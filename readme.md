@@ -1,120 +1,160 @@
-# RIAPress
+# RIA Press WordPress Theme
 
-RIAPress is a WordPress theme designed and developed by Rob Hudson to support an arrangement of the new design and development tools introduced in WordPress 6.1.
+A professional WordPress block theme featuring atomic design principles, performance optimization, and a comprehensive design system.
+
+**Version:** 0.1.0
+**Author:** Rob Hudson
+**License:** GPL v2 or later
+
+## Overview
+
+RIA Press is a modern WordPress block theme built with Full Site Editing (FSE) support, offering 16 custom Gutenberg blocks organized by atomic design principles.
 
 ## Requirements
-- Requires at least: 6.1
-- Tested up to: 6.5
-- Requires PHP: 5.6
-- Requires Node: v14.18.3
-- Requires @wordpress/scripts: v23.1.0
-- Stable tag: 4
-- License: GPLv2 or later
-- License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-## Theme.json
-- Theme.json is "a new mechanism to configure the editor that enables a finer-grained control and introduces the first step in managing styles" and settings. [Docs](https://developer.wordpress.org/block-editor/how-to-guides/themes/theme-json/)
+- WordPress: 6.1+
+- PHP: 7.4+
+- Node.js: 14.18.3+
+- @wordpress/scripts: 23.1.0+
 
-## Task Manager
+## Features
 
-### Install dependencies
-```
-cd /assets
-```
+### Design System
+- **16 Custom Blocks** organized by atomic design
+- **Color Variant System** with 8 semantic variants
+- **Animation System** with 12 animation types
+- **Performance Optimized** (8-15KB per block)
+- **Accessibility Ready** (WCAG 2.1 AA)
+- **Responsive Design** (mobile-first approach)
 
-### Install dependencies
-```
+### Block Library
+
+**Atoms (9):** Avatar, Breadcrumb, Button, Icon, Icon Box, Image, Image Box, Rating, Tag
+
+**Molecules (2):** Event Card, Resource Card
+
+**Organisms (2):** Modal, Popover
+
+**Templates (3):** Call To Action, Hero, Pricing Grid
+
+### Technical Features
+- Settings export/import functionality
+- Shared icon library (25 SVG icons)
+- theme.json configuration
+- Zero heavy dependencies
+- Optimized bundle sizes
+
+## Installation
+
+### For Users
+
+1. Go to Appearance > Themes > Add New
+2. Click Upload Theme
+3. Choose the theme .zip file
+4. Click Install Now, then Activate
+
+### For Developers
+
+```bash
+# Navigate to theme directory
+cd wp-content/themes/riapress
+
+# Install dependencies (for asset building)
+cd assets
 npm install
-```
-### Developer build
-```
-npm run start
-```
 
-### Production build
-```
+# Development mode (hot reload)
+npm run start
+
+# Production build
 npm run build
 ```
 
-## Recent Enhancements (v4.5.0)
+## Block Development
 
-### Phase 1: Universal Spacing System ✅
-- **9 blocks enhanced** with native WordPress padding controls
-- Consistent spacing controls across Button, Hero, Heading, Icon, Badge, Image, Separator, Social Link, and Accordions blocks
-- See [PHASE_1_COMPLETION_REPORT.md](PHASE_1_COMPLETION_REPORT.md) for details
+Each block follows WordPress best practices:
 
-### Alignment Fixes ✅
-- **Hero Section**: Fixed paragraph element centering
-- **CTA Section**: Implemented proper flexbox vertical/horizontal alignment
-- Systematic audit of all 48 blocks for alignment issues
-- See [ALIGNMENT_AUDIT_REPORT.md](ALIGNMENT_AUDIT_REPORT.md) for details
+```bash
+# Navigate to a block
+cd blocks/ria-button
 
-### Phase 2: Animation System 🎨
-- Design phase complete
-- IntersectionObserver-based scroll animations planned
-- Zero-dependency vanilla JS + CSS approach
-- See [PHASE_2_ANIMATION_SYSTEM_DESIGN.md](PHASE_2_ANIMATION_SYSTEM_DESIGN.md) for roadmap
+# Install dependencies
+npm install
+
+# Development
+npm run start
+
+# Production build
+npm run build
+```
+
+## Color Variant System
+
+All blocks support the unified color variant system:
+- Primary
+- Secondary
+- Tertiary
+- Neutral
+- Success
+- Warning
+- Error
+- Info
+- Custom (with color picker override)
+
+## Animation System
+
+Blocks support 12 animation types with configurable duration, delay, easing, scroll triggers, and stagger effects.
+
+## Performance
+
+Optimized for speed:
+- Bundle sizes: 8-15KB per block
+- No heavy dependencies
+- Lazy loading where appropriate
+- Efficient CSS architecture
+- 98.6% reduction in icon bundle sizes
+
+## Browser Support
+
+- Chrome (latest 2 versions)
+- Firefox (latest 2 versions)
+- Safari (latest 2 versions)
+- Edge (latest 2 versions)
+
+## Accessibility
+
+- WCAG 2.1 AA compliant
+- Proper ARIA labels
+- Keyboard navigation support
+- Screen reader friendly
 
 ## Documentation
 
-### Block Enhancement Reports
-- [BLOCK_AUDIT_REPORT.md](BLOCK_AUDIT_REPORT.md) - Comprehensive audit of all blocks
-- [PHASE_1_COMPLETION_REPORT.md](PHASE_1_COMPLETION_REPORT.md) - Spacing system implementation
-- [ALIGNMENT_AUDIT_REPORT.md](ALIGNMENT_AUDIT_REPORT.md) - Alignment issue audit and fixes
-- [PHASE_2_ANIMATION_SYSTEM_DESIGN.md](PHASE_2_ANIMATION_SYSTEM_DESIGN.md) - Animation system design by Rob
+- **readme.txt** - WordPress.org standard readme
+- **changelog.md** - Complete version history
+- Block-specific documentation in individual block folders
 
-### Version History
-- [changelog.md](changelog.md) - Complete version history and changes
+## License
 
-## GitHub Webhook Deployment Test# RIA Press Theme
+This theme is licensed under GPL v2 or later.
+http://www.gnu.org/licenses/gpl-2.0.html
 
-**Version:** v0.1.0-janus
-**Status:** Active Development
+## Credits
 
-## About
+- Designed and developed by Rob Hudson
+- Icons adapted from Lucide (MIT License)
+- Built with WordPress coding standards
 
-Professional WordPress block theme with atomic design system and performance-optimized architecture.
+## Changelog
 
-## Quick Links
-
-- **Repository:** https://github.com/robhdsndsn/riapress-theme
-- **Staging Site:** https://staging57.the-ria.ca
-- **Documentation:** See GIT_WORKFLOW.md for complete workflow
-
-## Key Features
-
-- 16 Gutenberg blocks (atomic design)
-- Color variant system (8 semantic variants)
-- Animation system (12 animation types)
+### Version 0.1.0 (November 13, 2025)
+- Initial release
+- 16 custom Gutenberg blocks
+- Color variant system
+- Animation system
+- Performance optimization
 - Settings export/import
-- Shared icon library (25 SVG icons)
-- Performance optimized (8-15KB per block)
+- Shared icon library
+- Full accessibility compliance
 
-## Version Naming
-
-Releases use Roman gods/goddesses:
-- v0.1.0 - Janus (Current) - The Foundation
-- v1.0.0 - Minerva (Planned) - First Stable
-- v2.0.0 - Apollo (Planned) - Enhanced
-
-## Development
-
-```bash
-# Daily workflow
-git checkout development
-git pull
-# Make changes
-git commit -m "type: description"
-git push
-
-# Auto-deploys to staging
-```
-
-See GIT_WORKFLOW.md for complete documentation.
-
-## The Janus Philosophy
-
-Like the two-faced Roman god at the threshold:
-- Looking back: Clean, organized history
-- Looking forward: Clear path for innovation
-- At the doorway: Between foundation and future
+See changelog.md for complete version history.
