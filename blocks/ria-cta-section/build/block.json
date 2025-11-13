@@ -1,0 +1,118 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "ria/cta-section",
+  "version": "0.1.0",
+  "title": "RIA CTA Section",
+  "category": "ria-blocks",
+  "icon": "megaphone",
+  "description": "Call-to-action section with flexible content, background options, and customizable styling",
+  "keywords": [
+    "cta",
+    "call-to-action",
+    "conversion",
+    "organism",
+    "section"
+  ],
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ],
+    "spacing": {
+      "margin": true,
+      "padding": false
+    }
+  },
+  "attributes": {
+    "backgroundColor": {
+      "type": "string",
+      "default": "#f5f5f5"
+    },
+    "textColor": {
+      "type": "string",
+      "default": "#1a1a1a"
+    },
+    "textAlign": {
+      "type": "string",
+      "default": "center"
+    },
+    "paddingTop": {
+      "type": "number",
+      "default": 60
+    },
+    "paddingBottom": {
+      "type": "number",
+      "default": 60
+    },
+    "paddingLeft": {
+      "type": "number",
+      "default": 24
+    },
+    "paddingRight": {
+      "type": "number",
+      "default": 24
+    },
+    "maxWidth": {
+      "type": "number",
+      "default": 800
+    },
+    "style": {
+      "type": "string",
+      "default": "box"
+    },
+    "borderWidth": {
+      "type": "number",
+      "default": 0
+    },
+    "borderStyle": {
+      "type": "string",
+      "default": "solid"
+    },
+    "borderColor": {
+      "type": "string",
+      "default": "#e5e7eb"
+    },
+    "borderRadius": {
+      "type": "number",
+      "default": 8
+    },
+    "boxShadow": {
+      "type": "string",
+      "default": "none"
+    },
+    "hoverShadow": {
+      "type": "string",
+      "default": "none"
+    },
+    "animationEnabled": {
+      "type": "boolean",
+      "default": true
+    },
+    "animationType": {
+      "type": "string",
+      "default": "fadeInUp"
+    },
+    "animationDuration": {
+      "type": "number",
+      "default": 0.6
+    },
+    "animationDelay": {
+      "type": "number",
+      "default": 0
+    },
+    "animationEasing": {
+      "type": "string",
+      "default": "ease-out"
+    },
+    "hoverAnimation": {
+      "type": "string",
+      "default": "none"
+    }
+  },
+  "textdomain": "ria",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}

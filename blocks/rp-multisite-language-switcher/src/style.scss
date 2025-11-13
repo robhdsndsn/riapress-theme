@@ -1,0 +1,32 @@
+.wp-block-rp-multisite-language-switcher {
+	// Color Variants
+	&.has-primary-variant {
+		background-color: var(--color-primary-100);
+		color: var(--color-primary-900);
+		border-color: var(--color-primary-300);
+	}
+
+	&.has-secondary-variant {
+		background-color: var(--color-secondary-100);
+		color: var(--color-secondary-900);
+		border-color: var(--color-secondary-300);
+	}
+
+	&.has-accent-variant {
+		background-color: var(--color-accent-100);
+		color: var(--color-accent-900);
+		border-color: var(--color-accent-300);
+	}
+
+	&.has-neutral-variant {
+		background-color: var(--color-neutral-100);
+		color: var(--color-neutral-900);
+		border-color: var(--color-neutral-300);
+	}
+
+	&.has-custom-colors {
+		color: var(--custom-color, currentColor);
+		background-color: var(--custom-background-color, transparent);
+		border-color: var(--custom-border-color, currentColor);
+	}
+}

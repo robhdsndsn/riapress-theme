@@ -1,0 +1,125 @@
+@import "../../assets/src/styles/base/breakpoints";
+//@import "../../assets/src/styles/base/colors";
+@import "../../assets/src/styles/base/spacing";
+//@import "../../assets/src/styles/base/transitions";
+
+
+.wp-block-rp-social-share {
+
+	.share-label {
+		font-weight: 600;
+	}
+
+	.share-container {
+		//border: 1px solid $dark;
+		border-radius: 8px;
+		padding: 8px;
+		display: flex;
+		align-content: flex-start;
+		justify-content: center;
+
+		.share-list {
+			margin: 0;
+			margin-left: 10px;
+			padding-left: 0;
+
+			display: flex;
+			align-content: flex-start;
+			gap: 10px;
+
+			li {
+				list-style: none;
+			}
+		}
+	}
+
+	&.alignwide,
+	&.alignfull {
+		.wp-block-rp-social-share {
+			max-width: var(--wp--style--global--content-size);
+			margin-right: auto;
+			margin-left: auto;
+		}
+	}
+
+	.wp-block-rp-social-share {
+		border-width: 1px 1px 1px 1px;
+		border-style: solid;
+		//border-color: $dark;
+		border-radius: 8px;
+	}
+
+	.editor-styles-wrapper button {
+		display: flex;
+	}
+
+	&.has-text-color {
+		.wp-block-rp-social-share {
+			border-color: inherit;
+
+			.accordion-toggle {
+
+				&:focus,
+				&:hover {
+					color: inherit;
+				}
+
+				&.is-active {
+					color: inherit;
+
+					.accordion-icon {
+						&:after {
+							color: inherit;
+						}
+					}
+				}
+
+			}
+
+			.accordion-icon {
+				&:after {
+					border-color: inherit;
+				}
+			}
+
+			.accordion-intro {
+				color: inherit;
+			}
+
+			.accordion-content {
+				border-color: inherit !important;
+			}
+		}
+	}
+
+	// Color Variants
+	&.has-primary-variant {
+		background-color: var(--color-primary-100);
+		color: var(--color-primary-900);
+		border-color: var(--color-primary-300);
+	}
+
+	&.has-secondary-variant {
+		background-color: var(--color-secondary-100);
+		color: var(--color-secondary-900);
+		border-color: var(--color-secondary-300);
+	}
+
+	&.has-accent-variant {
+		background-color: var(--color-accent-100);
+		color: var(--color-accent-900);
+		border-color: var(--color-accent-300);
+	}
+
+	&.has-neutral-variant {
+		background-color: var(--color-neutral-100);
+		color: var(--color-neutral-900);
+		border-color: var(--color-neutral-300);
+	}
+
+	&.has-custom-colors {
+		color: var(--custom-color, currentColor);
+		background-color: var(--custom-background-color, transparent);
+		border-color: var(--custom-border-color, currentColor);
+	}
+}

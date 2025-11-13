@@ -1,0 +1,10 @@
+// Breakpoints / Media Queries
+
+// Needed to be defined here as root variables (theme.json) is contextual to the browser, and not in the assets folder.
+$mobile: 414px; // Dimensions: iPhone XR (414px)
+$tablet: 768px; // Dimensions: iPad Mini (768px)
+$laptop: 1024px; // Dimensions: common laptop screen (1024px)
+$desktop: 1200px; // Dimensions: common desktop screen (1200px)
+
+// Navigation Query Size
+$admin_bar: 600px; // Dimensions: WordPress admin bar (600px) is taller and we need to adjust for it on 600px or smaller

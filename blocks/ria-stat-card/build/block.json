@@ -1,0 +1,115 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "ria/stat-card",
+	"version": "1.0.0",
+	"title": "RIA Stat Card",
+	"category": "ria",
+	"icon": "chart-bar",
+	"description": "Display a number with label and description for statistics.",
+	"keywords": [
+		"number",
+		"stat",
+		"counter",
+		"metric",
+		"statistic"
+	],
+	"supports": {
+		"html": false,
+		"anchor": true,
+		"spacing": {
+			"margin": true,
+			"padding": true
+		}
+	},
+	"attributes": {
+		"variant": {
+			"type": "string",
+			"default": "default"
+		},
+		"customBackgroundColor": {
+			"type": "string",
+			"default": ""
+		},
+		"customBorderColor": {
+			"type": "string",
+			"default": ""
+		},
+		"number": {
+			"type": "string",
+			"default": "100"
+		},
+		"label": {
+			"type": "string",
+			"default": ""
+		},
+		"description": {
+			"type": "string",
+			"default": ""
+		},
+		"numberColor": {
+			"type": "string",
+			"default": "#0073aa"
+		},
+		"numberSize": {
+			"type": "number",
+			"default": 48
+		},
+		"prefix": {
+			"type": "string",
+			"default": ""
+		},
+		"suffix": {
+			"type": "string",
+			"default": ""
+		},
+		"textAlign": {
+			"type": "string",
+			"default": "center"
+		},
+		"backgroundColor": {
+			"type": "string",
+			"default": ""
+		},
+		"showBackground": {
+			"type": "boolean",
+			"default": false
+		},
+		"borderRadius": {
+			"type": "number",
+			"default": 8
+		},
+		"animationEnabled": {
+			"type": "boolean",
+			"default": true
+		},
+		"animationType": {
+			"type": "string",
+			"default": "fadeInUp"
+		},
+		"animationDuration": {
+			"type": "number",
+			"default": 0.6
+		},
+		"animationDelay": {
+			"type": "number",
+			"default": 0
+		},
+		"animationEasing": {
+			"type": "string",
+			"default": "ease-out"
+		},
+		"hoverAnimation": {
+			"type": "string",
+			"default": "none"
+		},
+		"customColor": {
+			"type": "string",
+			"default": ""
+		}
+	},
+	"textdomain": "riapress",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}

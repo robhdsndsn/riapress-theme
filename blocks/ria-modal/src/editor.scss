@@ -1,0 +1,296 @@
+/**
+ * RIA Modal - Editor Styles
+ * Styles for the WordPress block editor only
+ */
+
+.wp-block-ria-modal {
+	// Alignment classes
+	&.align-left {
+		.modal-trigger-wrapper {
+			text-align: left;
+		}
+	}
+
+	&.align-center {
+		.modal-trigger-wrapper {
+			text-align: center;
+		}
+	}
+
+	&.align-right {
+		.modal-trigger-wrapper {
+			text-align: right;
+		}
+	}
+
+	// Trigger wrapper
+	.modal-trigger-wrapper {
+		margin-bottom: 1rem;
+	}
+
+	// Trigger button/link styles
+	.modal-trigger {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.5rem;
+		padding: 0.75rem 1.5rem;
+		font-size: 1rem;
+		font-weight: 500;
+		line-height: 1.5;
+		text-decoration: none;
+		border: none;
+		border-radius: 4px;
+		cursor: pointer;
+		transition: all 0.2s ease;
+
+		// RichText span
+		.trigger-text {
+			display: inline;
+		}
+
+		// Button styles
+		&.style-primary {
+			background: #3b82f6;
+			color: white;
+
+			&:hover {
+				background: #2563eb;
+			}
+		}
+
+		&.style-secondary {
+			background: #6b7280;
+			color: white;
+
+			&:hover {
+				background: #4b5563;
+			}
+		}
+
+		&.style-tertiary {
+			background: #e5e7eb;
+			color: #1f2937;
+
+			&:hover {
+				background: #d1d5db;
+			}
+		}
+
+		&.style-ghost {
+			background: transparent;
+			color: #3b82f6;
+			border: 2px solid #3b82f6;
+
+			&:hover {
+				background: #3b82f6;
+				color: white;
+			}
+		}
+
+		// Button sizes
+		&.size-small {
+			padding: 0.5rem 1rem;
+			font-size: 0.875rem;
+		}
+
+		&.size-medium {
+			padding: 0.75rem 1.5rem;
+			font-size: 1rem;
+		}
+
+		&.size-large {
+			padding: 1rem 2rem;
+			font-size: 1.125rem;
+		}
+
+		// Image trigger
+		&.trigger-image {
+			padding: 0;
+			background: transparent;
+			border: 2px dashed #e5e7eb;
+
+			img {
+				display: block;
+				max-width: 200px;
+				height: auto;
+			}
+
+			.components-button {
+				margin: 1rem;
+			}
+		}
+
+		// Icon trigger
+		&.trigger-icon {
+			padding: 1rem;
+			background: #f3f4f6;
+			border-radius: 50%;
+
+			.trigger-icon-large {
+				font-size: 2rem;
+				line-height: 1;
+			}
+		}
+
+		// Icon positioning
+		.trigger-icon {
+			display: inline-flex;
+			align-items: center;
+			font-size: 1.25em;
+			line-height: 1;
+
+			&.icon-left {
+				order: -1;
+			}
+
+			&.icon-right {
+				order: 1;
+			}
+		}
+
+		// Shadow utilities
+		&.shadow-small {
+			box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+		}
+
+		&.shadow-medium {
+			box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+		}
+
+		&.shadow-large {
+			box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+		}
+
+		// Hover shadow
+		&.hover-shadow-small:hover {
+			box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+		}
+
+		&.hover-shadow-medium:hover {
+			box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+		}
+
+		&.hover-shadow-large:hover {
+			box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+		}
+	}
+
+	// Modal preview container
+	.modal-preview-container {
+		margin-top: 1.5rem;
+		padding: 1rem;
+		background: #f9fafb;
+		border: 1px solid #e5e7eb;
+		border-radius: 4px;
+
+		.preview-header {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			margin-bottom: 1rem;
+
+			h4 {
+				margin: 0;
+				font-size: 0.875rem;
+				font-weight: 600;
+				color: #6b7280;
+				text-transform: uppercase;
+				letter-spacing: 0.05em;
+			}
+		}
+
+		.modal-preview {
+			padding: 1.5rem;
+			background: white;
+			border: 2px dashed #d1d5db;
+			border-radius: 8px;
+
+			// Size variants
+			&.size-small {
+				max-width: 400px;
+			}
+
+			&.size-medium {
+				max-width: 600px;
+			}
+
+			&.size-large {
+				max-width: 800px;
+			}
+
+			&.size-xlarge {
+				max-width: 1000px;
+			}
+
+			&.size-full {
+				max-width: 100%;
+			}
+
+			.modal-title {
+				margin-top: 0;
+				margin-bottom: 1rem;
+				font-size: 1.5rem;
+				font-weight: 700;
+				color: #1f2937;
+			}
+
+			// Content previews
+			.modal-custom-content {
+				// InnerBlocks container
+			}
+
+			.video-embed-preview {
+				padding: 1rem;
+				background: #f3f4f6;
+				border-radius: 4px;
+
+				p {
+					margin: 0.5rem 0;
+					font-size: 0.875rem;
+					color: #6b7280;
+
+					&:first-child {
+						font-weight: 600;
+						color: #374151;
+					}
+
+					&.help-text {
+						font-style: italic;
+					}
+				}
+			}
+
+			.image-upload-area {
+				text-align: center;
+
+				img {
+					max-width: 100%;
+					height: auto;
+					border-radius: 4px;
+				}
+			}
+
+			// WordPress Placeholder component
+			.components-placeholder {
+				min-height: 200px;
+			}
+		}
+	}
+
+	// Inspector controls custom styles
+	.components-panel__body {
+		.components-base-control__label {
+			margin-bottom: 0.5rem;
+			font-size: 11px;
+			font-weight: 600;
+			text-transform: uppercase;
+			letter-spacing: 0.5px;
+			color: #1e1e1e;
+		}
+
+		.components-color-picker {
+			margin-top: 0.5rem;
+			margin-bottom: 1rem;
+		}
+	}
+}

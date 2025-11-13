@@ -1,0 +1,75 @@
+{
+  "apiVersion": 3,
+  "name": "gregius/query-sort-by",
+  "title": "Query Sort By",
+  "category": "widgets",
+  "icon": "sort",
+  "description": "Sort the query results by date or title.",
+  "usesContext": ["queryId", "query"],
+  "supports": {
+    "html": false,
+    "className": true,
+    "customClassName": true,
+    "color": {
+      "background": true,
+      "text": true
+    },
+    "typography": {
+      "fontSize": true
+    },
+    "spacing": {
+      "margin": true,
+      "padding": true
+    },
+    "__experimentalBorder": {
+        "color": true,
+        "radius": true,
+        "width": true
+    },
+    "interactivity": {
+      "clientNavigation": true
+    }
+  },
+  "attributes": {
+    "sortOrder": {
+      "type": "string",
+      "default": "desc"
+    },
+    "sortBy": {
+      "type": "string",
+      "default": "date"
+    },
+    "label": {
+      "type": "string",
+      "default": "Sort by:"
+    },
+    "showLabel": {
+      "type": "boolean",
+      "default": true
+    },
+    "boldLabel": {
+      "type": "boolean",
+      "default": false
+    },
+    "style": {
+      "type": "object",
+      "default": {
+        "elements" : {
+          "select": {
+            "border": {
+              "radius": "4px",
+              "width": "1px",
+              "color": "var:custom|colors|dark"
+            }  
+          } 
+        }
+      }
+    }
+  },
+  "textdomain": "gregius-query-filter",
+  "editorScript": "file:./index.js",
+  "style": "file:./style-index.css",
+  "viewStyle": "file:./style-index.css",
+  "viewScriptModule": "file:./view.js",
+  "render": "file:./render.php"
+}

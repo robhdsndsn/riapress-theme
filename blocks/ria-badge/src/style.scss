@@ -1,0 +1,351 @@
+/**
+ * RIA Badge Block - Frontend Styles
+ */
+
+// Color variants (design tokens - can be customized)
+$badge-colors: (
+	neutral: (
+		bg: #f1f5f9,
+		text: #475569,
+		border: #cbd5e1,
+	),
+	info: (
+		bg: #dbeafe,
+		text: #1e40af,
+		border: #93c5fd,
+	),
+	success: (
+		bg: #dcfce7,
+		text: #166534,
+		border: #86efac,
+	),
+	warning: (
+		bg: #fef3c7,
+		text: #92400e,
+		border: #fcd34d,
+	),
+	error: (
+		bg: #fee2e2,
+		text: #991b1b,
+		border: #fca5a5,
+	),
+);
+
+// Size variants
+$badge-sizes: (
+	small: (
+		font-size: 0.75rem,
+		// 12px
+		padding: 2px 8px,
+		gap: 4px,
+		border-radius: 4px,
+	),
+	medium: (
+		font-size: 0.875rem,
+		// 14px
+		padding: 4px 12px,
+		gap: 6px,
+		border-radius: 6px,
+	),
+	large: (
+		font-size: 1rem,
+		// 16px
+		padding: 6px 16px,
+		gap: 8px,
+		border-radius: 8px,
+	),
+);
+
+// Base badge styles
+.ria-badge,
+.wp-block-ria-badge .ria-badge {
+	display: inline-flex;
+	align-items: center;
+	font-weight: 500;
+	line-height: 1;
+	white-space: nowrap;
+	vertical-align: middle;
+	transition: all 0.2s ease;
+	text-decoration: none;
+	position: relative;
+
+	// Badge text
+	&__text {
+		display: inline-block;
+	}
+
+	// Icon
+	&__icon {
+		flex-shrink: 0;
+		display: inline-block;
+		vertical-align: middle;
+	}
+
+	// Dot indicator
+	&__dot {
+		width: 6px;
+		height: 6px;
+		border-radius: 50%;
+		background: currentColor;
+		flex-shrink: 0;
+	}
+
+	// Dismiss button
+	&__dismiss {
+		background: none;
+		border: none;
+		padding: 0;
+		margin: 0 0 0 4px;
+		cursor: pointer;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		color: currentColor;
+		opacity: 0.6;
+		transition: opacity 0.2s ease;
+		flex-shrink: 0;
+
+		&:hover {
+			opacity: 1;
+		}
+
+		&:focus {
+			outline: 2px solid currentColor;
+			outline-offset: 2px;
+			border-radius: 2px;
+		}
+
+		svg {
+			display: block;
+		}
+	}
+
+	// Size variants
+	@each $size, $props in $badge-sizes {
+		&--#{$size} {
+			font-size: map-get($props, font-size);
+			padding: map-get($props, padding);
+			gap: map-get($props, gap);
+			border-radius: map-get($props, border-radius);
+		}
+	}
+
+	// Color variants (filled)
+	@each $variant, $colors in $badge-colors {
+		&--#{$variant} {
+			background-color: map-get($colors, bg);
+			color: map-get($colors, text);
+		}
+	}
+
+	// Color variants (outline)
+	&--outline {
+		background-color: transparent;
+
+		@each $variant, $colors in $badge-colors {
+			&.ria-badge--#{$variant} {
+				border: 1.5px solid map-get($colors, border);
+				color: map-get($colors, text);
+			}
+		}
+	}
+
+	// Linked badge hover
+	&--linked {
+		cursor: pointer;
+
+		&:hover {
+			transform: translateY(-1px);
+			box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+		}
+
+		&:active {
+			transform: translateY(0);
+		}
+	}
+
+	// Dismissible animation
+	&--dismissible {
+		&.is-dismissed {
+			animation: badge-dismiss 0.3s ease forwards;
+		}
+	}
+}
+
+// Dismiss animation
+@keyframes badge-dismiss {
+	0% {
+		opacity: 1;
+		transform: scale(1);
+	}
+	100% {
+		opacity: 0;
+		transform: scale(0.8);
+		max-width: 0;
+		padding: 0;
+		margin: 0;
+	}
+}
+
+// Accessibility
+@media (prefers-reduced-motion: reduce) {
+	.ria-badge,
+	.wp-block-ria-badge .ria-badge {
+		animation: none !important;
+		transition: none !important;
+	}
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+	.ria-badge,
+	.wp-block-ria-badge .ria-badge {
+		// Slightly smaller on mobile
+		@each $size, $props in $badge-sizes {
+			&--#{$size} {
+				font-size: calc(#{map-get($props, font-size)} * 0.9);
+			}
+		}
+	}
+}
+
+// Print styles
+@media print {
+	.ria-badge,
+	.wp-block-ria-badge .ria-badge {
+		&__dismiss {
+			display: none;
+		}
+
+		// Ensure badges are visible in print
+		&--outline {
+			@each $variant, $colors in $badge-colors {
+				&.ria-badge--#{$variant} {
+					background-color: map-get($colors, bg);
+					border-color: map-get($colors, text);
+				}
+			}
+		}
+	}
+}
+
+// Dark mode support (if theme provides .dark class on body)
+@media (prefers-color-scheme: dark) {
+	.ria-badge,
+	.wp-block-ria-badge .ria-badge {
+		// Adjust colors for dark mode
+		&--neutral {
+			background-color: #334155;
+			color: #e2e8f0;
+		}
+
+		&--info {
+			background-color: #1e3a8a;
+			color: #bfdbfe;
+		}
+
+		&--success {
+			background-color: #14532d;
+			color: #bbf7d0;
+		}
+
+		&--warning {
+			background-color: #78350f;
+			color: #fde68a;
+		}
+
+		&--error {
+			background-color: #7f1d1d;
+			color: #fecaca;
+		}
+
+		&--outline {
+			&.ria-badge--neutral {
+				border-color: #64748b;
+				color: #e2e8f0;
+			}
+
+			&.ria-badge--info {
+				border-color: #60a5fa;
+				color: #bfdbfe;
+			}
+
+			&.ria-badge--success {
+				border-color: #4ade80;
+				color: #bbf7d0;
+			}
+
+			&.ria-badge--warning {
+				border-color: #facc15;
+				color: #fde68a;
+			}
+
+			&.ria-badge--error {
+				border-color: #f87171;
+				color: #fecaca;
+			}
+		}
+	}
+}
+
+// Focus visible for keyboard navigation
+.ria-badge,
+.wp-block-ria-badge .ria-badge {
+	&:focus-visible {
+		outline: 2px solid currentColor;
+		outline-offset: 2px;
+	}
+}
+
+
+/* Color Variants */
+.wp-block-ria-badge {
+	/* Variant: Primary */
+	&.has-primary-variant {
+		background-color: var(--color-primary-100);
+		color: var(--color-primary-900);
+		border-color: var(--color-primary-300);
+
+		a {
+			color: var(--color-primary-700);
+		}
+	}
+
+	/* Variant: Secondary */
+	&.has-secondary-variant {
+		background-color: var(--color-secondary-100);
+		color: var(--color-secondary-900);
+		border-color: var(--color-secondary-300);
+
+		a {
+			color: var(--color-secondary-700);
+		}
+	}
+
+	/* Variant: Accent */
+	&.has-accent-variant {
+		background-color: var(--color-accent-100);
+		color: var(--color-accent-900);
+		border-color: var(--color-accent-300);
+
+		a {
+			color: var(--color-accent-700);
+		}
+	}
+
+	/* Variant: Neutral */
+	&.has-neutral-variant {
+		background-color: var(--color-neutral-100);
+		color: var(--color-neutral-900);
+		border-color: var(--color-neutral-300);
+
+		a {
+			color: var(--color-neutral-700);
+		}
+	}
+
+	/* Custom colors via inline styles */
+	&.has-custom-colors {
+		/* Inline styles will override */
+	}
+}

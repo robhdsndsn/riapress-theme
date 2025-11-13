@@ -1,0 +1,99 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "ria/button",
+	"version": "1.0.0",
+	"title": "RIA Button",
+	"category": "ria",
+	"icon": "button",
+	"description": "Branded call-to-action button with unified color system and multiple variants.",
+	"keywords": [
+		"button",
+		"cta",
+		"link",
+		"call to action"
+	],
+	"supports": {
+		"html": false,
+		"align": false,
+		"spacing": {
+			"margin": true,
+			"padding": true
+		}
+	},
+	"attributes": {
+		"text": {
+			"type": "string",
+			"default": "Click Here"
+		},
+		"url": {
+			"type": "string",
+			"default": ""
+		},
+		"buttonVariant": {
+			"type": "string",
+			"default": "primary",
+			"enum": [
+				"primary",
+				"secondary",
+				"tertiary",
+				"outline-primary",
+				"outline-secondary",
+				"outline-tertiary",
+				"ghost",
+				"link",
+				"custom"
+			]
+		},
+		"size": {
+			"type": "string",
+			"default": "medium",
+			"enum": [
+				"small",
+				"medium",
+				"large"
+			]
+		},
+		"icon": {
+			"type": "string",
+			"default": ""
+		},
+		"iconPosition": {
+			"type": "string",
+			"default": "none",
+			"enum": [
+				"left",
+				"right",
+				"none"
+			]
+		},
+		"openInNewTab": {
+			"type": "boolean",
+			"default": false
+		},
+		"customBackgroundColor": {
+			"type": "string",
+			"default": ""
+		},
+		"customTextColor": {
+			"type": "string",
+			"default": ""
+		},
+		"customBorderColor": {
+			"type": "string",
+			"default": ""
+		},
+		"variant": {
+			"type": "string",
+			"default": "default"
+		},
+		"customColor": {
+			"type": "string",
+			"default": ""
+		}
+	},
+	"textdomain": "riapress",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}

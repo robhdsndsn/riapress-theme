@@ -1,0 +1,79 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "ria/shape",
+  "version": "1.0.0",
+  "title": "RIA Shape",
+  "category": "ria-blocks",
+  "icon": "art",
+  "description": "Add decorative SVG shapes and dividers",
+  "keywords": [
+    "shape",
+    "divider",
+    "svg",
+    "decoration",
+    "wave"
+  ],
+  "supports": {
+    "html": false,
+    "anchor": true
+  },
+  "attributes": {
+    "shapeName": {
+      "type": "string",
+      "default": "wave"
+    },
+    "shapeColor": {
+      "type": "string",
+      "default": "#2563eb"
+    },
+    "shapeHeight": {
+      "type": "number",
+      "default": 100
+    },
+    "flipHorizontal": {
+      "type": "boolean",
+      "default": false
+    },
+    "flipVertical": {
+      "type": "boolean",
+      "default": false
+    },
+    "position": {
+      "type": "string",
+      "default": "bottom"
+    },
+    "zIndex": {
+      "type": "number",
+      "default": 1
+    },
+    "animationEnabled": {
+      "type": "boolean",
+      "default": true
+    },
+    "animationType": {
+      "type": "string",
+      "default": "fadeInUp"
+    },
+    "animationDuration": {
+      "type": "number",
+      "default": 0.6
+    },
+    "animationDelay": {
+      "type": "number",
+      "default": 0
+    },
+    "animationEasing": {
+      "type": "string",
+      "default": "ease-out"
+    },
+    "hoverAnimation": {
+      "type": "string",
+      "default": "none"
+    }
+  },
+  "textdomain": "ria-shape",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}

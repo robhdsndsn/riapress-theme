@@ -1,0 +1,82 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "ria/social-link",
+  "version": "0.1.0",
+  "title": "RIA Social Link",
+  "category": "widgets",
+  "icon": "share",
+  "description": "Individual social media link button.",
+  "keywords": [
+    "social",
+    "link",
+    "icon",
+    "share",
+    "media"
+  ],
+  "supports": {
+    "html": false,
+    "spacing": {
+      "margin": true,
+      "padding": true
+    }
+  },
+  "attributes": {
+    "url": {
+      "type": "string",
+      "default": ""
+    },
+    "service": {
+      "type": "string",
+      "default": "facebook",
+      "enum": [
+        "facebook",
+        "twitter",
+        "linkedin",
+        "instagram",
+        "youtube",
+        "email"
+      ]
+    },
+    "label": {
+      "type": "string",
+      "default": ""
+    },
+    "showLabel": {
+      "type": "boolean",
+      "default": false
+    },
+    "openInNewTab": {
+      "type": "boolean",
+      "default": true
+    },
+    "animationEnabled": {
+      "type": "boolean",
+      "default": true
+    },
+    "animationType": {
+      "type": "string",
+      "default": "fadeInUp"
+    },
+    "animationDuration": {
+      "type": "number",
+      "default": 0.6
+    },
+    "animationDelay": {
+      "type": "number",
+      "default": 0
+    },
+    "animationEasing": {
+      "type": "string",
+      "default": "ease-out"
+    },
+    "hoverAnimation": {
+      "type": "string",
+      "default": "none"
+    }
+  },
+  "textdomain": "ria-social-link",
+  "editorScript": "file:index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}

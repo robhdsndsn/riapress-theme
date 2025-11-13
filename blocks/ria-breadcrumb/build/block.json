@@ -1,0 +1,113 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "ria/breadcrumb",
+  "version": "0.1.0",
+  "title": "RIA Breadcrumb",
+  "category": "ria",
+  "icon": "arrow-right-alt",
+  "description": "Navigation breadcrumb trail showing page hierarchy.",
+  "keywords": [
+    "breadcrumb",
+    "navigation",
+    "hierarchy",
+    "trail",
+    "atom"
+  ],
+  "supports": {
+    "html": false,
+    "align": true,
+    "spacing": {
+      "margin": true,
+      "padding": false
+    }
+  },
+  "attributes": {
+    "variant": {
+      "type": "string",
+      "default": "neutral"
+    },
+    "customColor": {
+      "type": "string",
+      "default": ""
+    },
+    "customBackgroundColor": {
+      "type": "string",
+      "default": ""
+    },
+    "customBorderColor": {
+      "type": "string",
+      "default": ""
+    },
+    "items": {
+      "type": "array",
+      "default": [
+        {
+          "label": "Home",
+          "url": "/"
+        },
+        {
+          "label": "Current Page",
+          "url": ""
+        }
+      ]
+    },
+    "separator": {
+      "type": "string",
+      "default": "/",
+      "enum": [
+        "/",
+        ">",
+        "›",
+        "»",
+        "•",
+        "-"
+      ]
+    },
+    "separatorIcon": {
+      "type": "string",
+      "default": ""
+    },
+    "showHome": {
+      "type": "boolean",
+      "default": true
+    },
+    "fontSize": {
+      "type": "string",
+      "default": "small",
+      "enum": [
+        "small",
+        "medium",
+        "large"
+      ]
+    },
+    "animationType": {
+      "type": "string",
+      "default": "none"
+    },
+    "animationDuration": {
+      "type": "number",
+      "default": 0.6
+    },
+    "animationDelay": {
+      "type": "number",
+      "default": 0
+    },
+    "animationEasing": {
+      "type": "string",
+      "default": "ease-out"
+    },
+    "animateOnScroll": {
+      "type": "boolean",
+      "default": false
+    },
+    "staggerDelay": {
+      "type": "number",
+      "default": 0
+    }
+  },
+  "textdomain": "riapress",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}

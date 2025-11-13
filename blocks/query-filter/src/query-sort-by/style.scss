@@ -1,0 +1,35 @@
+/* Query Sort By block styles */
+.wp-block-gregius-query-sort-by {
+  // Base flex layout  
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem; 
+  form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  /* Basic spacing between label and select */
+  .wp-block-query-filter-sort-by__label,
+  .wp-block-query-filter__label {
+    display: block;
+    margin: 0;
+  }
+ 
+  /* Screen reader only text */
+  .screen-reader-text { 
+    border: 0;
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0; 
+    position: absolute !important;
+    width: 1px;
+    word-wrap: normal !important;
+  }
+} 

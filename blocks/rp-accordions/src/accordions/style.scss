@@ -1,0 +1,130 @@
+.wp-block-rp-accordions {
+
+	.wp-block-rp-accordion {}
+
+	// This reset the button style
+	button.accordion-toggle {
+		width: 100%;
+		margin: unset;
+		padding: unset;
+		border-radius: unset;
+		background-color: unset;
+		color: inherit;
+	}
+
+	.accordion-toggle {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		width: 100%;
+		font-family: inherit;
+		font-size: inherit;
+		font-weight: 300;
+		cursor: pointer;
+		border-width: 0 0 1px 0;
+		border-style: solid;
+		border-color: currentColor;
+
+		&:focus,
+		&:hover {}
+
+		&.is-active {
+			border-color: transparent;
+
+			.accordion-icon {
+				&:after {
+					top: .5rem;
+					transform: rotate(-135deg);
+				}
+			}
+		}
+	}
+
+	.editor-styles-wrapper button {
+		display: flex;
+	}
+
+	.accordion-icon {
+		display: flex;
+		flex: 0 0 1rem;
+		justify-content: center;
+		order: 2;
+
+		&:after {
+			width: 1rem;
+			height: 1rem;
+			content: "";
+			display: block;
+			box-sizing: border-box;
+			transition: transform 0.2s ease-in-out, top 0.2s ease-in-out;
+			border-right: 0.1em solid currentColor;
+			border-bottom: 0.1em solid currentColor;
+			background: transparent;
+			transform: rotate(45deg);
+			position: relative;
+			top: -.25rem;  
+			left: -.25rem;
+		}
+	}
+
+	.accordion-intro {
+		margin: unset;
+		padding: .5rem 0;
+		text-align: left;
+		font-weight: 400;
+		letter-spacing: unset;
+	}
+
+	.accordion-content {
+		display: none;
+		margin-bottom: unset;
+
+		&.is-active {
+			display: block;
+			overflow: auto;
+			border-width: 0 0 1px 0;
+			border-style: solid;
+			border-color: currentColor;
+		}
+	}
+
+	&.has-text-color {
+		.wp-block-rp-accordion {
+			border-color: currentColor;
+
+			.accordion-toggle {
+
+				&:focus,
+				&:hover {
+					color: inherit;
+				}
+
+				&.is-active {
+					color: inherit;
+
+					.accordion-icon {
+						&:after {
+							color: inherit;
+						}
+					}
+				}
+
+			}
+
+			.accordion-icon {
+				&:after {
+					/* ensure border color inherits text color */
+					border-color: currentColor;
+				}
+			}
+
+			.accordion-intro {
+				color: inherit;
+			}
+
+			.accordion-content {
+				border-color: currentColor;
+			}
+		}
+	}
+}

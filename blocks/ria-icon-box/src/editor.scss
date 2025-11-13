@@ -1,0 +1,76 @@
+/**
+ * Editor Styles for RIA Icon Box Block
+ */
+
+.wp-block-ria-icon-box {
+	padding: 20px;
+	min-height: 100px;
+
+	.icon-box-inner {
+		display: flex;
+		gap: 20px;
+		align-items: flex-start;
+	}
+
+	&.icon-position-top .icon-box-inner {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	&.icon-position-left .icon-box-inner {
+		flex-direction: row;
+		align-items: flex-start;
+	}
+
+	&.icon-position-right .icon-box-inner {
+		flex-direction: row-reverse;
+		align-items: flex-start;
+	}
+
+	.icon-box-icon {
+		flex-shrink: 0;
+		line-height: 1;
+
+		.dashicon {
+			display: block;
+		}
+	}
+
+	.icon-box-content {
+		flex: 1;
+	}
+
+	.icon-box-heading {
+		margin: 0 0 12px 0;
+		font-size: 24px;
+		font-weight: 600;
+
+		&:empty::before {
+			content: attr(placeholder);
+			color: #999;
+		}
+	}
+
+	.icon-box-description {
+		margin: 0;
+		font-size: 16px;
+		line-height: 1.6;
+
+		&:empty::before {
+			content: attr(placeholder);
+			color: #999;
+		}
+	}
+
+	&.text-align-left {
+		text-align: left;
+	}
+
+	&.text-align-center {
+		text-align: center;
+	}
+
+	&.text-align-right {
+		text-align: right;
+	}
+}

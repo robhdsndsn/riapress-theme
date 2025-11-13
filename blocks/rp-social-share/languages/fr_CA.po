@@ -1,0 +1,70 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-09-23T22:53:24+00:00\n"
+"PO-Revision-Date: 2025-09-23 15:56-0700\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr_CA\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.7\n"
+"X-Domain: social-share\n"
+
+#: build/index.js:64 build/index.js:254 build/index.js:28 build/index.js:158
+msgctxt "Screen Reader Text: Button Label"
+msgid "Share:"
+msgstr "Partager :"
+
+#: build/index.js:85 build/index.js:275 build/index.js:44 build/index.js:174
+msgctxt "Screen Reader Text: Button Label"
+msgid "X"
+msgstr "X"
+
+#: build/index.js:106 build/index.js:296 build/index.js:62 build/index.js:192
+msgctxt "Screen Reader Text: Button Label"
+msgid "Facebook"
+msgstr "Facebook"
+
+#: build/index.js:127 build/index.js:317 build/index.js:80 build/index.js:210
+msgctxt "Screen Reader Text: Button Label"
+msgid "Linked In"
+msgstr "Linkedin"
+
+#: build/index.js:153 build/index.js:343 build/index.js:102 build/index.js:232
+msgctxt "Screen Reader Text: Button Label"
+msgid "Pinterest"
+msgstr "Pinterest"
+
+#: build/index.js:174 build/index.js:364 build/index.js:119 build/index.js:249
+msgctxt "Screen Reader Text: Button Label"
+msgid "Email"
+msgstr "E-mail"
+
+#: build/block.json
+msgctxt "block title"
+msgid "Social Share"
+msgstr "Partage social"
+
+#: build/block.json
+msgctxt "block description"
+msgid ""
+"Social Sharing Tool: Twitter, Facebook, Linked In, Pinterest, Email. NOTE: "
+"you need og meta tags for this to work on all platforms. Yoast SEO can set "
+"this up."
+msgstr ""
+"Outil de partage social : Twitter, Facebook, LinkedIn, Pinterest, e-mail. "
+"REMARQUE : les balises méta og sont nécessaires pour que cela fonctionne "
+"sur toutes les plateformes. Yoast SEO peut le configurer."
+
+#: build/block.json
+msgctxt "block keyword"
+msgid "share"
+msgstr "partager"
+
+#: build/block.json
+msgctxt "block keyword"
+msgid "social"
+msgstr "social"

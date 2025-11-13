@@ -1,0 +1,333 @@
+/**
+ * RIAPress Block Animation System
+ * CSS Animations & Transitions
+ *
+ * @version 1.0.0
+ * @author Rob Hudson
+ * @date 2025-10-31
+ */
+
+/* ============================================
+   ACCESSIBILITY: Respect User Motion Preferences
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .ria-animate,
+  .ria-animate * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    animation-delay: 0ms !important;
+  }
+}
+
+/* ============================================
+   BASE ANIMATION STATES
+   ============================================ */
+
+/* Initial state - hidden before animation */
+.ria-animate {
+  opacity: 0;
+}
+
+/* Completed state - ensure visibility */
+.ria-animate-complete {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+/* ============================================
+   ENTRANCE ANIMATIONS
+   ============================================ */
+
+/* Fade In */
+@keyframes riaFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.ria-animate-fadeIn {
+  animation-name: riaFadeIn;
+  animation-fill-mode: both;
+}
+
+/* Fade In Up */
+@keyframes riaFadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.ria-animate-fadeInUp {
+  animation-name: riaFadeInUp;
+  animation-fill-mode: both;
+}
+
+/* Fade In Down */
+@keyframes riaFadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.ria-animate-fadeInDown {
+  animation-name: riaFadeInDown;
+  animation-fill-mode: both;
+}
+
+/* Fade In Left */
+@keyframes riaFadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.ria-animate-fadeInLeft {
+  animation-name: riaFadeInLeft;
+  animation-fill-mode: both;
+}
+
+/* Fade In Right */
+@keyframes riaFadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.ria-animate-fadeInRight {
+  animation-name: riaFadeInRight;
+  animation-fill-mode: both;
+}
+
+/* Zoom In */
+@keyframes riaZoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.ria-animate-zoomIn {
+  animation-name: riaZoomIn;
+  animation-fill-mode: both;
+}
+
+/* Zoom Out */
+@keyframes riaZoomOut {
+  from {
+    opacity: 0;
+    transform: scale(1.2);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.ria-animate-zoomOut {
+  animation-name: riaZoomOut;
+  animation-fill-mode: both;
+}
+
+/* Slide In Up */
+@keyframes riaSlideInUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.ria-animate-slideInUp {
+  animation-name: riaSlideInUp;
+  animation-fill-mode: both;
+}
+
+/* Slide In Left */
+@keyframes riaSlideInLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.ria-animate-slideInLeft {
+  animation-name: riaSlideInLeft;
+  animation-fill-mode: both;
+}
+
+/* Slide In Right */
+@keyframes riaSlideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.ria-animate-slideInRight {
+  animation-name: riaSlideInRight;
+  animation-fill-mode: both;
+}
+
+/* ============================================
+   HOVER ANIMATIONS
+   ============================================ */
+
+/* Lift Effect */
+[data-hover-animation="lift"] {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+[data-hover-animation="lift"]:hover,
+[data-hover-animation="lift"]:focus {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Grow Effect */
+[data-hover-animation="grow"] {
+  transition: transform 0.3s ease;
+}
+
+[data-hover-animation="grow"]:hover,
+[data-hover-animation="grow"]:focus {
+  transform: scale(1.05);
+}
+
+/* Shrink Effect */
+[data-hover-animation="shrink"] {
+  transition: transform 0.3s ease;
+}
+
+[data-hover-animation="shrink"]:hover,
+[data-hover-animation="shrink"]:focus {
+  transform: scale(0.95);
+}
+
+/* Glow Effect */
+[data-hover-animation="glow"] {
+  transition: box-shadow 0.3s ease;
+}
+
+[data-hover-animation="glow"]:hover,
+[data-hover-animation="glow"]:focus {
+  box-shadow: 0 0 20px rgba(0, 123, 255, 0.5);
+}
+
+/* ============================================
+   GPU ACCELERATION
+   ============================================ */
+
+/* Enable hardware acceleration for better performance */
+.ria-animate,
+[data-hover-animation] {
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Remove will-change after animation completes */
+.ria-animate-complete {
+  will-change: auto;
+}
+
+/* ============================================
+   UTILITY CLASSES
+   ============================================ */
+
+/* Disable animations programmatically */
+.ria-animate-disabled,
+.ria-animate-disabled * {
+  animation: none !important;
+  transition: none !important;
+}
+
+/* Force immediate visibility (for debugging) */
+.ria-animate-debug {
+  opacity: 1 !important;
+  transform: none !important;
+  animation: none !important;
+}
+
+/* ============================================
+   STAGGER ANIMATIONS (FUTURE)
+   ============================================ */
+
+/* Placeholder for stagger animation styles */
+.ria-animate-stagger > * {
+  /* Children will receive sequential delays */
+}
+
+/* ============================================
+   RESPONSIVE ADJUSTMENTS
+   ============================================ */
+
+/* Reduce motion on smaller screens if needed */
+@media (max-width: 768px) {
+  .ria-animate {
+    /* Can optionally reduce animation distances on mobile */
+  }
+}
+
+/* ============================================
+   PERFORMANCE OPTIMIZATIONS
+   ============================================ */
+
+/* Contain layout to prevent reflows */
+.ria-animate {
+  contain: layout style;
+}
+
+/* Ensure animations don't cause layout shift */
+.ria-animate-fadeIn,
+.ria-animate-fadeInUp,
+.ria-animate-fadeInDown,
+.ria-animate-fadeInLeft,
+.ria-animate-fadeInRight,
+.ria-animate-zoomIn,
+.ria-animate-zoomOut,
+.ria-animate-slideInUp,
+.ria-animate-slideInLeft,
+.ria-animate-slideInRight {
+  /* Reserve space to prevent CLS */
+  min-height: 1px;
+}

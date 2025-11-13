@@ -1,0 +1,106 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "ria/icon-group",
+  "version": "1.0.0",
+  "title": "RIA Icon Group",
+  "category": "ria",
+  "icon": "editor-ul",
+  "description": "Display a list of items with customizable icons.",
+  "keywords": [
+    "list",
+    "icon",
+    "features",
+    "checklist"
+  ],
+  "supports": {
+    "html": false,
+    "align": true,
+    "spacing": {
+      "margin": true,
+      "padding": true
+    }
+  },
+  "attributes": {
+    "items": {
+      "type": "array",
+      "default": [
+        {
+          "text": "First list item",
+          "iconName": "Check",
+          "iconColor": ""
+        },
+        {
+          "text": "Second list item",
+          "iconName": "Check",
+          "iconColor": ""
+        },
+        {
+          "text": "Third list item",
+          "iconName": "Check",
+          "iconColor": ""
+        }
+      ]
+    },
+    "iconSize": {
+      "type": "number",
+      "default": 20
+    },
+    "iconPosition": {
+      "type": "string",
+      "default": "left"
+    },
+    "iconColor": {
+      "type": "string",
+      "default": ""
+    },
+    "textColor": {
+      "type": "string",
+      "default": ""
+    },
+    "fontSize": {
+      "type": "number",
+      "default": 16
+    },
+    "itemSpacing": {
+      "type": "number",
+      "default": 12
+    },
+    "iconTextSpacing": {
+      "type": "number",
+      "default": 12
+    },
+    "alignment": {
+      "type": "string",
+      "default": "left"
+    },
+    "animationEnabled": {
+      "type": "boolean",
+      "default": true
+    },
+    "animationType": {
+      "type": "string",
+      "default": "fadeInUp"
+    },
+    "animationDuration": {
+      "type": "number",
+      "default": 0.6
+    },
+    "animationDelay": {
+      "type": "number",
+      "default": 0
+    },
+    "animationEasing": {
+      "type": "string",
+      "default": "ease-out"
+    },
+    "hoverAnimation": {
+      "type": "string",
+      "default": "none"
+    }
+  },
+  "textdomain": "riapress",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}

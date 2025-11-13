@@ -1,0 +1,267 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "ria/stats",
+	"version": "1.0.0",
+	"title": "RIA Stats",
+	"category": "ria",
+	"icon": "chart-bar",
+	"description": "Display a group of statistics with flexible layout and styling. Container for multiple stat displays.",
+	"keywords": [
+		"stats",
+		"statistics",
+		"metrics",
+		"numbers",
+		"counter",
+		"impact",
+		"data"
+	],
+	"supports": {
+		"html": false,
+		"align": [
+			"wide",
+			"full"
+		],
+		"spacing": {
+			"margin": true,
+			"padding": true
+		}
+	},
+	"attributes": {
+		"columns": {
+			"type": "number",
+			"default": 3,
+			"enum": [
+				1,
+				2,
+				3,
+				4,
+				5,
+				6
+			]
+		},
+		"columnsTablet": {
+			"type": "number",
+			"default": 2
+		},
+		"columnsMobile": {
+			"type": "number",
+			"default": 1
+		},
+		"gap": {
+			"type": "number",
+			"default": 24
+		},
+		"style": {
+			"type": "string",
+			"default": "default",
+			"enum": [
+				"default",
+				"cards",
+				"minimal",
+				"bordered",
+				"background"
+			]
+		},
+		"alignment": {
+			"type": "string",
+			"default": "center",
+			"enum": [
+				"left",
+				"center",
+				"right"
+			]
+		},
+		"verticalAlignment": {
+			"type": "string",
+			"default": "top",
+			"enum": [
+				"top",
+				"center",
+				"bottom",
+				"stretch"
+			]
+		},
+		"variant": {
+			"type": "string",
+			"default": "default"
+		},
+		"customBackgroundColor": {
+			"type": "string",
+			"default": ""
+		},
+		"customCardBackgroundColor": {
+			"type": "string",
+			"default": ""
+		},
+		"customDividerColor": {
+			"type": "string",
+			"default": ""
+		},
+		"customBorderColor": {
+			"type": "string",
+			"default": ""
+		},
+		"showDividers": {
+			"type": "boolean",
+			"default": false
+		},
+		"dividerWidth": {
+			"type": "number",
+			"default": 1
+		},
+		"dividerStyle": {
+			"type": "string",
+			"default": "solid",
+			"enum": [
+				"solid",
+				"dashed",
+				"dotted"
+			]
+		},
+		"equalHeight": {
+			"type": "boolean",
+			"default": true
+		},
+		"countUpAnimation": {
+			"type": "boolean",
+			"default": true
+		},
+		"countUpDuration": {
+			"type": "number",
+			"default": 2
+		},
+		"countUpDelay": {
+			"type": "number",
+			"default": 0.2
+		},
+		"borderWidth": {
+			"type": "number",
+			"default": 0
+		},
+		"borderStyle": {
+			"type": "string",
+			"default": "solid",
+			"enum": [
+				"none",
+				"solid",
+				"dashed",
+				"dotted",
+				"double",
+				"groove",
+				"ridge"
+			]
+		},
+		"borderRadius": {
+			"type": "number",
+			"default": 8
+		},
+		"boxShadow": {
+			"type": "string",
+			"default": "none",
+			"enum": [
+				"none",
+				"small",
+				"medium",
+				"large",
+				"xlarge",
+				"2xlarge",
+				"inner"
+			]
+		},
+		"hoverShadow": {
+			"type": "string",
+			"default": "none",
+			"enum": [
+				"none",
+				"small",
+				"medium",
+				"large",
+				"xlarge",
+				"2xlarge"
+			]
+		},
+		"animationEnabled": {
+			"type": "boolean",
+			"default": true
+		},
+		"animationType": {
+			"type": "string",
+			"default": "fadeInUp",
+			"enum": [
+				"fadeIn",
+				"fadeInUp",
+				"fadeInDown",
+				"fadeInLeft",
+				"fadeInRight",
+				"slideInUp",
+				"slideInDown",
+				"slideInLeft",
+				"slideInRight",
+				"zoomIn",
+				"zoomInUp",
+				"bounceIn",
+				"rotateIn",
+				"flipInX",
+				"flipInY",
+				"none"
+			]
+		},
+		"animationDuration": {
+			"type": "number",
+			"default": 1000
+		},
+		"animationDelay": {
+			"type": "number",
+			"default": 0
+		},
+		"animationEasing": {
+			"type": "string",
+			"default": "ease-out",
+			"enum": [
+				"linear",
+				"ease",
+				"ease-in",
+				"ease-out",
+				"ease-in-out"
+			]
+		},
+		"hoverAnimation": {
+			"type": "string",
+			"default": "none",
+			"enum": [
+				"none",
+				"lift",
+				"grow",
+				"shrink",
+				"rotate",
+				"tilt",
+				"glow",
+				"pulse",
+				"bounce"
+			]
+		},
+		"staggerAnimation": {
+			"type": "boolean",
+			"default": true
+		},
+		"staggerDelay": {
+			"type": "number",
+			"default": 100
+		},
+		"customColor": {
+			"type": "string",
+			"default": ""
+		}
+	},
+	"providesContext": {
+		"ria/statsGroupStyle": "style",
+		"ria/statsGroupAlignment": "alignment",
+		"ria/statsGroupVariant": "variant",
+		"ria/statsGroupBorderRadius": "borderRadius"
+	},
+	"textdomain": "riapress",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}

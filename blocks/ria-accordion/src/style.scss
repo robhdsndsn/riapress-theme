@@ -1,0 +1,758 @@
+/**
+ * RIA Accordion - Frontend Styles
+ *
+ * Production styles for all layout variants, animations, and responsive design
+ */
+
+.wp-block-ria-accordion {
+	margin: 2rem 0;
+	width: 100%;
+
+	// Accordion items wrapper
+	.accordion-items-wrapper {
+		display: flex;
+		flex-direction: column;
+	}
+
+	// Individual accordion item
+	.accordion-item {
+		position: relative;
+		background: var(--wp--custom--colors--white);
+		transition: all 0.2s ease;
+		overflow: hidden;
+
+		// Accordion title/header
+		.accordion-item-title {
+			display: flex;
+			align-items: center;
+			gap: 12px;
+			cursor: pointer;
+			user-select: none;
+			transition: all 0.25s ease;
+			position: relative;
+			width: 100%;
+			text-align: left;
+			border: none;
+			background: transparent;
+
+			&:hover {
+				background-color: var(--wp--custom--colors--neutral-50);
+			}
+
+			&:focus {
+				outline: 2px solid var(--wp--custom--colors--primary-500);
+				outline-offset: 2px;
+			}
+
+			&:focus-visible {
+				outline: 2px solid var(--wp--custom--colors--primary-500);
+				outline-offset: 2px;
+			}
+
+			// Remove button default styles
+			&::-moz-focus-inner {
+				border: 0;
+			}
+
+			.accordion-title-text {
+				flex: 1;
+				margin: 0;
+				font-weight: 600;
+				line-height: 1.4;
+			}
+
+			.accordion-icon {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				flex-shrink: 0;
+				transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+				line-height: 0;
+
+				&.icon-open {
+					display: none;
+				}
+
+				&.icon-close {
+					display: flex;
+				}
+
+				svg {
+					display: block;
+					width: 1em;
+					height: 1em;
+				}
+			}
+
+			// Icon positions
+			&.icon-left {
+				.accordion-icon {
+					order: -1;
+				}
+			}
+
+			&.icon-right {
+				.accordion-icon {
+					order: 1;
+				}
+			}
+
+			&.icon-none {
+				.accordion-icon {
+					display: none !important;
+				}
+			}
+		}
+
+		// Accordion content
+		.accordion-item-content {
+			max-height: 0;
+			overflow: hidden;
+			transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+			.accordion-content-inner {
+				p {
+					margin: 0 0 1em 0;
+
+					&:last-child {
+						margin-bottom: 0;
+					}
+				}
+
+				ul, ol {
+					margin: 0 0 1em 0;
+					padding-left: 1.5em;
+
+					&:last-child {
+						margin-bottom: 0;
+					}
+				}
+
+				h1, h2, h3, h4, h5, h6 {
+					margin: 0 0 0.5em 0;
+
+					&:last-child {
+						margin-bottom: 0;
+					}
+				}
+			}
+		}
+
+		// Open state
+		&.is-open {
+			.accordion-item-title {
+				.accordion-icon {
+					&.icon-open {
+						display: flex;
+					}
+
+					&.icon-close {
+						display: none;
+					}
+				}
+			}
+
+			.accordion-item-content {
+				// max-height will be set dynamically by JavaScript
+			}
+		}
+
+		// Divider
+		.accordion-divider {
+			width: 100%;
+			margin: 0;
+		}
+	}
+
+	// Title sizes
+	.accordion-item {
+		&.size-small .accordion-item-title {
+			font-size: 14px;
+		}
+
+		&.size-medium .accordion-item-title {
+			font-size: 16px;
+		}
+
+		&.size-large .accordion-item-title {
+			font-size: 18px;
+		}
+
+		&.size-xlarge .accordion-item-title {
+			font-size: 20px;
+		}
+	}
+
+	// Layout variants
+	&.layout-default {
+		.accordion-item {
+			border: 1px solid var(--wp--custom--colors--neutral-200);
+			border-radius: 8px;
+			margin-bottom: 8px;
+			background: var(--wp--custom--colors--white);
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	&.layout-minimal {
+		.accordion-item {
+			border: none;
+			border-bottom: 1px solid var(--wp--custom--colors--neutral-200);
+			border-radius: 0;
+			margin-bottom: 0;
+
+			&:last-child {
+				border-bottom: none;
+			}
+
+			.accordion-item-title {
+				padding-left: 0;
+				padding-right: 0;
+			}
+
+			.accordion-item-content {
+				padding-left: 0;
+				padding-right: 0;
+			}
+		}
+	}
+
+	&.layout-bordered {
+		.accordion-item {
+			border: 2px solid var(--wp--custom--colors--neutral-200);
+			border-radius: 8px;
+			margin-bottom: 12px;
+			background: var(--wp--custom--colors--white);
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	&.layout-filled {
+		.accordion-item {
+			background: var(--wp--custom--colors--neutral-50);
+			border: 1px solid var(--wp--custom--colors--neutral-200);
+			border-radius: 8px;
+			margin-bottom: 8px;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+
+			&.is-open {
+				background: var(--wp--custom--colors--white);
+			}
+		}
+	}
+
+	// Shadow variants
+	.accordion-item {
+		&.shadow-none {
+			box-shadow: none;
+		}
+
+		&.shadow-small {
+			box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+		}
+
+		&.shadow-medium {
+			box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+		}
+
+		&.shadow-large {
+			box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+		}
+
+		&.shadow-xlarge {
+			box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+		}
+
+		&.shadow-2xlarge {
+			box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+		}
+
+		&.shadow-inner {
+			box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+		}
+
+		// Hover shadows
+		&:hover {
+			&.hover-shadow-small {
+				box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+			}
+
+			&.hover-shadow-medium {
+				box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+			}
+
+			&.hover-shadow-large {
+				box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+			}
+
+			&.hover-shadow-xlarge {
+				box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+			}
+
+			&.hover-shadow-2xlarge {
+				box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+			}
+		}
+
+		// Hover animations
+		&.hover-lift:hover {
+			transform: translateY(-4px);
+		}
+
+		&.hover-grow:hover {
+			transform: scale(1.02);
+		}
+
+		&.hover-shrink:hover {
+			transform: scale(0.98);
+		}
+
+		&.hover-rotate:hover {
+			transform: rotate(1deg);
+		}
+
+		&.hover-tilt:hover {
+			transform: perspective(1000px) rotateX(2deg);
+		}
+
+		&.hover-glow:hover {
+			box-shadow: 0 0 20px rgba(37, 99, 235, 0.3);
+		}
+
+		&.hover-pulse:hover {
+			animation: pulse 1s infinite;
+		}
+
+		&.hover-bounce:hover {
+			animation: bounce 1s;
+		}
+	}
+
+	// Accordion type indicator (optional visual distinction)
+	&.accordion-type-toggle {
+		// Toggle type allows multiple panels open
+	}
+
+	&.accordion-type-accordion {
+		// Accordion type allows only one panel open
+	}
+}
+
+// Keyframe animations
+@keyframes pulse {
+	0%, 100% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0.8;
+	}
+}
+
+@keyframes bounce {
+	0%, 100% {
+		transform: translateY(0);
+	}
+	50% {
+		transform: translateY(-10px);
+	}
+}
+
+// Responsive Design
+@media (max-width: 768px) {
+	.wp-block-ria-accordion {
+		margin: 1.5rem 0;
+
+		.accordion-item {
+			.accordion-item-title {
+				font-size: 14px !important;
+
+				&.size-large {
+					font-size: 16px !important;
+				}
+
+				&.size-xlarge {
+					font-size: 18px !important;
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 480px) {
+	.wp-block-ria-accordion {
+		margin: 1rem 0;
+
+		.accordion-item {
+			.accordion-item-title {
+				gap: 8px;
+			}
+		}
+
+		&.layout-default,
+		&.layout-bordered,
+		&.layout-filled {
+			.accordion-item {
+				border-radius: 4px;
+			}
+		}
+	}
+}
+
+// Accessibility: Respect reduced motion preference
+@media (prefers-reduced-motion: reduce) {
+	.wp-block-ria-accordion {
+		.accordion-item {
+			.accordion-item-title {
+				transition: none;
+
+				.accordion-icon {
+					transition: none;
+				}
+			}
+
+			.accordion-item-content {
+				transition: none !important;
+			}
+
+			// Disable hover animations
+			&.hover-lift:hover,
+			&.hover-grow:hover,
+			&.hover-shrink:hover,
+			&.hover-rotate:hover,
+			&.hover-tilt:hover {
+				transform: none;
+			}
+
+			&.hover-pulse:hover,
+			&.hover-bounce:hover {
+				animation: none;
+			}
+		}
+	}
+}
+
+// High contrast mode support
+@media (prefers-contrast: high) {
+	.wp-block-ria-accordion {
+		.accordion-item {
+			.accordion-item-title {
+				&:focus {
+					outline-width: 3px;
+					outline-offset: 3px;
+				}
+			}
+		}
+
+		&.layout-minimal {
+			.accordion-item {
+				border-bottom-width: 2px;
+			}
+		}
+	}
+}
+
+// Print styles
+@media print {
+	.wp-block-ria-accordion {
+		.accordion-item {
+			.accordion-item-content {
+				max-height: none !important;
+				overflow: visible !important;
+			}
+
+			.accordion-icon {
+				display: none !important;
+			}
+
+			page-break-inside: avoid;
+		}
+	}
+}
+
+// Dark mode support - DISABLED by default to prevent automatic dark backgrounds
+// To enable dark mode, add a .dark-mode class to a parent element
+// or uncomment the @media query below and adjust as needed
+
+/*
+@media (prefers-color-scheme: dark) {
+	.wp-block-ria-accordion {
+		&.layout-default,
+		&.layout-bordered {
+			.accordion-item {
+				background: #1f2937;
+				border-color: #374151;
+				color: var(--wp--custom--colors--neutral-50);
+			}
+		}
+
+		&.layout-filled {
+			.accordion-item {
+				background: #111827;
+				border-color: #374151;
+				color: var(--wp--custom--colors--neutral-50);
+
+				&.is-open {
+					background: #1f2937;
+				}
+			}
+		}
+
+		&.layout-minimal {
+			.accordion-item {
+				border-color: #374151;
+				color: var(--wp--custom--colors--neutral-50);
+			}
+		}
+	}
+}
+*/
+
+// Manual dark mode support (requires .dark-mode class on parent)
+.dark-mode .wp-block-ria-accordion {
+	&.layout-default,
+	&.layout-bordered {
+		.accordion-item {
+			background: #1f2937;
+			border-color: #374151;
+			color: var(--wp--custom--colors--neutral-50);
+
+			.accordion-item-title,
+			.accordion-item-content {
+				color: var(--wp--custom--colors--neutral-50);
+			}
+		}
+	}
+
+	&.layout-filled {
+		.accordion-item {
+			background: #111827;
+			border-color: #374151;
+			color: var(--wp--custom--colors--neutral-50);
+
+			.accordion-item-title,
+			.accordion-item-content {
+				color: var(--wp--custom--colors--neutral-50);
+			}
+
+			&.is-open {
+				background: #1f2937;
+			}
+		}
+	}
+
+	&.layout-minimal {
+		.accordion-item {
+			border-color: #374151;
+			color: var(--wp--custom--colors--neutral-50);
+
+			.accordion-item-title,
+			.accordion-item-content {
+				color: var(--wp--custom--colors--neutral-50);
+			}
+		}
+	}
+}
+
+
+// ============================================
+// VARIANT COLOR SYSTEMS
+// ============================================
+
+// Primary Variant (Navy)
+.wp-block-ria-accordion.variant-primary {
+	.accordion-item-title {
+		color: var(--wp--custom--colors--primary-900);
+		background-color: var(--wp--custom--colors--primary-50);
+		
+		&:hover {
+			background-color: var(--wp--custom--colors--primary-100);
+			color: var(--wp--custom--colors--primary-700);
+		}
+		
+		&:focus, &:focus-visible {
+			outline-color: var(--wp--custom--colors--primary-500);
+		}
+	}
+	
+	.accordion-icon {
+		color: var(--wp--custom--colors--primary-600);
+	}
+	
+	.accordion-item-content {
+		color: var(--wp--custom--colors--primary-800);
+		background-color: var(--wp--custom--colors--white);
+	}
+	
+	.accordion-item {
+		border-color: var(--wp--custom--colors--primary-200);
+	}
+	
+	.accordion-divider {
+		border-color: var(--wp--custom--colors--primary-200);
+	}
+}
+
+// Secondary Variant (Green)
+.wp-block-ria-accordion.variant-secondary {
+	.accordion-item-title {
+		color: var(--wp--custom--colors--secondary-900);
+		background-color: var(--wp--custom--colors--secondary-50);
+		
+		&:hover {
+			background-color: var(--wp--custom--colors--secondary-100);
+			color: var(--wp--custom--colors--secondary-700);
+		}
+		
+		&:focus, &:focus-visible {
+			outline-color: var(--wp--custom--colors--secondary-500);
+		}
+	}
+	
+	.accordion-icon {
+		color: var(--wp--custom--colors--secondary-600);
+	}
+	
+	.accordion-item-content {
+		color: var(--wp--custom--colors--secondary-800);
+		background-color: var(--wp--custom--colors--white);
+	}
+	
+	.accordion-item {
+		border-color: var(--wp--custom--colors--secondary-200);
+	}
+	
+	.accordion-divider {
+		border-color: var(--wp--custom--colors--secondary-200);
+	}
+}
+
+// Tertiary Variant (Orange)
+.wp-block-ria-accordion.variant-tertiary {
+	.accordion-item-title {
+		color: var(--wp--custom--colors--tertiary-900);
+		background-color: var(--wp--custom--colors--tertiary-50);
+		
+		&:hover {
+			background-color: var(--wp--custom--colors--tertiary-100);
+			color: var(--wp--custom--colors--tertiary-700);
+		}
+		
+		&:focus, &:focus-visible {
+			outline-color: var(--wp--custom--colors--tertiary-500);
+		}
+	}
+	
+	.accordion-icon {
+		color: var(--wp--custom--colors--tertiary-600);
+	}
+	
+	.accordion-item-content {
+		color: var(--wp--custom--colors--tertiary-800);
+		background-color: var(--wp--custom--colors--white);
+	}
+	
+	.accordion-item {
+		border-color: var(--wp--custom--colors--tertiary-200);
+	}
+	
+	.accordion-divider {
+		border-color: var(--wp--custom--colors--tertiary-200);
+	}
+}
+
+// Neutral Variant (Gray - default)
+.wp-block-ria-accordion.variant-neutral,
+.wp-block-ria-accordion:not([class*="variant-"]) {
+	.accordion-item-title {
+		color: var(--wp--custom--colors--neutral-900);
+		background-color: var(--wp--custom--colors--neutral-50);
+		
+		&:hover {
+			background-color: var(--wp--custom--colors--neutral-100);
+			color: var(--wp--custom--colors--neutral-700);
+		}
+		
+		&:focus, &:focus-visible {
+			outline-color: var(--wp--custom--colors--neutral-500);
+		}
+	}
+	
+	.accordion-icon {
+		color: var(--wp--custom--colors--neutral-600);
+	}
+	
+	.accordion-item-content {
+		color: var(--wp--custom--colors--neutral-800);
+		background-color: var(--wp--custom--colors--white);
+	}
+	
+	.accordion-item {
+		border-color: var(--wp--custom--colors--neutral-200);
+	}
+	
+	.accordion-divider {
+		border-color: var(--wp--custom--colors--neutral-200);
+	}
+}
+
+
+/* Color Variants */
+.wp-block-ria-accordion {
+	/* Variant: Primary */
+	&.has-primary-variant {
+		background-color: var(--color-primary-100);
+		color: var(--color-primary-900);
+		border-color: var(--color-primary-300);
+
+		a {
+			color: var(--color-primary-700);
+		}
+	}
+
+	/* Variant: Secondary */
+	&.has-secondary-variant {
+		background-color: var(--color-secondary-100);
+		color: var(--color-secondary-900);
+		border-color: var(--color-secondary-300);
+
+		a {
+			color: var(--color-secondary-700);
+		}
+	}
+
+	/* Variant: Accent */
+	&.has-accent-variant {
+		background-color: var(--color-accent-100);
+		color: var(--color-accent-900);
+		border-color: var(--color-accent-300);
+
+		a {
+			color: var(--color-accent-700);
+		}
+	}
+
+	/* Variant: Neutral */
+	&.has-neutral-variant {
+		background-color: var(--color-neutral-100);
+		color: var(--color-neutral-900);
+		border-color: var(--color-neutral-300);
+
+		a {
+			color: var(--color-neutral-700);
+		}
+	}
+
+	/* Custom colors via inline styles */
+	&.has-custom-colors {
+		/* Inline styles will override */
+	}
+}

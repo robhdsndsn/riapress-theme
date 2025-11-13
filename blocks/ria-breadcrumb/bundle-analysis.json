@@ -1,0 +1,2 @@
+Couldn't read webpack bundle stats from "C:\Users\RHudson\Desktop\Claudius\Projects\RIA Too\02_Development\Theme_Files\riapress\blocks\ria-breadcrumb\build\index.asset.php":
+SyntaxError: Unexpected token '<', "<?php retu"... is not valid JSON

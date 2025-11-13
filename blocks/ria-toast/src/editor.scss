@@ -1,0 +1,75 @@
+/**
+ * RIA Toast Container - Editor Styles
+ */
+
+.wp-block-ria-toast-container {
+	// Make the editor preview look nice
+	&.ria-toast-container-editor {
+		position: relative;
+		padding: 0;
+		margin: 20px 0;
+	}
+}
+
+.ria-toast-editor-preview {
+	display: flex;
+	align-items: flex-start;
+	gap: 16px;
+	padding: 20px;
+	border: 2px dashed hsl(0, 0%, 80%);
+	border-radius: 8px;
+	background-color: hsl(0, 0%, 98%);
+	transition: all 0.2s ease;
+
+	&:hover {
+		border-color: hsl(0, 0%, 60%);
+		background-color: hsl(0, 0%, 96%);
+	}
+}
+
+.ria-toast-editor-icon {
+	flex-shrink: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 40px;
+	height: 40px;
+	border-radius: 8px;
+	background-color: hsl(214, 95%, 95%);
+	color: hsl(214, 85%, 55%);
+
+	svg {
+		display: block;
+	}
+}
+
+.ria-toast-editor-content {
+	flex: 1;
+	min-width: 0;
+}
+
+.ria-toast-editor-title {
+	font-size: 16px;
+	font-weight: 600;
+	line-height: 1.4;
+	margin: 0 0 6px;
+	color: hsl(0, 0%, 10%);
+}
+
+.ria-toast-editor-description {
+	font-size: 14px;
+	line-height: 1.5;
+	margin: 0 0 4px;
+	color: hsl(0, 0%, 40%);
+}
+
+.ria-toast-editor-note {
+	font-size: 13px;
+	line-height: 1.4;
+	margin: 8px 0 0;
+	padding: 8px 12px;
+	border-radius: 4px;
+	background-color: hsl(214, 95%, 96%);
+	color: hsl(214, 85%, 30%);
+	font-style: italic;
+}

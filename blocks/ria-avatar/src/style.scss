@@ -1,0 +1,117 @@
+/**
+ * RIA Avatar Block - Frontend & Editor Styles
+ */
+
+.wp-block-ria-avatar {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+	border-style: solid;
+	position: relative;
+
+	// Default neutral variant
+	background-color: var(--wp--preset--color--neutral-bg, #f3f4f6);
+	color: var(--wp--preset--color--neutral-text, #374151);
+	border-color: var(--wp--preset--color--neutral-accent, #d1d5db);
+
+	// Size variants
+	&.size-small {
+		width: 32px;
+		height: 32px;
+		font-size: 12px;
+		font-weight: 600;
+	}
+
+	&.size-medium {
+		width: 48px;
+		height: 48px;
+		font-size: 16px;
+		font-weight: 600;
+	}
+
+	&.size-large {
+		width: 80px;
+		height: 80px;
+		font-size: 24px;
+		font-weight: 600;
+	}
+
+	&.size-xlarge {
+		width: 120px;
+		height: 120px;
+		font-size: 36px;
+		font-weight: 600;
+	}
+
+	// Shape variants
+	&.shape-circle {
+		border-radius: 50%;
+	}
+
+	&.shape-square {
+		border-radius: 0;
+	}
+
+	&.shape-rounded {
+		border-radius: 8px;
+	}
+
+	// Image
+	.ria-avatar-image {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		display: block;
+	}
+
+	// Initials
+	.ria-avatar-initials {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		height: 100%;
+		user-select: none;
+		text-transform: uppercase;
+		line-height: 1;
+	}
+
+	// Color Variants
+	&.has-primary-variant {
+		background-color: var(--wp--preset--color--primary-bg, #dbeafe);
+		color: var(--wp--preset--color--primary-text, #1e40af);
+		border-color: var(--wp--preset--color--primary-accent, #3b82f6);
+	}
+
+	&.has-secondary-variant {
+		background-color: var(--wp--preset--color--secondary-bg, #f3e8ff);
+		color: var(--wp--preset--color--secondary-text, #6b21a8);
+		border-color: var(--wp--preset--color--secondary-accent, #a855f7);
+	}
+
+	&.has-accent-variant {
+		background-color: var(--wp--preset--color--accent-bg, #fef3c7);
+		color: var(--wp--preset--color--accent-text, #92400e);
+		border-color: var(--wp--preset--color--accent-accent, #f59e0b);
+	}
+
+	&.has-neutral-variant {
+		background-color: var(--wp--preset--color--neutral-bg, #f3f4f6);
+		color: var(--wp--preset--color--neutral-text, #374151);
+		border-color: var(--wp--preset--color--neutral-accent, #d1d5db);
+	}
+
+	// Custom colors (inline styles applied)
+	&.has-custom-colors {
+		// Inline styles will override
+	}
+
+	// Hover effect
+	transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+
+	&:hover {
+		transform: scale(1.05);
+		box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+	}
+}

@@ -1,0 +1,54 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-02-15T21:34:28+00:00\n"
+"PO-Revision-Date: 2024-02-18 11:34-0500\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr_CA\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.4.2\n"
+"X-Domain: address\n"
+
+#: build/index.js:44 build/index.js:22
+msgctxt "Address - Title"
+msgid "Typography"
+msgstr "Typographie"
+
+#: build/index.js:49 build/index.js:27
+msgctxt "Address - Label"
+msgid "Extra Small"
+msgstr "Très Petit"
+
+#: build/index.js:52 build/index.js:28
+msgctxt "Address - Label"
+msgid "Small"
+msgstr "Petit"
+
+#: build/index.js:55 build/index.js:29
+msgctxt "Address - Label"
+msgid "Medium"
+msgstr "Moyen"
+
+#: build/index.js:63 build/index.js:40
+msgctxt "Address - Placeholder"
+msgid "Enter address here..."
+msgstr "Saisir l'adresse ici..."
+
+#: build/block.json
+msgctxt "block title"
+msgid "Address"
+msgstr "Adresse"
+
+#: build/block.json
+msgctxt "block description"
+msgid "This is a block to place an address."
+msgstr "Ceci est un bloc pour placer une adresse."
+
+#: build/block.json
+msgctxt "block keyword"
+msgid "address"
+msgstr "adresse"

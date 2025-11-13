@@ -1,0 +1,7 @@
+.wp-block-group {
+  &.is-style-hide-on-mobile {
+    @media screen and (max-width: $admin_bar) {
+      display: none !important;
+    }
+  }
+}

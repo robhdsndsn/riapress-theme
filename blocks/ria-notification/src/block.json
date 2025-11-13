@@ -1,0 +1,126 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "ria/notification",
+	"version": "2.0.0",
+	"title": "RIA Alert",
+	"category": "ria",
+	"icon": "info",
+	"description": "Display alert/notification boxes with shadcn/ui design - perfect for success messages, warnings, errors, and information.",
+	"keywords": [
+		"alert",
+		"notification",
+		"notice",
+		"message",
+		"info",
+		"warning",
+		"error",
+		"success"
+	],
+	"supports": {
+		"html": false,
+		"anchor": true,
+		"spacing": {
+			"margin": true,
+			"padding": false
+		},
+		"color": {
+			"background": false,
+			"text": false
+		}
+	},
+	"attributes": {
+		"variant": {
+			"type": "string",
+			"default": "default"
+		},
+		"title": {
+			"type": "string",
+			"default": ""
+		},
+		"message": {
+			"type": "string",
+			"default": "This is an alert message. You can add any content here."
+		},
+		"showIcon": {
+			"type": "boolean",
+			"default": true
+		},
+		"iconName": {
+			"type": "string",
+			"default": "auto"
+		},
+		"isDismissible": {
+			"type": "boolean",
+			"default": false
+		},
+		"borderRadius": {
+			"type": "string",
+			"default": "medium",
+			"enum": [
+				"none",
+				"small",
+				"medium",
+				"large",
+				"full"
+			]
+		},
+		"animationEnabled": {
+			"type": "boolean",
+			"default": true
+		},
+		"animationType": {
+			"type": "string",
+			"default": "fadeInUp",
+			"enum": [
+				"fadeIn",
+				"fadeInUp",
+				"fadeInDown",
+				"fadeInLeft",
+				"fadeInRight",
+				"slideInUp",
+				"slideInDown",
+				"slideInLeft",
+				"slideInRight",
+				"zoomIn",
+				"none"
+			]
+		},
+		"animationDuration": {
+			"type": "number",
+			"default": 600
+		},
+		"animationDelay": {
+			"type": "number",
+			"default": 0
+		},
+		"animationEasing": {
+			"type": "string",
+			"default": "ease-out",
+			"enum": [
+				"linear",
+				"ease",
+				"ease-in",
+				"ease-out",
+				"ease-in-out"
+			]
+		},
+		"customColor": {
+			"type": "string",
+			"default": ""
+		},
+		"customBackgroundColor": {
+			"type": "string",
+			"default": ""
+		},
+		"customBorderColor": {
+			"type": "string",
+			"default": ""
+		}
+	},
+	"textdomain": "ria-notification",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"viewScript": "file:./view.js"
+}

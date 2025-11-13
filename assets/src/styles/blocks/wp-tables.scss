@@ -1,0 +1,45 @@
+// Table
+// ––––––––––––––––––––––––––––––––––––––––––––––––––
+
+table {
+  display:        table;
+  overflow-x:     auto;
+  border-spacing: 0;
+  text-align:     left;
+  border:         1px solid;
+}
+
+th,
+td {
+  padding: 1.2rem 1.5rem;
+  border:  1px solid;
+}
+
+
+.wp-block-table {
+  &.is-style-regular {
+    .has-neutral-background-color,
+    .has-dark-background-color,
+    .has-orange-background-color {
+      table,
+      th,
+      td {
+      }
+    }
+  }
+
+  &.is-style-stripes {
+    border: unset;
+
+    //.has-neutral-background-color,
+    .has-dark-background-color,
+    .has-orange-background-color {
+      tbody {
+        tr {
+          &:nth-child(odd) {
+          }
+        }
+      }
+    }
+  }
+}

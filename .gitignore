@@ -1,0 +1,123 @@
+# RIAPress WordPress Theme - .gitignore
+# Created: 2025-11-09
+
+# ===========================
+# Node & NPM
+# ===========================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+.pnpm-debug.log*
+
+# ===========================
+# Operating System Files
+# ===========================
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*~
+
+# ===========================
+# Editor & IDE
+# ===========================
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+
+# ===========================
+# Backup & Temporary Files
+# ===========================
+*.backup
+*.bak
+*.old
+*.orig
+*.tmp
+.#*
+
+# ===========================
+# Logs
+# ===========================
+*.log
+logs/
+
+# ===========================
+# Compressed Files
+# ===========================
+*.zip
+*.tar.gz
+*.rar
+*.7z
+
+# ===========================
+# Test & Debug Files
+# ===========================
+test-blocks.php
+test-*.php
+nul
+
+# ===========================
+# Development Scripts
+# ===========================
+*.py
+*.bat
+*.sh
+patch_*.py
+migrate_*.sh
+
+# ===========================
+# Project Specific
+# ===========================
+oldTemplates/
+zeitpress-backup/
+zeitpress_backup_*/
+*-backup/
+*_report_*.txt
+rename_report_*.txt
+riapress-production.zip
+riapress-rebuilt.zip
+riapress.zip
+
+# Development documentation (internal use only)
+*_REPORT.md
+*_AUDIT.md
+*_SUMMARY.md
+*_CHECKLIST.md
+*_GUIDE.md
+PHASE_*.md
+BUILD_*.md
+ENHANCEMENT_*.md
+ALIGNMENT_*.md
+BLOCK_*.md
+ICON_*.md
+LUCIDE_*.md
+SESSION_*.md
+CLAUDE.md
+migration_summary.md
+
+# Keep WordPress standard docs (these WILL be included)
+!readme.md
+!changelog.md
+
+# ===========================
+# INCLUDE THESE (Important!)
+# ===========================
+# style.css
+# functions.php
+# theme.json
+# blocks/*/src/
+# blocks/*.php
+# blocks/*/build/
+# functions/
+# templates/
+# patterns/
+# parts/
+# assets/

@@ -1,0 +1,141 @@
+/**
+ * RIA Rating Block - Frontend & Editor Styles
+ */
+
+.wp-block-ria-rating {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+
+	.ria-rating-stars {
+		display: inline-flex;
+		align-items: center;
+		gap: 4px;
+	}
+
+	.ria-rating-star {
+		position: relative;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		transition: transform 0.2s ease-out;
+
+		// Half star overlay
+		&.is-half {
+			.ria-rating-star-half {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 50%;
+				overflow: hidden;
+				display: flex;
+			}
+		}
+
+		// Filled star
+		&.is-filled {
+			color: var(--wp--preset--color--accent-accent, #f59e0b);
+		}
+
+		// Empty star
+		&:not(.is-filled):not(.is-half) {
+			color: var(--wp--preset--color--neutral-accent, #d1d5db);
+		}
+	}
+
+	.ria-rating-star-icon {
+		display: block;
+	}
+
+	.ria-rating-value {
+		font-weight: 600;
+		font-size: 0.9em;
+		color: var(--wp--preset--color--neutral-text, #374151);
+	}
+
+	// Size variants
+	&.size-small {
+		.ria-rating-star-icon {
+			width: 16px;
+			height: 16px;
+		}
+	}
+
+	&.size-medium {
+		.ria-rating-star-icon {
+			width: 20px;
+			height: 20px;
+		}
+	}
+
+	&.size-large {
+		.ria-rating-star-icon {
+			width: 28px;
+			height: 28px;
+		}
+	}
+
+	&.size-xlarge {
+		.ria-rating-star-icon {
+			width: 36px;
+			height: 36px;
+		}
+	}
+
+	// Color Variants
+	&.has-primary-variant {
+		.ria-rating-star.is-filled,
+		.ria-rating-star.is-half {
+			color: var(--wp--preset--color--primary-accent, #3b82f6);
+		}
+
+		.ria-rating-value {
+			color: var(--wp--preset--color--primary-text, #1e40af);
+		}
+	}
+
+	&.has-secondary-variant {
+		.ria-rating-star.is-filled,
+		.ria-rating-star.is-half {
+			color: var(--wp--preset--color--secondary-accent, #a855f7);
+		}
+
+		.ria-rating-value {
+			color: var(--wp--preset--color--secondary-text, #6b21a8);
+		}
+	}
+
+	&.has-accent-variant {
+		.ria-rating-star.is-filled,
+		.ria-rating-star.is-half {
+			color: var(--wp--preset--color--accent-accent, #f59e0b);
+		}
+
+		.ria-rating-value {
+			color: var(--wp--preset--color--accent-text, #92400e);
+		}
+	}
+
+	&.has-neutral-variant {
+		.ria-rating-star.is-filled,
+		.ria-rating-star.is-half {
+			color: var(--wp--preset--color--neutral-accent, #374151);
+		}
+
+		.ria-rating-value {
+			color: var(--wp--preset--color--neutral-text, #6b7280);
+		}
+	}
+
+	// Custom colors (inline styles applied)
+	&.has-custom-colors {
+		// Inline styles will override
+	}
+
+	// Hover effect (interactive)
+	&:hover {
+		.ria-rating-star {
+			transform: scale(1.1);
+		}
+	}
+}

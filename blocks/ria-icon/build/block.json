@@ -1,0 +1,79 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "ria/icon",
+  "version": "0.1.0",
+  "title": "RIA Icon",
+  "category": "design",
+  "icon": "star-filled",
+  "description": "Display an SVG icon from a curated library.",
+  "keywords": [
+    "icon",
+    "svg",
+    "lucide",
+    "symbol",
+    "graphic"
+  ],
+  "supports": {
+    "html": false,
+    "align": true,
+    "spacing": {
+      "margin": true,
+      "padding": true
+    }
+  },
+  "attributes": {
+    "iconName": {
+      "type": "string",
+      "default": "Star"
+    },
+    "size": {
+      "type": "number",
+      "default": 24
+    },
+    "strokeWidth": {
+      "type": "number",
+      "default": 2
+    },
+    "color": {
+      "type": "string",
+      "default": ""
+    },
+    "rotation": {
+      "type": "number",
+      "default": 0
+    },
+    "ariaLabel": {
+      "type": "string",
+      "default": ""
+    },
+    "animationEnabled": {
+      "type": "boolean",
+      "default": true
+    },
+    "animationType": {
+      "type": "string",
+      "default": "fadeInUp"
+    },
+    "animationDuration": {
+      "type": "number",
+      "default": 0.6
+    },
+    "animationDelay": {
+      "type": "number",
+      "default": 0
+    },
+    "animationEasing": {
+      "type": "string",
+      "default": "ease-out"
+    },
+    "hoverAnimation": {
+      "type": "string",
+      "default": "none"
+    }
+  },
+  "textdomain": "ria-icon",
+  "editorScript": "file:index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}

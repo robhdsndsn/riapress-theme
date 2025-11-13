@@ -1,0 +1,498 @@
+// RIA Quote Block - Frontend Styles
+
+.wp-block-ria-quote {
+	position: relative;
+	padding: 2rem;
+	margin: 2rem 0;
+	background-color: var(--background-color, #f9fafb);
+	border-width: var(--border-width, 0);
+	border-style: var(--border-style, solid);
+	border-color: var(--border-color, #e5e7eb);
+	border-radius: var(--border-radius, 8px);
+	transition: all 0.3s ease;
+
+	// Quote Content
+	.quote-content {
+		margin-bottom: 1.5rem;
+
+		.quote-text {
+			font-family: Georgia, serif;
+			color: var(--quote-color, #1a1a1a);
+			line-height: 1.6;
+			margin: 0;
+			font-style: italic;
+
+			p {
+				margin: 0;
+			}
+		}
+	}
+
+	// Attribution
+	.quote-attribution {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+		margin-top: 1.5rem;
+
+		.author-image {
+			object-fit: cover;
+			flex-shrink: 0;
+
+			&.shape-circle {
+				border-radius: 50%;
+			}
+
+			&.shape-square {
+				border-radius: 0;
+			}
+
+			&.shape-rounded {
+				border-radius: 8px;
+			}
+		}
+
+		.author-info {
+			flex: 1;
+
+			.author-name,
+			.author-title,
+			.author-organization {
+				display: block;
+				color: var(--author-color, #6b7280);
+			}
+
+			.author-name {
+				font-weight: 600;
+				font-size: 1rem;
+				margin-bottom: 0.25rem;
+				font-style: normal;
+			}
+
+			.author-title,
+			.author-organization {
+				font-size: 0.875rem;
+				opacity: 0.9;
+				font-style: normal;
+			}
+
+			.author-title {
+				margin-bottom: 0.125rem;
+			}
+		}
+	}
+
+	// =============================
+	// QUOTE SIZES
+	// =============================
+
+	&.quote-size-small .quote-text {
+		font-size: 1rem;
+	}
+
+	&.quote-size-medium .quote-text {
+		font-size: 1.25rem;
+	}
+
+	&.quote-size-large .quote-text {
+		font-size: 1.75rem;
+	}
+
+	&.quote-size-xlarge .quote-text {
+		font-size: 2.25rem;
+	}
+
+	// =============================
+	// QUOTE MARK STYLES
+	// =============================
+
+	// Default inline quote marks
+	&.quote-marks-default .quote-text::before {
+		content: '\201C'; // Left double quotation mark
+		margin-right: 0.25rem;
+	}
+
+	&.quote-marks-default .quote-text::after {
+		content: '\201D'; // Right double quotation mark
+		margin-left: 0.25rem;
+	}
+
+	// Large decorative quote marks
+	&.quote-marks-large .quote-content {
+		position: relative;
+
+		&::before {
+			content: '\201C';
+			position: absolute;
+			top: -20px;
+			left: -10px;
+			font-size: 5rem;
+			line-height: 1;
+			color: var(--accent-color, #2563eb);
+			opacity: 0.2;
+			font-family: Georgia, serif;
+		}
+	}
+
+	// Icon-based quote marks (using SVG-like styling)
+	&.quote-marks-icon .quote-content {
+		position: relative;
+		padding-left: 3rem;
+
+		&::before {
+			content: '\275D'; // Heavy double turned comma quotation mark
+			position: absolute;
+			left: 0;
+			top: 0;
+			font-size: 2.5rem;
+			line-height: 1;
+			color: var(--accent-color, #2563eb);
+			opacity: 0.6;
+		}
+	}
+
+	// =============================
+	// TEXT ALIGNMENT
+	// =============================
+
+	&.text-align-left .quote-content {
+		text-align: left;
+	}
+
+	&.text-align-center .quote-content {
+		text-align: center;
+	}
+
+	&.text-align-right .quote-content {
+		text-align: right;
+	}
+
+	// =============================
+	// ATTRIBUTION ALIGNMENT
+	// =============================
+
+	&.attribution-align-left .quote-attribution {
+		justify-content: flex-start;
+	}
+
+	&.attribution-align-center .quote-attribution {
+		justify-content: center;
+	}
+
+	&.attribution-align-right .quote-attribution {
+		justify-content: flex-end;
+	}
+
+	// =============================
+	// STYLE VARIANTS
+	// =============================
+
+	// Default Style
+	&.style-default {
+		// Inherits base styles
+	}
+
+	// Large Style
+	&.style-large {
+		padding: 3rem;
+
+		.quote-text {
+			font-size: 2rem;
+			font-weight: 500;
+		}
+
+		.author-name {
+			font-size: 1.125rem;
+		}
+	}
+
+	// Minimal Style
+	&.style-minimal {
+		background-color: transparent;
+		border: none;
+		padding: 1rem 0;
+
+		.quote-text {
+			font-weight: 300;
+		}
+
+		.author-info {
+			opacity: 0.7;
+		}
+	}
+
+	// Boxed Style
+	&.style-boxed {
+		background-color: var(--background-color, #f9fafb);
+		border: 2px solid var(--border-color, #e5e7eb);
+		box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+	}
+
+	// Accent Bar Style
+	&.style-accent-bar {
+		background-color: transparent;
+		border: none;
+	}
+
+	// =============================
+	// ACCENT BAR POSITIONS
+	// =============================
+
+	&.accent-bar-left {
+		border-left: var(--accent-bar-width, 4px) solid var(--accent-color, #2563eb);
+		padding-left: 2rem;
+	}
+
+	&.accent-bar-right {
+		border-right: var(--accent-bar-width, 4px) solid var(--accent-color, #2563eb);
+		padding-right: 2rem;
+	}
+
+	&.accent-bar-top {
+		border-top: var(--accent-bar-width, 4px) solid var(--accent-color, #2563eb);
+		padding-top: 2rem;
+	}
+
+	&.accent-bar-bottom {
+		border-bottom: var(--accent-bar-width, 4px) solid var(--accent-color, #2563eb);
+		padding-bottom: 2rem;
+	}
+
+	// =============================
+	// BOX SHADOWS
+	// =============================
+
+	&.shadow-small {
+		box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+	}
+
+	&.shadow-medium {
+		box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+	}
+
+	&.shadow-large {
+		box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+	}
+
+	&.shadow-xlarge {
+		box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+	}
+
+	&.shadow-2xlarge {
+		box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+	}
+
+	&.shadow-inner {
+		box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+	}
+
+	// =============================
+	// HOVER SHADOWS
+	// =============================
+
+	&.hover-shadow-small:hover {
+		box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+	}
+
+	&.hover-shadow-medium:hover {
+		box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+	}
+
+	&.hover-shadow-large:hover {
+		box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+	}
+
+	&.hover-shadow-xlarge:hover {
+		box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+	}
+
+	&.hover-shadow-2xlarge:hover {
+		box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+	}
+
+	// =============================
+	// HOVER ANIMATIONS
+	// =============================
+
+	&.hover-lift:hover {
+		transform: translateY(-4px);
+	}
+
+	&.hover-grow:hover {
+		transform: scale(1.02);
+	}
+
+	&.hover-shrink:hover {
+		transform: scale(0.98);
+	}
+
+	&.hover-rotate:hover {
+		transform: rotate(1deg);
+	}
+
+	&.hover-tilt:hover {
+		transform: rotate(-1deg);
+	}
+
+	&.hover-glow:hover {
+		box-shadow: 0 0 20px rgba(37, 99, 235, 0.3);
+	}
+
+	&.hover-pulse:hover {
+		animation: pulse 1s infinite;
+	}
+
+	&.hover-bounce:hover {
+		animation: bounce 0.5s;
+	}
+
+	// =============================
+	// RESPONSIVE DESIGN
+	// =============================
+
+	@media (max-width: 768px) {
+		padding: 1.5rem;
+
+		&.quote-size-large .quote-text {
+			font-size: 1.5rem;
+		}
+
+		&.quote-size-xlarge .quote-text {
+			font-size: 1.75rem;
+		}
+
+		&.style-large {
+			padding: 2rem;
+
+			.quote-text {
+				font-size: 1.5rem;
+			}
+		}
+
+		&.quote-marks-large .quote-content::before {
+			font-size: 3.5rem;
+			top: -15px;
+			left: -5px;
+		}
+
+		.quote-attribution {
+			flex-direction: column;
+			align-items: flex-start;
+			text-align: left;
+
+			.author-image {
+				margin-bottom: 0.5rem;
+			}
+		}
+	}
+
+	@media (max-width: 480px) {
+		padding: 1rem;
+
+		&.quote-size-medium .quote-text {
+			font-size: 1.125rem;
+		}
+
+		&.quote-size-large .quote-text {
+			font-size: 1.25rem;
+		}
+
+		&.quote-size-xlarge .quote-text {
+			font-size: 1.5rem;
+		}
+
+		&.style-large {
+			padding: 1.5rem;
+
+			.quote-text {
+				font-size: 1.25rem;
+			}
+		}
+
+		&.accent-bar-left,
+		&.accent-bar-right {
+			padding-left: 1rem;
+			padding-right: 1rem;
+		}
+	}
+}
+
+// =============================
+// KEYFRAME ANIMATIONS
+// =============================
+
+@keyframes pulse {
+	0%,
+	100% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0.9;
+	}
+}
+
+@keyframes bounce {
+	0%,
+	20%,
+	50%,
+	80%,
+	100% {
+		transform: translateY(0);
+	}
+	40% {
+		transform: translateY(-10px);
+	}
+	60% {
+		transform: translateY(-5px);
+	}
+}
+
+// =============================
+// ACCESSIBILITY
+// =============================
+
+@media (prefers-reduced-motion: reduce) {
+	.wp-block-ria-quote {
+		transition: none;
+		animation: none;
+
+		&:hover {
+			transform: none;
+			animation: none;
+		}
+	}
+}
+
+// Variant Color System
+.wp-block-ria-quote.variant-primary,
+.ria-quote.variant-primary {
+  --quote-bg-color: var(--wp--custom--colors--primary-50);
+  --quote-border-color: var(--wp--custom--colors--primary-300);
+}
+
+.wp-block-ria-quote.variant-secondary,
+.ria-quote.variant-secondary {
+  --quote-bg-color: var(--wp--custom--colors--secondary-50);
+  --quote-border-color: var(--wp--custom--colors--secondary-300);
+}
+
+.wp-block-ria-quote.variant-accent,
+.ria-quote.variant-accent {
+  --quote-bg-color: var(--wp--custom--colors--accent-50);
+  --quote-border-color: var(--wp--custom--colors--accent-300);
+}
+
+.wp-block-ria-quote.variant-neutral,
+.ria-quote.variant-neutral {
+  --quote-bg-color: var(--wp--custom--colors--neutral-50);
+  --quote-border-color: var(--wp--custom--colors--neutral-300);
+}
+
+.wp-block-ria-quote.variant-custom,
+.ria-quote.variant-custom {
+  --quote-quotecolor: var(--customquotecolor, var(--wp--custom--colors--neutral-200));
+  --quote-authorcolor: var(--customauthorcolor, var(--wp--custom--colors--neutral-200));
+  --quote-bg-color: var(--custombackgroundcolor, var(--wp--custom--colors--neutral-50));
+  --quote-accentcolor: var(--customaccentcolor, var(--wp--custom--colors--neutral-200));
+  --quote-border-color: var(--custombordercolor, var(--wp--custom--colors--neutral-300));
+}

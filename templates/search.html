@@ -1,0 +1,41 @@
+<!-- wp:template-part {"slug":"site-header","theme":"riapress","tagName":"header"} /-->
+
+<!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|6","bottom":"var:preset|spacing|6"}}},"layout":{"inherit":true,"type":"constrained"}} -->
+<div class="wp-block-group" style="padding-top:var(--wp--preset--spacing--6);padding-bottom:var(--wp--preset--spacing--6)"><!-- wp:group {"style":{"spacing":{"margin":{"bottom":"var:preset|spacing|5"}}},"layout":{"inherit":true,"type":"constrained"}} -->
+  <div class="wp-block-group" style="margin-bottom:var(--wp--preset--spacing--5)"><!-- wp:query-title {"type":"search","textAlign":"center"} /-->
+
+    <!-- wp:search {"label":"Search","showLabel":false,"placeholder":"Search...","width":960,"widthUnit":"px","buttonText":"Search","buttonPosition":"button-inside","buttonUseIcon":true,"align":"center"} /--></div>
+  <!-- /wp:group -->
+
+  <!-- wp:query {"queryId":0,"query":{"perPage":4,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":true,"taxQuery":null,"parents":[]},"tagName":"main","layout":{"inherit":false}} -->
+  <main class="wp-block-query"><!-- wp:post-template {"align":"wide"} -->
+    <!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"top"}} -->
+    <div class="wp-block-group"><!-- wp:group {"layout":{"type":"constrained"}} -->
+      <div class="wp-block-group"><!-- wp:post-featured-image {"isLink":true,"aspectRatio":"1","width":"","height":"","sizeSlug":"thumbnail"} /--></div>
+      <!-- /wp:group -->
+
+      <!-- wp:group {"layout":{"type":"constrained"}} -->
+      <div class="wp-block-group"><!-- wp:post-title {"isLink":true,"fontSize":"large"} /-->
+
+        <!-- wp:post-date {"isLink":true} /-->
+
+        <!-- wp:post-excerpt /--></div>
+      <!-- /wp:group --></div>
+    <!-- /wp:group -->
+    <!-- /wp:post-template -->
+
+    <!-- wp:query-pagination {"paginationArrow":"arrow","align":"wide","layout":{"type":"flex","justifyContent":"space-between"}} -->
+    <!-- wp:query-pagination-previous /-->
+
+    <!-- wp:query-pagination-next /-->
+    <!-- /wp:query-pagination -->
+
+    <!-- wp:query-no-results -->
+    <!-- wp:paragraph {"placeholder":"Add text or blocks that will display when the query returns no results."} -->
+    <p></p>
+    <!-- /wp:paragraph -->
+    <!-- /wp:query-no-results --></main>
+  <!-- /wp:query --></div>
+<!-- /wp:group -->
+
+<!-- wp:template-part {"slug":"site-footer","theme":"riapress","tagName":"footer"} /-->

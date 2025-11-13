@@ -1,0 +1,72 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "zp/metric",
+	"version": "0.1.0",
+	"title": "Metric",
+	"description": "A Metric item",
+	"icon": "screenoptions",
+	"parent": [ "zp/metrics" ],
+	"supports": {
+		"html": false,
+		"align": [
+			"wide",
+			"full"
+		],
+		"color": {
+			"background": true,
+			"text": true
+		}
+	},
+	"attributes": {
+		"description": {
+			"type": "string",
+			"source": "html",
+			"selector": "p"
+		},
+		"countUpAnimated": {
+			"type": "boolean",
+			"default": true
+		},
+		"countUpStart": {
+			"type": "string",
+			"default": "0"
+		},
+		"countUpDuration": {
+			"type": "string",
+			"default": "2.5"
+		},
+		"countUpPrefix": {
+			"type": "string",
+			"source": "html",
+			"selector": "span.prefix"
+		},
+		"countUpSuffix": {
+			"type": "string",
+			"source": "html",
+			"selector": "span.suffix",
+			"default": "K+"
+		},
+		"countUpEnd": {
+			"type": "string",
+			"source": "html",
+			"selector": "span.metric",
+			"default": "1000"
+		},
+		"ariaLabel": {
+			"type": "string"
+		},
+		"ariaDescription": {
+			"type": "string"
+		}
+	},
+	"example": {
+		"attributes": {
+			"columns": 2
+		}
+	},
+	"textdomain": "metrics",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}

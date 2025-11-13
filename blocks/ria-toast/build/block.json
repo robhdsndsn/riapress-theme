@@ -1,0 +1,61 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "ria/toast-container",
+	"version": "1.0.0",
+	"title": "RIA Toast Container",
+	"category": "ria",
+	"icon": "megaphone",
+	"description": "Toast notification container for displaying dynamic notifications. Add once to your site (usually in header/footer).",
+	"keywords": [
+		"toast",
+		"notification",
+		"alert",
+		"message",
+		"snackbar"
+	],
+	"supports": {
+		"html": false,
+		"multiple": false,
+		"reusable": false
+	},
+	"attributes": {
+		"position": {
+			"type": "string",
+			"default": "top-right",
+			"enum": [
+				"top-right",
+				"top-left",
+				"bottom-right",
+				"bottom-left",
+				"top-center",
+				"bottom-center"
+			]
+		},
+		"maxToasts": {
+			"type": "number",
+			"default": 5
+		},
+		"variant": {
+			"type": "string",
+			"default": "default"
+		},
+		"customColor": {
+			"type": "string",
+			"default": ""
+		},
+		"customBackgroundColor": {
+			"type": "string",
+			"default": ""
+		},
+		"customBorderColor": {
+			"type": "string",
+			"default": ""
+		}
+	},
+	"textdomain": "ria-toast",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"viewScript": "file:./view.js"
+}

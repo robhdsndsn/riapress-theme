@@ -1,0 +1,15 @@
+.wp-block-image {
+  margin-bottom: 1.5rem;
+
+  &.is-style-rounded {
+    img {
+      border-radius: 9999px;
+    }
+  }
+
+  .wp-block-image__aligncenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

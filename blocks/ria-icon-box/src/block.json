@@ -1,0 +1,139 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "ria/icon-box",
+	"version": "1.0.0",
+	"title": "RIA Icon Box",
+	"category": "ria",
+	"icon": "star-filled",
+	"description": "Display an icon with heading and description.",
+	"keywords": [
+		"icon",
+		"box",
+		"feature",
+		"service",
+		"info"
+	],
+	"supports": {
+		"html": false,
+		"anchor": true,
+		"spacing": {
+			"margin": true,
+			"padding": true
+		}
+	},
+	"attributes": {
+		"variant": {
+			"type": "string",
+			"default": "default"
+		},
+		"customBackgroundColor": {
+			"type": "string",
+			"default": ""
+		},
+		"customBorderColor": {
+			"type": "string",
+			"default": ""
+		},
+		"iconName": {
+			"type": "string",
+			"default": "Star"
+		},
+		"iconSize": {
+			"type": "number",
+			"default": 48
+		},
+		"iconColor": {
+			"type": "string",
+			"default": "#0073aa"
+		},
+		"heading": {
+			"type": "string",
+			"default": ""
+		},
+		"description": {
+			"type": "string",
+			"default": ""
+		},
+		"textAlign": {
+			"type": "string",
+			"default": "center"
+		},
+		"iconPosition": {
+			"type": "string",
+			"default": "top"
+		},
+		"linkUrl": {
+			"type": "string",
+			"default": ""
+		},
+		"linkTarget": {
+			"type": "boolean",
+			"default": false
+		},
+		"backgroundColor": {
+			"type": "string",
+			"default": ""
+		},
+		"showBackground": {
+			"type": "boolean",
+			"default": false
+		},
+		"borderRadius": {
+			"type": "number",
+			"default": 8
+		},
+		"borderWidth": {
+			"type": "number",
+			"default": 0
+		},
+		"borderStyle": {
+			"type": "string",
+			"default": "solid"
+		},
+		"borderColor": {
+			"type": "string",
+			"default": "#e5e7eb"
+		},
+		"boxShadow": {
+			"type": "string",
+			"default": "none"
+		},
+		"hoverShadow": {
+			"type": "string",
+			"default": "small"
+		},
+		"animationEnabled": {
+			"type": "boolean",
+			"default": true
+		},
+		"animationType": {
+			"type": "string",
+			"default": "fadeInUp"
+		},
+		"animationDuration": {
+			"type": "number",
+			"default": 0.6
+		},
+		"animationDelay": {
+			"type": "number",
+			"default": 0
+		},
+		"animationEasing": {
+			"type": "string",
+			"default": "ease-out"
+		},
+		"hoverAnimation": {
+			"type": "string",
+			"default": "none"
+		},
+		"customColor": {
+			"type": "string",
+			"default": ""
+		}
+	},
+	"textdomain": "ria-icon-box",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}

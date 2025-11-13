@@ -1,0 +1,182 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "ria/video",
+  "version": "1.0.0",
+  "title": "RIA Video",
+  "category": "media",
+  "icon": "video-alt2",
+  "description": "Embed videos from YouTube, Vimeo, or upload your own with advanced styling and modal options.",
+  "keywords": [
+    "video",
+    "youtube",
+    "vimeo",
+    "media",
+    "embed",
+    "modal",
+    "popup",
+    "player"
+  ],
+  "supports": {
+    "html": false,
+    "align": ["wide", "full"],
+    "spacing": {
+      "margin": true,
+      "padding": true
+    }
+  },
+  "attributes": {
+    "videoType": {
+      "type": "string",
+      "default": "youtube",
+      "enum": ["youtube", "vimeo", "hosted"]
+    },
+    "videoUrl": {
+      "type": "string",
+      "default": ""
+    },
+    "videoId": {
+      "type": "string",
+      "default": ""
+    },
+    "hostedVideoId": {
+      "type": "number",
+      "default": 0
+    },
+    "thumbnailUrl": {
+      "type": "string",
+      "default": ""
+    },
+    "thumbnailId": {
+      "type": "number",
+      "default": 0
+    },
+    "useCustomThumbnail": {
+      "type": "boolean",
+      "default": false
+    },
+    "displayMode": {
+      "type": "string",
+      "default": "inline",
+      "enum": ["inline", "modal", "background"]
+    },
+    "aspectRatio": {
+      "type": "string",
+      "default": "16-9",
+      "enum": ["16-9", "4-3", "1-1", "21-9", "custom"]
+    },
+    "customAspectRatio": {
+      "type": "string",
+      "default": "16 / 9"
+    },
+    "autoplay": {
+      "type": "boolean",
+      "default": false
+    },
+    "loop": {
+      "type": "boolean",
+      "default": false
+    },
+    "muted": {
+      "type": "boolean",
+      "default": false
+    },
+    "controls": {
+      "type": "boolean",
+      "default": true
+    },
+    "playButtonStyle": {
+      "type": "string",
+      "default": "default",
+      "enum": ["default", "circle", "square", "minimal", "none"]
+    },
+    "playButtonSize": {
+      "type": "number",
+      "default": 80
+    },
+    "playButtonColor": {
+      "type": "string",
+      "default": "#ffffff"
+    },
+    "playButtonBackground": {
+      "type": "string",
+      "default": "rgba(0, 0, 0, 0.7)"
+    },
+    "overlayColor": {
+      "type": "string",
+      "default": ""
+    },
+    "overlayOpacity": {
+      "type": "number",
+      "default": 0
+    },
+    "showTitle": {
+      "type": "boolean",
+      "default": false
+    },
+    "title": {
+      "type": "string",
+      "default": ""
+    },
+    "showDescription": {
+      "type": "boolean",
+      "default": false
+    },
+    "description": {
+      "type": "string",
+      "default": ""
+    },
+    "borderWidth": {
+      "type": "number",
+      "default": 0
+    },
+    "borderStyle": {
+      "type": "string",
+      "default": "solid"
+    },
+    "borderColor": {
+      "type": "string",
+      "default": "#e5e7eb"
+    },
+    "borderRadius": {
+      "type": "number",
+      "default": 8
+    },
+    "boxShadow": {
+      "type": "string",
+      "default": "none"
+    },
+    "hoverShadow": {
+      "type": "string",
+      "default": "medium"
+    },
+    "animationEnabled": {
+      "type": "boolean",
+      "default": true
+    },
+    "animationType": {
+      "type": "string",
+      "default": "fadeInUp"
+    },
+    "animationDuration": {
+      "type": "number",
+      "default": 0.6
+    },
+    "animationDelay": {
+      "type": "number",
+      "default": 0
+    },
+    "animationEasing": {
+      "type": "string",
+      "default": "ease-out"
+    },
+    "hoverAnimation": {
+      "type": "string",
+      "default": "none"
+    }
+  },
+  "textdomain": "ria-video",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}

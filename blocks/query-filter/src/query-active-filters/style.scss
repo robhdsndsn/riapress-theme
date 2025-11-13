@@ -1,0 +1,46 @@
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ */
+
+.wp-block-gregius-query-active-filters {
+    margin-bottom: 1.5em;
+
+    .active-filters,
+    .active-filters-editor-preview {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.8em;
+        line-height: 0;
+    }
+
+    .filter-badge {
+        display: inline-flex;
+        align-items: center;
+        padding: 0.25em 1em;
+        border-radius: 50px;
+
+        .remove {
+            width: 1em;
+            height: 1em;
+            margin-left: 0.5em;
+            font-size: 1.5em;
+            line-height: 1;
+            padding: 0;
+            border: 2px solid transparent;
+            background: transparent;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            outline: 0;
+        }
+
+        .remove:focus {
+            outline: 0;
+            outline-offset: 2px;
+            border: 2px solid var(--wp--custom--colors--dark);
+            border-radius: 50%;
+        }
+    }
+}

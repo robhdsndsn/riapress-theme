@@ -1,0 +1,363 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "ria/event-card",
+	"version": "1.0.0",
+	"title": "RIA Event Card",
+	"category": "ria",
+	"icon": "calendar-alt",
+	"description": "Display event information with dates, location, registration, and metadata in various layouts",
+	"keywords": [
+		"event",
+		"calendar",
+		"card",
+		"date",
+		"registration"
+	],
+	"supports": {
+		"html": false,
+		"align": true,
+		"spacing": {
+			"margin": true,
+			"padding": false
+		}
+	},
+	"attributes": {
+		"variant": {
+			"type": "string",
+			"default": "default"
+		},
+		"customBackgroundColor": {
+			"type": "string",
+			"default": ""
+		},
+		"customAccentColor": {
+			"type": "string",
+			"default": ""
+		},
+		"customBorderColor": {
+			"type": "string",
+			"default": ""
+		},
+		"layout": {
+			"type": "string",
+			"default": "card",
+			"enum": [
+				"card",
+				"compact",
+				"featured",
+				"list"
+			]
+		},
+		"title": {
+			"type": "string",
+			"default": ""
+		},
+		"description": {
+			"type": "string",
+			"default": ""
+		},
+		"startDate": {
+			"type": "string",
+			"default": ""
+		},
+		"endDate": {
+			"type": "string",
+			"default": ""
+		},
+		"startTime": {
+			"type": "string",
+			"default": ""
+		},
+		"endTime": {
+			"type": "string",
+			"default": ""
+		},
+		"timezone": {
+			"type": "string",
+			"default": ""
+		},
+		"showDate": {
+			"type": "boolean",
+			"default": true
+		},
+		"showTime": {
+			"type": "boolean",
+			"default": true
+		},
+		"dateFormat": {
+			"type": "string",
+			"default": "short",
+			"enum": [
+				"short",
+				"long",
+				"custom"
+			]
+		},
+		"customDateFormat": {
+			"type": "string",
+			"default": "F j, Y"
+		},
+		"locationName": {
+			"type": "string",
+			"default": ""
+		},
+		"locationAddress": {
+			"type": "string",
+			"default": ""
+		},
+		"locationType": {
+			"type": "string",
+			"default": "in-person",
+			"enum": [
+				"in-person",
+				"virtual",
+				"hybrid"
+			]
+		},
+		"virtualUrl": {
+			"type": "string",
+			"default": ""
+		},
+		"showLocation": {
+			"type": "boolean",
+			"default": true
+		},
+		"featuredImageId": {
+			"type": "number",
+			"default": 0
+		},
+		"featuredImageUrl": {
+			"type": "string",
+			"default": ""
+		},
+		"featuredImageAlt": {
+			"type": "string",
+			"default": ""
+		},
+		"showImage": {
+			"type": "boolean",
+			"default": true
+		},
+		"registrationUrl": {
+			"type": "string",
+			"default": ""
+		},
+		"registrationButtonText": {
+			"type": "string",
+			"default": "Register Now"
+		},
+		"registrationDeadline": {
+			"type": "string",
+			"default": ""
+		},
+		"showRegistrationButton": {
+			"type": "boolean",
+			"default": true
+		},
+		"cost": {
+			"type": "string",
+			"default": ""
+		},
+		"capacity": {
+			"type": "number",
+			"default": 0
+		},
+		"spotsRemaining": {
+			"type": "number",
+			"default": 0
+		},
+		"showCost": {
+			"type": "boolean",
+			"default": true
+		},
+		"showCapacity": {
+			"type": "boolean",
+			"default": false
+		},
+		"eventStatus": {
+			"type": "string",
+			"default": "upcoming",
+			"enum": [
+				"upcoming",
+				"ongoing",
+				"past",
+				"cancelled"
+			]
+		},
+		"showStatusBadge": {
+			"type": "boolean",
+			"default": true
+		},
+		"isSignatureEvent": {
+			"type": "boolean",
+			"default": false
+		},
+		"isFeatured": {
+			"type": "boolean",
+			"default": false
+		},
+		"showSignatureBadge": {
+			"type": "boolean",
+			"default": true
+		},
+		"organizers": {
+			"type": "array",
+			"default": [],
+			"items": {
+				"type": "object"
+			}
+		},
+		"speakers": {
+			"type": "array",
+			"default": [],
+			"items": {
+				"type": "object"
+			}
+		},
+		"topics": {
+			"type": "array",
+			"default": [],
+			"items": {
+				"type": "string"
+			}
+		},
+		"showOrganizers": {
+			"type": "boolean",
+			"default": false
+		},
+		"showSpeakers": {
+			"type": "boolean",
+			"default": false
+		},
+		"showTopics": {
+			"type": "boolean",
+			"default": true
+		},
+		"buttonStyle": {
+			"type": "string",
+			"default": "primary",
+			"enum": [
+				"primary",
+				"secondary",
+				"tertiary",
+				"ghost"
+			]
+		},
+		"borderWidth": {
+			"type": "number",
+			"default": 1
+		},
+		"borderStyle": {
+			"type": "string",
+			"default": "solid",
+			"enum": [
+				"none",
+				"solid",
+				"dashed",
+				"dotted",
+				"double",
+				"groove",
+				"ridge"
+			]
+		},
+		"borderRadius": {
+			"type": "number",
+			"default": 8
+		},
+		"boxShadow": {
+			"type": "string",
+			"default": "small",
+			"enum": [
+				"none",
+				"small",
+				"medium",
+				"large",
+				"xlarge",
+				"2xlarge",
+				"inner"
+			]
+		},
+		"hoverShadow": {
+			"type": "string",
+			"default": "medium",
+			"enum": [
+				"none",
+				"small",
+				"medium",
+				"large",
+				"xlarge",
+				"2xlarge"
+			]
+		},
+		"animationEnabled": {
+			"type": "boolean",
+			"default": true
+		},
+		"animationType": {
+			"type": "string",
+			"default": "fadeInUp",
+			"enum": [
+				"fadeIn",
+				"fadeInUp",
+				"fadeInDown",
+				"fadeInLeft",
+				"fadeInRight",
+				"slideInUp",
+				"slideInDown",
+				"slideInLeft",
+				"slideInRight",
+				"zoomIn",
+				"zoomInUp",
+				"bounceIn",
+				"rotateIn",
+				"flipInX",
+				"flipInY",
+				"none"
+			]
+		},
+		"animationDuration": {
+			"type": "number",
+			"default": 1000
+		},
+		"animationDelay": {
+			"type": "number",
+			"default": 0
+		},
+		"animationEasing": {
+			"type": "string",
+			"default": "ease-out",
+			"enum": [
+				"linear",
+				"ease",
+				"ease-in",
+				"ease-out",
+				"ease-in-out"
+			]
+		},
+		"hoverAnimation": {
+			"type": "string",
+			"default": "lift",
+			"enum": [
+				"none",
+				"lift",
+				"grow",
+				"shrink",
+				"rotate",
+				"tilt",
+				"glow",
+				"pulse",
+				"bounce"
+			]
+		},
+		"customColor": {
+			"type": "string",
+			"default": ""
+		}
+	},
+	"textdomain": "ria-event-card",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"viewScript": "file:./view.js"
+}

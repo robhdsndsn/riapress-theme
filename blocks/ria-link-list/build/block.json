@@ -1,0 +1,280 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "ria/link-list",
+	"version": "1.0.0",
+	"title": "RIA Link List",
+	"category": "ria",
+	"icon": "admin-links",
+	"description": "Display a styled list of links with optional icons, descriptions, and various layout options.",
+	"keywords": [
+		"links",
+		"list",
+		"menu",
+		"navigation",
+		"resources",
+		"quick-links",
+		"icons"
+	],
+	"supports": {
+		"html": false,
+		"align": false,
+		"spacing": {
+			"margin": true,
+			"padding": true
+		}
+	},
+	"attributes": {
+		"links": {
+			"type": "array",
+			"default": []
+		},
+		"layout": {
+			"type": "string",
+			"default": "vertical",
+			"enum": [
+				"vertical",
+				"horizontal",
+				"grid",
+				"compact"
+			]
+		},
+		"columns": {
+			"type": "number",
+			"default": 2,
+			"enum": [
+				1,
+				2,
+				3,
+				4
+			]
+		},
+		"showIcons": {
+			"type": "boolean",
+			"default": true
+		},
+		"iconPosition": {
+			"type": "string",
+			"default": "left",
+			"enum": [
+				"left",
+				"right",
+				"top"
+			]
+		},
+		"iconSize": {
+			"type": "number",
+			"default": 20
+		},
+		"showDescriptions": {
+			"type": "boolean",
+			"default": false
+		},
+		"openInNewTab": {
+			"type": "boolean",
+			"default": false
+		},
+		"linkStyle": {
+			"type": "string",
+			"default": "default",
+			"enum": [
+				"default",
+				"button",
+				"minimal",
+				"underline",
+				"arrow"
+			]
+		},
+		"linkSize": {
+			"type": "string",
+			"default": "medium",
+			"enum": [
+				"small",
+				"medium",
+				"large"
+			]
+		},
+		"spacing": {
+			"type": "number",
+			"default": 12
+		},
+		"dividerStyle": {
+			"type": "string",
+			"default": "none",
+			"enum": [
+				"none",
+				"solid",
+				"dashed",
+				"dotted"
+			]
+		},
+		"alignment": {
+			"type": "string",
+			"default": "left",
+			"enum": [
+				"left",
+				"center",
+				"right"
+			]
+		},
+		"variant": {
+			"type": "string",
+			"default": "default"
+		},
+		"customIconColor": {
+			"type": "string",
+			"default": ""
+		},
+		"customLinkColor": {
+			"type": "string",
+			"default": ""
+		},
+		"customLinkHoverColor": {
+			"type": "string",
+			"default": ""
+		},
+		"customBackgroundColor": {
+			"type": "string",
+			"default": ""
+		},
+		"customItemBackgroundColor": {
+			"type": "string",
+			"default": ""
+		},
+		"customItemHoverBackground": {
+			"type": "string",
+			"default": ""
+		},
+		"customDividerColor": {
+			"type": "string",
+			"default": ""
+		},
+		"customBorderColor": {
+			"type": "string",
+			"default": ""
+		},
+		"borderWidth": {
+			"type": "number",
+			"default": 0
+		},
+		"borderStyle": {
+			"type": "string",
+			"default": "solid",
+			"enum": [
+				"none",
+				"solid",
+				"dashed",
+				"dotted",
+				"double",
+				"groove",
+				"ridge"
+			]
+		},
+		"borderRadius": {
+			"type": "number",
+			"default": 4
+		},
+		"boxShadow": {
+			"type": "string",
+			"default": "none",
+			"enum": [
+				"none",
+				"small",
+				"medium",
+				"large",
+				"xlarge",
+				"2xlarge",
+				"inner"
+			]
+		},
+		"hoverShadow": {
+			"type": "string",
+			"default": "none",
+			"enum": [
+				"none",
+				"small",
+				"medium",
+				"large",
+				"xlarge",
+				"2xlarge"
+			]
+		},
+		"animationEnabled": {
+			"type": "boolean",
+			"default": true
+		},
+		"animationType": {
+			"type": "string",
+			"default": "fadeInUp",
+			"enum": [
+				"fadeIn",
+				"fadeInUp",
+				"fadeInDown",
+				"fadeInLeft",
+				"fadeInRight",
+				"slideInUp",
+				"slideInDown",
+				"slideInLeft",
+				"slideInRight",
+				"zoomIn",
+				"zoomInUp",
+				"bounceIn",
+				"rotateIn",
+				"flipInX",
+				"flipInY",
+				"none"
+			]
+		},
+		"animationDuration": {
+			"type": "number",
+			"default": 1000
+		},
+		"animationDelay": {
+			"type": "number",
+			"default": 0
+		},
+		"animationEasing": {
+			"type": "string",
+			"default": "ease-out",
+			"enum": [
+				"linear",
+				"ease",
+				"ease-in",
+				"ease-out",
+				"ease-in-out"
+			]
+		},
+		"hoverAnimation": {
+			"type": "string",
+			"default": "none",
+			"enum": [
+				"none",
+				"lift",
+				"grow",
+				"shrink",
+				"rotate",
+				"tilt",
+				"glow",
+				"pulse",
+				"bounce"
+			]
+		},
+		"staggerAnimation": {
+			"type": "boolean",
+			"default": true
+		},
+		"staggerDelay": {
+			"type": "number",
+			"default": 100
+		},
+		"customColor": {
+			"type": "string",
+			"default": ""
+		}
+	},
+	"textdomain": "ria-link-list",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"viewScript": "file:./view.js"
+}

@@ -1,0 +1,331 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "ria/contact-info",
+	"version": "0.1.0",
+	"title": "RIA Contact Info",
+	"category": "ria",
+	"icon": "phone",
+	"description": "Display contact information with phone, email, address, website, fax, and social links in various layouts.",
+	"keywords": [
+		"contact",
+		"phone",
+		"email",
+		"address",
+		"social",
+		"molecule"
+	],
+	"supports": {
+		"html": false,
+		"align": true,
+		"spacing": {
+			"margin": true,
+			"padding": false
+		}
+	},
+	"attributes": {
+		"layout": {
+			"type": "string",
+			"default": "vertical",
+			"enum": [
+				"vertical",
+				"horizontal",
+				"grid",
+				"compact",
+				"card"
+			]
+		},
+		"phone": {
+			"type": "string",
+			"default": ""
+		},
+		"email": {
+			"type": "string",
+			"default": ""
+		},
+		"address": {
+			"type": "string",
+			"default": ""
+		},
+		"website": {
+			"type": "string",
+			"default": ""
+		},
+		"fax": {
+			"type": "string",
+			"default": ""
+		},
+		"socialLinks": {
+			"type": "array",
+			"default": [],
+			"items": {
+				"type": "object",
+				"properties": {
+					"platform": {
+						"type": "string"
+					},
+					"url": {
+						"type": "string"
+					}
+				}
+			}
+		},
+		"showPhone": {
+			"type": "boolean",
+			"default": true
+		},
+		"showEmail": {
+			"type": "boolean",
+			"default": true
+		},
+		"showAddress": {
+			"type": "boolean",
+			"default": true
+		},
+		"showWebsite": {
+			"type": "boolean",
+			"default": true
+		},
+		"showFax": {
+			"type": "boolean",
+			"default": false
+		},
+		"showSocial": {
+			"type": "boolean",
+			"default": true
+		},
+		"showIcons": {
+			"type": "boolean",
+			"default": true
+		},
+		"iconPosition": {
+			"type": "string",
+			"default": "left",
+			"enum": [
+				"left",
+				"right",
+				"top"
+			]
+		},
+		"iconSize": {
+			"type": "number",
+			"default": 20
+		},
+		"iconStyle": {
+			"type": "string",
+			"default": "default",
+			"enum": [
+				"default",
+				"circle",
+				"square",
+				"minimal"
+			]
+		},
+		"itemSpacing": {
+			"type": "number",
+			"default": 12
+		},
+		"alignment": {
+			"type": "string",
+			"default": "left",
+			"enum": [
+				"left",
+				"center",
+				"right"
+			]
+		},
+		"variant": {
+			"type": "string",
+			"default": "default"
+		},
+		"customIconColor": {
+			"type": "string",
+			"default": ""
+		},
+		"customTextColor": {
+			"type": "string",
+			"default": ""
+		},
+		"customLinkColor": {
+			"type": "string",
+			"default": ""
+		},
+		"customBackgroundColor": {
+			"type": "string",
+			"default": ""
+		},
+		"customBorderColor": {
+			"type": "string",
+			"default": ""
+		},
+		"fontSize": {
+			"type": "string",
+			"default": "medium",
+			"enum": [
+				"small",
+				"medium",
+				"large"
+			]
+		},
+		"showLabels": {
+			"type": "boolean",
+			"default": false
+		},
+		"phoneLabel": {
+			"type": "string",
+			"default": "Phone:"
+		},
+		"emailLabel": {
+			"type": "string",
+			"default": "Email:"
+		},
+		"addressLabel": {
+			"type": "string",
+			"default": "Address:"
+		},
+		"websiteLabel": {
+			"type": "string",
+			"default": "Website:"
+		},
+		"faxLabel": {
+			"type": "string",
+			"default": "Fax:"
+		},
+		"clickablePhone": {
+			"type": "boolean",
+			"default": true
+		},
+		"clickableEmail": {
+			"type": "boolean",
+			"default": true
+		},
+		"socialIconSize": {
+			"type": "number",
+			"default": 24
+		},
+		"socialIconStyle": {
+			"type": "string",
+			"default": "default",
+			"enum": [
+				"default",
+				"circle",
+				"square",
+				"rounded"
+			]
+		},
+		"borderWidth": {
+			"type": "number",
+			"default": 0
+		},
+		"borderStyle": {
+			"type": "string",
+			"default": "solid",
+			"enum": [
+				"none",
+				"solid",
+				"dashed",
+				"dotted",
+				"double",
+				"groove",
+				"ridge"
+			]
+		},
+		"borderRadius": {
+			"type": "number",
+			"default": 0
+		},
+		"boxShadow": {
+			"type": "string",
+			"default": "none",
+			"enum": [
+				"none",
+				"small",
+				"medium",
+				"large",
+				"xlarge",
+				"2xlarge",
+				"inner"
+			]
+		},
+		"hoverShadow": {
+			"type": "string",
+			"default": "none",
+			"enum": [
+				"none",
+				"small",
+				"medium",
+				"large",
+				"xlarge",
+				"2xlarge"
+			]
+		},
+		"animationEnabled": {
+			"type": "boolean",
+			"default": true
+		},
+		"animationType": {
+			"type": "string",
+			"default": "fadeInUp",
+			"enum": [
+				"fadeIn",
+				"fadeInUp",
+				"fadeInDown",
+				"fadeInLeft",
+				"fadeInRight",
+				"slideInUp",
+				"slideInDown",
+				"slideInLeft",
+				"slideInRight",
+				"zoomIn",
+				"zoomInUp",
+				"bounceIn",
+				"rotateIn",
+				"flipInX",
+				"flipInY",
+				"none"
+			]
+		},
+		"animationDuration": {
+			"type": "number",
+			"default": 1000
+		},
+		"animationDelay": {
+			"type": "number",
+			"default": 0
+		},
+		"animationEasing": {
+			"type": "string",
+			"default": "ease-out",
+			"enum": [
+				"linear",
+				"ease",
+				"ease-in",
+				"ease-out",
+				"ease-in-out"
+			]
+		},
+		"hoverAnimation": {
+			"type": "string",
+			"default": "none",
+			"enum": [
+				"none",
+				"lift",
+				"grow",
+				"shrink",
+				"rotate",
+				"tilt",
+				"glow",
+				"pulse",
+				"bounce"
+			]
+		},
+		"customColor": {
+			"type": "string",
+			"default": ""
+		}
+	},
+	"textdomain": "ria-contact-info",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}

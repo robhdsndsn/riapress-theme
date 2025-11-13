@@ -1,0 +1,104 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-11-15T02:33:02+00:00\n"
+"PO-Revision-Date: 2022-11-14 18:40-0800\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr_CA\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 3.2\n"
+"X-Domain: cards\n"
+
+#: build/index.js:1
+msgctxt "Block - Cards"
+msgid "Image Settings"
+msgstr "Paramètres des images"
+
+#: build/index.js:1
+msgctxt "Block - Cards"
+msgid "Alt Text"
+msgstr "Texte alternatif"
+
+#: build/index.js:1
+msgctxt "Block - Cards"
+msgid ""
+"Alternative text describes your image to people who can see it. Add a short "
+"description with its key details."
+msgstr ""
+"Le texte alternatif décrit votre image aux personnes qui peuvent la voir. "
+"Ajoutez une courte description avec ses principaux détails."
+
+#: build/index.js:1
+msgctxt "Block - Cards"
+msgid "Replace Image"
+msgstr "Remplacer l’image"
+
+#: build/index.js:1
+msgctxt "Block - Cards"
+msgid "Remove Image"
+msgstr "Supprimer l’image"
+
+#: build/index.js:1
+msgctxt "Block - Cards"
+msgid "Title"
+msgstr "Titre"
+
+#: build/index.js:1
+msgctxt "Block - Cards"
+msgid "Card"
+msgstr "Carte"
+
+#: build/index.js:1
+msgctxt "Block - Cards"
+msgid "A Card item"
+msgstr "Un objet Carte"
+
+#: build/index.js:1
+msgctxt "Block - Cards"
+msgid "Columns"
+msgstr "Colonnes"
+
+#: build/block.json
+msgctxt "block title"
+msgid "Cards"
+msgstr "Cartes"
+
+#: build/block.json
+msgctxt "block description"
+msgid "A grid of cards."
+msgstr "Une grille de cartes."
+
+#: build/block.json
+msgctxt "block keyword"
+msgid "Cards"
+msgstr "Carte"
+
+#: build/block.json
+msgctxt "block keyword"
+msgid "Card"
+msgstr "Carte"
+
+#: build/block.json
+msgctxt "block keyword"
+msgid "Columns"
+msgstr "Colonnes"
+
+#: build/block.json
+msgctxt "block keyword"
+msgid "Grid"
+msgstr "Grille"
+
+#: build/block.json
+msgctxt "block style label"
+msgid "Horizontal"
+msgstr "Horizontal"
+
+#: build/block.json
+msgctxt "block style label"
+msgid "Vertical"
+msgstr "Vertical"

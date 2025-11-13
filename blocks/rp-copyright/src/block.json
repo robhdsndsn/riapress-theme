@@ -1,0 +1,52 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "zp/copyright",
+  "version": "0.1.0",
+  "title": "Copyright",
+  "category": "text",
+  "icon": "admin-settings",
+  "description": "A block with year, copyright, and site name.",
+  "keywords": [
+    "Copyright",
+    "Text"
+  ],
+  "supports": {
+    "html": false,
+    "color": {
+      "background": false,
+      "text": false,
+      "gradients": false
+    }
+  },
+  "attributes": {
+    "siteTitle": {
+      "type": "string"
+    },
+    "fontSizeClass": {
+      "type": "string",
+      "default": "has-small-font-size"
+    },
+    "variant": {
+      "type": "string",
+      "default": "default"
+    },
+    "customColor": {
+      "type": "string",
+      "default": ""
+    },
+    "customBackgroundColor": {
+      "type": "string",
+      "default": ""
+    },
+    "customBorderColor": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "textdomain": "copyright",
+  "editorScript": "file:index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "render": "file:./render.php"
+}

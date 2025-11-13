@@ -1,0 +1,42 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "zp/metrics",
+	"version": "0.1.0",
+	"title": "Metrics",
+	"category": "widgets",
+	"icon": "grid-view",
+	"description": "Metrics.",
+	"keywords": [
+		"Metrics",
+		"Statistics",
+		"Counter"
+	],
+	"supports": {
+		"html": false,
+		"align": [
+			"wide",
+			"full"
+		]
+	},
+	"attributes": {
+		"columns": {
+			"type": "number",
+			"default": 3
+		},
+		"align": {
+			"type": "string",
+			"default": ""
+		}
+	},
+	"example": {
+		"attributes": {
+			"columns": 2
+		}
+	},
+	"textdomain": "metrics",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"viewScript": "file:./view.js"
+}

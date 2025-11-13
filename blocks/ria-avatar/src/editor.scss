@@ -1,0 +1,18 @@
+/**
+ * RIA Avatar Block - Editor Styles
+ */
+
+.wp-block-ria-avatar {
+	// Editor-specific styles
+	cursor: pointer;
+
+	.ria-avatar-image-control {
+		display: flex;
+		flex-direction: column;
+		gap: 12px;
+
+		img {
+			border: 1px solid #ddd;
+		}
+	}
+}

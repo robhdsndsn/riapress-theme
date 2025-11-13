@@ -1,0 +1,301 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "ria/accordion",
+	"version": "1.0.0",
+	"title": "RIA Accordion",
+	"category": "ria",
+	"icon": "list-view",
+	"description": "Create expandable accordion panels for FAQs, content sections, and collapsible information displays.",
+	"keywords": [
+		"accordion",
+		"collapse",
+		"toggle",
+		"faq",
+		"expand",
+		"panel",
+		"dropdown"
+	],
+	"supports": {
+		"html": false,
+		"align": [
+			"wide",
+			"full"
+		],
+		"spacing": {
+			"margin": true,
+			"padding": true
+		}
+	},
+	"attributes": {
+		"layout": {
+			"type": "string",
+			"default": "default",
+			"enum": [
+				"default",
+				"minimal",
+				"bordered",
+				"filled"
+			]
+		},
+		"accordionType": {
+			"type": "string",
+			"default": "accordion",
+			"enum": [
+				"accordion",
+				"toggle"
+			]
+		},
+		"allowMultipleOpen": {
+			"type": "boolean",
+			"default": false
+		},
+		"defaultOpen": {
+			"type": "number",
+			"default": -1
+		},
+		"iconPosition": {
+			"type": "string",
+			"default": "right",
+			"enum": [
+				"left",
+				"right",
+				"none"
+			]
+		},
+		"openIcon": {
+			"type": "string",
+			"default": "chevron-up"
+		},
+		"closeIcon": {
+			"type": "string",
+			"default": "chevron-down"
+		},
+		"iconSize": {
+			"type": "number",
+			"default": 20
+		},
+		"titleTag": {
+			"type": "string",
+			"default": "h3",
+			"enum": [
+				"h2",
+				"h3",
+				"h4",
+				"h5",
+				"h6",
+				"div"
+			]
+		},
+		"titleSize": {
+			"type": "string",
+			"default": "medium",
+			"enum": [
+				"small",
+				"medium",
+				"large",
+				"xlarge"
+			]
+		},
+		"titlePadding": {
+			"type": "number",
+			"default": 16
+		},
+		"contentPadding": {
+			"type": "number",
+			"default": 16
+		},
+		"itemSpacing": {
+			"type": "number",
+			"default": 8
+		},
+		"animationSpeed": {
+			"type": "number",
+			"default": 300
+		},
+		"smooth": {
+			"type": "boolean",
+			"default": true
+		},
+		"showDividers": {
+			"type": "boolean",
+			"default": true
+		},
+		"dividerWidth": {
+			"type": "number",
+			"default": 1
+		},
+		"borderWidth": {
+			"type": "number",
+			"default": 1
+		},
+		"borderStyle": {
+			"type": "string",
+			"default": "solid",
+			"enum": [
+				"none",
+				"solid",
+				"dashed",
+				"dotted",
+				"double",
+				"groove",
+				"ridge"
+			]
+		},
+		"borderRadius": {
+			"type": "number",
+			"default": 8
+		},
+		"boxShadow": {
+			"type": "string",
+			"default": "none",
+			"enum": [
+				"none",
+				"small",
+				"medium",
+				"large",
+				"xlarge",
+				"2xlarge",
+				"inner"
+			]
+		},
+		"hoverShadow": {
+			"type": "string",
+			"default": "small",
+			"enum": [
+				"none",
+				"small",
+				"medium",
+				"large",
+				"xlarge",
+				"2xlarge"
+			]
+		},
+		"animationEnabled": {
+			"type": "boolean",
+			"default": true
+		},
+		"animationType": {
+			"type": "string",
+			"default": "fadeInUp",
+			"enum": [
+				"fadeIn",
+				"fadeInUp",
+				"fadeInDown",
+				"fadeInLeft",
+				"fadeInRight",
+				"slideInUp",
+				"slideInDown",
+				"slideInLeft",
+				"slideInRight",
+				"zoomIn",
+				"zoomInUp",
+				"bounceIn",
+				"rotateIn",
+				"flipInX",
+				"flipInY",
+				"none"
+			]
+		},
+		"animationDuration": {
+			"type": "number",
+			"default": 1000
+		},
+		"animationDelay": {
+			"type": "number",
+			"default": 0
+		},
+		"animationEasing": {
+			"type": "string",
+			"default": "ease-out",
+			"enum": [
+				"linear",
+				"ease",
+				"ease-in",
+				"ease-out",
+				"ease-in-out"
+			]
+		},
+		"hoverAnimation": {
+			"type": "string",
+			"default": "none",
+			"enum": [
+				"none",
+				"lift",
+				"grow",
+				"shrink",
+				"rotate",
+				"tilt",
+				"glow",
+				"pulse",
+				"bounce"
+			]
+		},
+		"staggerAnimation": {
+			"type": "boolean",
+			"default": true
+		},
+		"staggerDelay": {
+			"type": "number",
+			"default": 100
+		},
+		"variant": {
+			"type": "string",
+			"default": "primary"
+		},
+		"customIconColor": {
+			"type": "string",
+			"default": ""
+		},
+		"customTitleColor": {
+			"type": "string",
+			"default": ""
+		},
+		"customTitleBackground": {
+			"type": "string",
+			"default": ""
+		},
+		"customContentColor": {
+			"type": "string",
+			"default": ""
+		},
+		"customBorderColor": {
+			"type": "string",
+			"default": ""
+		},
+		"customColor": {
+			"type": "string",
+			"default": ""
+		},
+		"customBackgroundColor": {
+			"type": "string",
+			"default": ""
+		}
+	},
+	"providesContext": {
+		"ria/accordion/iconPosition": "iconPosition",
+		"ria/accordion/openIcon": "openIcon",
+		"ria/accordion/closeIcon": "closeIcon",
+		"ria/accordion/iconSize": "iconSize",
+		"ria/accordion/titleTag": "titleTag",
+		"ria/accordion/titleSize": "titleSize",
+		"ria/accordion/titlePadding": "titlePadding",
+		"ria/accordion/contentPadding": "contentPadding",
+		"ria/accordion/borderWidth": "borderWidth",
+		"ria/accordion/borderStyle": "borderStyle",
+		"ria/accordion/borderRadius": "borderRadius",
+		"ria/accordion/boxShadow": "boxShadow",
+		"ria/accordion/hoverShadow": "hoverShadow",
+		"ria/accordion/variant": "variant",
+		"ria/accordion/customIconColor": "customIconColor",
+		"ria/accordion/customTitleColor": "customTitleColor",
+		"ria/accordion/customTitleBackground": "customTitleBackground",
+		"ria/accordion/customContentColor": "customContentColor",
+		"ria/accordion/customBorderColor": "customBorderColor"
+	},
+	"textdomain": "ria-accordion",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"viewScript": "file:./view.js"
+}

@@ -1,0 +1,426 @@
+/**
+ * Frontend styles for RIA Person Profile block
+ * Production-ready display block with full animation support
+ */
+
+.ria-person-profile {
+	display: flex;
+	gap: 1.5rem;
+	padding: 1.5rem;
+	transition: all 0.3s ease;
+
+	// Layout Variants
+	&.layout-vertical {
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+
+		.person-content {
+			align-items: center;
+		}
+	}
+
+	&.layout-horizontal {
+		flex-direction: row;
+		align-items: flex-start;
+
+		@media (max-width: 768px) {
+			flex-direction: column;
+			align-items: center;
+			text-align: center;
+
+			.person-content {
+				align-items: center;
+			}
+		}
+	}
+
+	&.layout-compact {
+		flex-direction: row;
+		gap: 1rem;
+		padding: 1rem;
+
+		.person-photo {
+			width: 80px !important;
+			height: 80px !important;
+		}
+
+		.person-name {
+			font-size: 1.25rem;
+			margin-bottom: 0.25rem;
+		}
+
+		.person-credentials,
+		.person-title {
+			font-size: 0.875rem;
+		}
+
+		.person-bio {
+			font-size: 0.875rem;
+			margin-bottom: 0.5rem;
+		}
+
+		.person-contact {
+			margin-top: 0.5rem;
+		}
+
+		@media (max-width: 768px) {
+			flex-direction: column;
+			align-items: center;
+			text-align: center;
+
+			.person-content {
+				align-items: center;
+			}
+		}
+	}
+
+	&.layout-card {
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+
+		.person-content {
+			align-items: center;
+		}
+	}
+
+	// Text Alignment
+	&.align-left {
+		text-align: left;
+
+		.person-content {
+			align-items: flex-start;
+		}
+	}
+
+	&.align-center {
+		text-align: center;
+
+		.person-content {
+			align-items: center;
+		}
+	}
+
+	&.align-right {
+		text-align: right;
+
+		.person-content {
+			align-items: flex-end;
+		}
+	}
+
+	// Box Shadows
+	&.shadow-none {
+		box-shadow: none;
+	}
+
+	&.shadow-small {
+		box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.08);
+	}
+
+	&.shadow-medium {
+		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06);
+	}
+
+	&.shadow-large {
+		box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05);
+	}
+
+	// Hover Shadows
+	&.hover-shadow-small:hover {
+		box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.08);
+	}
+
+	&.hover-shadow-medium:hover {
+		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06);
+	}
+
+	&.hover-shadow-large:hover {
+		box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05);
+	}
+
+	// Hover Animations
+	&.hover-lift:hover {
+		transform: translateY(-4px);
+	}
+
+	&.hover-grow:hover {
+		transform: scale(1.02);
+	}
+
+	// Photo Section
+	.person-photo {
+		flex-shrink: 0;
+		overflow: hidden;
+		background: #f3f4f6;
+
+		&.photo-circle {
+			border-radius: 50%;
+		}
+
+		&.photo-square {
+			border-radius: 0;
+		}
+
+		&.photo-rounded {
+			border-radius: 12px;
+		}
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			display: block;
+		}
+	}
+
+	// Content Section
+	.person-content {
+		flex: 1;
+		min-width: 0;
+		display: flex;
+		flex-direction: column;
+
+		.person-name {
+			margin: 0 0 0.5rem;
+			font-size: 1.5rem;
+			font-weight: 600;
+			color: #1f2937;
+			line-height: 1.2;
+		}
+
+		.person-credentials {
+			margin: 0 0 0.5rem;
+			font-size: 0.875rem;
+			color: #6b7280;
+			font-style: italic;
+		}
+
+		.person-title {
+			margin: 0 0 0.5rem;
+			font-size: 1rem;
+			color: #374151;
+			font-weight: 500;
+		}
+
+		.person-organization {
+			margin: 0 0 0.75rem;
+			font-size: 0.95rem;
+			color: #4b5563;
+			font-weight: 400;
+		}
+
+		.person-bio {
+			margin: 0 0 0.75rem;
+			line-height: 1.6;
+			color: #4b5563;
+		}
+
+		// Contact Information
+		.person-contact {
+			display: flex;
+			flex-direction: column;
+			gap: 0.5rem;
+			margin-top: 0.75rem;
+
+			.contact-item {
+				display: flex;
+				align-items: center;
+				gap: 0.5rem;
+				font-size: 0.875rem;
+
+				.contact-icon {
+					font-size: 1rem;
+					color: #6b7280;
+					flex-shrink: 0;
+					width: 20px;
+					text-align: center;
+				}
+
+				a {
+					color: #3b82f6;
+					text-decoration: none;
+					transition: color 0.2s;
+
+					&:hover {
+						color: #2563eb;
+						text-decoration: underline;
+					}
+				}
+			}
+		}
+
+		// Research Topics
+		.person-research-topics {
+			margin-top: 1rem;
+
+			.topics-label {
+				font-size: 0.875rem;
+				font-weight: 600;
+				color: #374151;
+				margin: 0 0 0.5rem;
+			}
+
+			.topics-list {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 0.5rem;
+
+				.topic-tag {
+					display: inline-block;
+					padding: 0.25rem 0.75rem;
+					background: #e5e7eb;
+					border-radius: 16px;
+					font-size: 0.75rem;
+					color: #374151;
+					transition: all 0.2s;
+
+					&:hover {
+						background: #d1d5db;
+					}
+				}
+			}
+		}
+
+		// Profile Link
+		.profile-link {
+			margin-top: 1rem;
+
+			.view-profile-link {
+				display: inline-flex;
+				align-items: center;
+				gap: 0.25rem;
+				color: #3b82f6;
+				font-size: 0.875rem;
+				font-weight: 500;
+				text-decoration: none;
+				transition: color 0.2s;
+
+				&:hover {
+					color: #2563eb;
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+
+	// Profile Wrapper Link (when entire block is clickable)
+	.profile-wrapper {
+		display: flex;
+		gap: inherit;
+		width: 100%;
+		text-decoration: none;
+		color: inherit;
+		transition: all 0.3s ease;
+
+		&:hover {
+			transform: translateY(-2px);
+		}
+	}
+
+	// Animation Support
+	&[data-animation] {
+		opacity: 0;
+
+		&.animate {
+			opacity: 1;
+		}
+	}
+
+	// Reduced motion support
+	@media (prefers-reduced-motion: reduce) {
+		&[data-animation] {
+			opacity: 1 !important;
+			animation: none !important;
+		}
+
+		&.hover-lift:hover,
+		&.hover-grow:hover,
+		.profile-wrapper:hover {
+			transform: none !important;
+		}
+	}
+
+	// Responsive Design
+	@media (max-width: 480px) {
+		padding: 1rem;
+		gap: 1rem;
+
+		&.layout-horizontal,
+		&.layout-compact {
+			flex-direction: column;
+			align-items: center;
+			text-align: center;
+
+			.person-content {
+				align-items: center;
+			}
+		}
+
+		.person-photo {
+			width: 120px !important;
+			height: 120px !important;
+		}
+
+		.person-content {
+			.person-name {
+				font-size: 1.25rem;
+			}
+
+			.person-credentials,
+			.person-title,
+			.person-organization {
+				font-size: 0.875rem;
+			}
+
+			.person-bio {
+				font-size: 0.875rem;
+			}
+
+			.person-contact {
+				align-items: center;
+			}
+		}
+	}
+}
+
+// Accessibility - Focus States
+.ria-person-profile {
+	a:focus-visible {
+		outline: 2px solid #3b82f6;
+		outline-offset: 2px;
+		border-radius: 2px;
+	}
+}
+
+// Variant Color System
+.wp-block-ria-person-profile.variant-primary,
+.ria-person-profile.variant-primary {
+  --person-profile-bg-color: var(--wp--custom--colors--primary-50);
+  --person-profile-border-color: var(--wp--custom--colors--primary-300);
+}
+
+.wp-block-ria-person-profile.variant-secondary,
+.ria-person-profile.variant-secondary {
+  --person-profile-bg-color: var(--wp--custom--colors--secondary-50);
+  --person-profile-border-color: var(--wp--custom--colors--secondary-300);
+}
+
+.wp-block-ria-person-profile.variant-accent,
+.ria-person-profile.variant-accent {
+  --person-profile-bg-color: var(--wp--custom--colors--accent-50);
+  --person-profile-border-color: var(--wp--custom--colors--accent-300);
+}
+
+.wp-block-ria-person-profile.variant-neutral,
+.ria-person-profile.variant-neutral {
+  --person-profile-bg-color: var(--wp--custom--colors--neutral-50);
+  --person-profile-border-color: var(--wp--custom--colors--neutral-300);
+}
+
+.wp-block-ria-person-profile.variant-custom,
+.ria-person-profile.variant-custom {
+  --person-profile-bg-color: var(--custombackgroundcolor, var(--wp--custom--colors--neutral-50));
+  --person-profile-border-color: var(--custombordercolor, var(--wp--custom--colors--neutral-300));
+}

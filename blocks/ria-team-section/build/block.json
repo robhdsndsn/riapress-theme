@@ -1,0 +1,86 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "ria/team-section",
+  "version": "0.1.0",
+  "title": "RIA Team Section",
+  "category": "ria-blocks",
+  "icon": "groups",
+  "description": "Display team members in a grid layout with photos, names, roles, and optional social links",
+  "keywords": [
+    "team",
+    "members",
+    "staff",
+    "people",
+    "organism"
+  ],
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ]
+  },
+  "attributes": {
+    "columns": {
+      "type": "number",
+      "default": 3
+    },
+    "gap": {
+      "type": "number",
+      "default": 32
+    },
+    "imageStyle": {
+      "type": "string",
+      "default": "circle"
+    },
+    "showSocial": {
+      "type": "boolean",
+      "default": true
+    },
+    "backgroundColor": {
+      "type": "string",
+      "default": "#ffffff"
+    },
+    "textColor": {
+      "type": "string",
+      "default": "#1a1a1a"
+    },
+    "accentColor": {
+      "type": "string",
+      "default": "#2563eb"
+    },
+    "maxWidth": {
+      "type": "number",
+      "default": 1200
+    },
+    "animationEnabled": {
+      "type": "boolean",
+      "default": true
+    },
+    "animationType": {
+      "type": "string",
+      "default": "fadeInUp"
+    },
+    "animationDuration": {
+      "type": "number",
+      "default": 0.6
+    },
+    "animationDelay": {
+      "type": "number",
+      "default": 0
+    },
+    "animationEasing": {
+      "type": "string",
+      "default": "ease-out"
+    },
+    "hoverAnimation": {
+      "type": "string",
+      "default": "none"
+    }
+  },
+  "textdomain": "ria",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}

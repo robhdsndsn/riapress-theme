@@ -1,0 +1,83 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "ria/spacer",
+  "version": "1.0.0",
+  "title": "RIA Spacer",
+  "category": "design",
+  "icon": "image-flip-vertical",
+  "description": "Add vertical spacing between blocks with precise height control.",
+  "keywords": [
+    "spacer",
+    "spacing",
+    "margin",
+    "gap",
+    "vertical"
+  ],
+  "supports": {
+    "html": false,
+    "anchor": true
+  },
+  "attributes": {
+    "height": {
+      "type": "number",
+      "default": 40
+    },
+    "heightMobile": {
+      "type": "number",
+      "default": 0
+    },
+    "heightTablet": {
+      "type": "number",
+      "default": 0
+    },
+    "backgroundColor": {
+      "type": "string",
+      "default": ""
+    },
+    "showBorderTop": {
+      "type": "boolean",
+      "default": false
+    },
+    "showBorderBottom": {
+      "type": "boolean",
+      "default": false
+    },
+    "borderColor": {
+      "type": "string",
+      "default": "#e0e0e0"
+    },
+    "borderWidth": {
+      "type": "number",
+      "default": 1
+    },
+    "animationEnabled": {
+      "type": "boolean",
+      "default": true
+    },
+    "animationType": {
+      "type": "string",
+      "default": "fadeInUp"
+    },
+    "animationDuration": {
+      "type": "number",
+      "default": 0.6
+    },
+    "animationDelay": {
+      "type": "number",
+      "default": 0
+    },
+    "animationEasing": {
+      "type": "string",
+      "default": "ease-out"
+    },
+    "hoverAnimation": {
+      "type": "string",
+      "default": "none"
+    }
+  },
+  "textdomain": "ria-spacer",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}

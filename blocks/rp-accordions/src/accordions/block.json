@@ -1,0 +1,58 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "zp/accordions",
+	"version": "0.1.0",
+	"title": "Accordions",
+	"category": "design",
+	"icon": "list-view",
+	"description": "A group of accordions.",
+	"keywords": [
+		"accordions",
+		"accordion"
+	],
+	"supports": {
+		"html": false,
+		"align": [
+			"wide",
+			"full"
+		],
+		"color": {
+			"background": true,
+			"text": true
+		},
+		"spacing": {
+			"padding": false,
+			"margin": false,
+			"blockGap": false
+		}
+	},
+	"providesContext": {
+		"zp/accordions/headingLevel": "headingLevel",
+		"zp/accordions/openAllByDefault": "openAllByDefault",
+		"zp/accordions/fontSize": "fontSize"
+	},
+	"attributes": {
+		"align": {
+			"type": "string",
+			"default": ""
+		},
+		"headingLevel": {
+			"type": "number",
+			"default": 3
+		},
+		"openAllByDefault": {
+			"type": "boolean",
+			"default": false
+		},
+		"fontSize": {
+			"type": "string",
+			"default": "1.5rem"
+		}
+	},
+	"textdomain": "accordions",
+	"editorScript": "file:index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"viewScript": "file:./view.js"
+}

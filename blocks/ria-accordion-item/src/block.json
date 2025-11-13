@@ -1,0 +1,72 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "ria/accordion-item",
+	"version": "1.0.0",
+	"title": "Accordion Item",
+	"category": "ria",
+	"description": "An individual accordion item with expandable content",
+	"parent": [
+		"ria/accordion"
+	],
+	"supports": {
+		"html": false,
+		"reusable": false
+	},
+	"usesContext": [
+		"ria/accordion/iconPosition",
+		"ria/accordion/openIcon",
+		"ria/accordion/closeIcon",
+		"ria/accordion/iconSize",
+		"ria/accordion/iconColor",
+		"ria/accordion/titleTag",
+		"ria/accordion/titleSize",
+		"ria/accordion/titleColor",
+		"ria/accordion/titleBackgroundColor",
+		"ria/accordion/titleHoverColor",
+		"ria/accordion/contentColor",
+		"ria/accordion/contentBackgroundColor",
+		"ria/accordion/titlePadding",
+		"ria/accordion/contentPadding",
+		"ria/accordion/borderWidth",
+		"ria/accordion/borderStyle",
+		"ria/accordion/borderColor",
+		"ria/accordion/borderRadius",
+		"ria/accordion/boxShadow",
+		"ria/accordion/hoverShadow"
+	],
+	"attributes": {
+		"title": {
+			"type": "string",
+			"default": "Accordion Item"
+		},
+		"isOpen": {
+			"type": "boolean",
+			"default": false
+		},
+		"itemId": {
+			"type": "string",
+			"default": ""
+		},
+		"variant": {
+			"type": "string",
+			"default": "default"
+		},
+		"customColor": {
+			"type": "string",
+			"default": ""
+		},
+		"customBackgroundColor": {
+			"type": "string",
+			"default": ""
+		},
+		"customBorderColor": {
+			"type": "string",
+			"default": ""
+		}
+	},
+	"textdomain": "ria-accordion",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}

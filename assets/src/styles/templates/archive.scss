@@ -1,0 +1,246 @@
+.blog,
+.archive {
+  .latest-posts {
+    .layout-container {
+      &.has-3-columns {
+        ul {
+          @media screen and (min-width: $tablet) {
+            grid-template-columns: repeat(3, 1fr);
+          }
+        }
+      }
+    }
+
+    .article-title {
+      text-align: center;
+    }
+
+    ul {
+      display: grid;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      grid-template-columns: 1fr;
+      gap: 30px;
+
+      @media screen and (min-width: $tablet) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      li {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 2rem;
+        transition: all 0.2s ease-in-out;
+        color: var(--wp--custom--colors--black);
+        border: 1px solid var(--wp--custom--colors--black);
+        border-radius: 4px;
+        background-color: var(--wp--custom--colors--neutral-100);
+        box-shadow: 8px 8px 0 0 var(--wp--custom--colors--neutral-300);
+        gap: 1rem;
+
+        @media screen and (min-width: $tablet) {
+          // gap: 1rem;gap
+        }
+
+        &:focus,
+        &:hover {
+          border-color: var(--wp--custom--colors--red);
+          box-shadow: 8px 8px 0 0 var(--wp--custom--colors--primary-200);
+        }
+
+        a {
+          width: fit-content;
+          text-decoration: unset;
+          color: var(--wp--custom--colors--black);
+          border: unset;
+
+          &:focus,
+          &:hover {
+            text-decoration: underline;
+            border: unset;
+          }
+
+          //a11y
+          &:after {
+            position: absolute;
+            inset: 0;
+            display: block;
+            content: "";
+          }
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+          order: 3;
+          margin: unset;
+          padding: 0 2rem;
+          font-size: 20px;
+          font-weight: 600;
+          line-height: 1.4;
+
+          div {
+            // this dev is targeting the editor
+            display: inline-block;
+          }
+
+          span {
+            &::after {
+              display: inline-block;
+              width: 1rem;
+              height: 1rem;
+              margin-left: 0.75rem;
+              content: "";
+              transition: all 0.2s ease-in-out;
+              background-repeat: no-repeat;
+              background-position: bottom;
+              background-size: cover;
+              // position: absolute;
+              // background-image: url("../../images/svgs/arrow-right.svg");
+              filter: invert(30%) sepia(32%) saturate(3268%) hue-rotate(336deg) brightness(101%) contrast(90%);
+            }
+          }
+        }
+
+        .image-container+.meta-container {
+          margin-top: 0.5rem;
+        }
+
+        .image-container {
+          order: 1;
+
+          img {
+            display: block;
+            order: 1;
+            width: 100%;
+            height: auto;
+          }
+        }
+
+        .meta-container {
+          display: flex;
+          align-items: center;
+          order: 2;
+          width: fit-content;
+          margin: 2rem 2rem 0;
+          padding: 0.25rem 1rem;
+          font-weight: 600;
+          color: var(--wp--custom--colors--black);
+          border: 1px solid var(--wp--custom--colors--neutral-300);
+          border-radius: 50px;
+          background: var(--wp--custom--colors--white);
+          gap: 0.25rem;
+
+          time {
+            order: 2;
+            font-weight: 400;
+
+            // &:before {
+            // This is used only if events are enabled
+            // content: "When:";Thisisusedonlyifeventsareenabledcontent
+            // margin-right: .25rem;margin-right
+            // font-weight: 600;font-weight
+            // }
+          }
+
+          .meta-divider {
+            color: var(--wp--custom--colors--neutral-200);
+          }
+        }
+
+        .excerpt {
+          order: 4;
+          padding: 0 2rem;
+          font-size: 16px;
+          line-height: 1.6;
+
+          p {
+            // this paragraph is targeting the editor
+            margin: 0;
+            padding: 0;
+          }
+        }
+      }
+    }
+  }
+
+  .d-flex {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  // Pagination
+  .navigation.pagination {
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+
+      .page-numbers {
+        color: var(--wp--custom--colors--black);
+
+        &.current {
+          font-weight: 700;
+        }
+
+        &.prev {
+          width: 1.35rem;
+          height: 1.35rem;
+          transform: rotate(180deg);
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: cover;
+          // background-image: url("../../images/svgs/chevron-right.svg");
+        }
+
+        &.next {
+          width: 1.35rem;
+          height: 1.35rem;
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: cover;
+          // background-image: url("../../images/svgs/chevron-right.svg");
+        }
+      }
+    }
+  }
+
+  // Events
+  &.post-type-archive-event {
+    .current-events-link,
+    .past-events-link {
+      padding-bottom: 5px;
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 28px;
+      text-decoration: none;
+      color: var(--wp--custom--colors--red);
+      border-bottom: 1px solid var(--wp--custom--colors--red);
+
+      &::after {
+        display: inline-block;
+        width: .875rem;
+        height: .875rem;
+        margin-left: 0.75rem;
+        content: "";
+        transition: all 0.2s ease-in-out;
+        background-repeat: no-repeat;
+        background-position: bottom;
+        background-size: cover;
+        // position: absolute;
+        // background-image: url("../../../assets/images/svgs/arrow-right.svg");
+        filter: invert(30%) sepia(32%) saturate(3268%) hue-rotate(336deg) brightness(101%) contrast(90%);
+      }
+
+      &:focus,
+      &:hover {
+        // border-bottom: 1px solid transparent;
+      }
+    }
+  }
+}

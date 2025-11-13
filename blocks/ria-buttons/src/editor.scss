@@ -1,0 +1,63 @@
+/**
+ * RIA Button Group - Editor Styles
+ */
+
+.wp-block-ria-button-group {
+	display: flex;
+	position: relative;
+
+	// Horizontal layout (default)
+	&.button-group-horizontal {
+		flex-direction: row;
+
+		&.wrap {
+			flex-wrap: wrap;
+		}
+
+		&.align-start {
+			justify-content: flex-start;
+		}
+
+		&.align-center {
+			justify-content: center;
+		}
+
+		&.align-end {
+			justify-content: flex-end;
+		}
+
+		&.align-space-between {
+			justify-content: space-between;
+		}
+	}
+
+	// Vertical layout
+	&.button-group-vertical {
+		flex-direction: column;
+
+		&.align-start {
+			align-items: flex-start;
+		}
+
+		&.align-center {
+			align-items: center;
+		}
+
+		&.align-end {
+			align-items: flex-end;
+		}
+
+		&.align-space-between {
+			justify-content: space-between;
+		}
+	}
+
+	// Editor-specific: show placeholder when empty
+	.block-editor-inner-blocks {
+		width: 100%;
+	}
+
+	.block-list-appender {
+		margin-top: 8px;
+	}
+}

@@ -1,0 +1,37 @@
+{
+	"name": "riapress-theme",
+	"version": "4.4.0",
+	"description": "RIAPress FSE Block Theme",
+	"author": "Rob Hudson",
+	"license": "GPL-2.0-or-later",
+	"scripts": {
+		"build": "wp-scripts build --webpack-src-dir=blocks --output-path=blocks",
+		"build:renamed": "npm run build:profile-card && npm run build:stats && npm run build:stat-card && npm run build:buttons",
+		"build:8blocks": "npm run build:profile-card && npm run build:resource-card && npm run build:event-card && npm run build:stats && npm run build:quote && npm run build:link-list && npm run build:contact-info && npm run build:modal",
+		"build:profile-card": "wp-scripts build blocks/ria-profile-card/src/index.js --output-path=blocks/ria-profile-card/build",
+		"build:resource-card": "wp-scripts build blocks/ria-resource-card/src/index.js --output-path=blocks/ria-resource-card/build && copy blocks\\ria-resource-card\\src\\block.json blocks\\ria-resource-card\\build\\block.json",
+		"build:event-card": "wp-scripts build blocks/ria-event-card/src/index.js --output-path=blocks/ria-event-card/build",
+		"build:stats": "wp-scripts build blocks/ria-stats/src/index.js --output-path=blocks/ria-stats/build",
+		"build:stat-card": "wp-scripts build blocks/ria-stat-card/src/index.js --output-path=blocks/ria-stat-card/build",
+		"build:buttons": "wp-scripts build blocks/ria-buttons/src/index.js --output-path=blocks/ria-buttons/build",
+		"build:quote": "wp-scripts build blocks/ria-quote/src/index.js --output-path=blocks/ria-quote/build && copy blocks\\ria-quote\\src\\block.json blocks\\ria-quote\\build\\block.json",
+		"build:link-list": "wp-scripts build blocks/ria-link-list/src/index.js --output-path=blocks/ria-link-list/build",
+		"build:contact-info": "wp-scripts build blocks/ria-contact-info/src/index.js --output-path=blocks/ria-contact-info/build",
+		"build:modal": "wp-scripts build blocks/ria-modal/src/index.js --output-path=blocks/ria-modal/build",
+		"start": "wp-scripts start",
+		"lint:js": "wp-scripts lint-js",
+		"lint:css": "wp-scripts lint-style",
+		"format": "wp-scripts format"
+	},
+	"devDependencies": {
+		"@wordpress/scripts": "^27.0.0"
+	},
+	"dependencies": {
+		"@wordpress/block-editor": "^13.1.0",
+		"@wordpress/blocks": "^13.1.0",
+		"@wordpress/components": "^28.1.0",
+		"@wordpress/element": "^6.1.0",
+		"@wordpress/i18n": "^5.1.0",
+		"@wordpress/icons": "^10.1.0"
+	}
+}

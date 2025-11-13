@@ -1,0 +1,58 @@
+/**
+ * RIA Tooltip - Editor Styles
+ */
+
+.wp-block-ria-tooltip {
+	// Editor wrapper
+	& {
+		padding: 16px;
+		border: 1px dashed #ddd;
+		border-radius: 4px;
+		background-color: #f9f9f9;
+	}
+
+	// Trigger wrapper in editor
+	.tooltip-trigger-wrapper {
+		display: block;
+		margin-bottom: 12px;
+	}
+
+	// Tooltip preview in editor
+	.tooltip-content {
+		position: relative;
+		display: block;
+		margin-top: 12px;
+		opacity: 0.9;
+		visibility: visible;
+		pointer-events: none;
+
+		&::before {
+			content: 'Tooltip Preview:';
+			display: block;
+			font-size: 10px;
+			opacity: 0.6;
+			margin-bottom: 4px;
+			text-transform: uppercase;
+			letter-spacing: 0.5px;
+			font-weight: 600;
+		}
+
+		// Hide arrow in editor
+		.tooltip-arrow {
+			display: none;
+		}
+	}
+
+	// Preview note styling
+	.tooltip-preview-note {
+		display: block;
+		margin-top: 12px;
+		padding: 8px 12px;
+		background-color: #e7f3ff;
+		border-left: 3px solid #2196f3;
+		font-size: 12px;
+		color: #1976d2;
+		font-style: normal;
+		border-radius: 4px;
+	}
+}

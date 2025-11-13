@@ -1,0 +1,139 @@
+/**
+ * RIA Stats Group - Editor Styles
+ * Styles for the block editor interface
+ */
+
+.wp-block-ria-stats-group,
+.ria-stats-group {
+	display: grid;
+	width: 100%;
+
+	// Use CSS variables for responsive columns
+	grid-template-columns: repeat(var(--stats-columns, 3), 1fr);
+	gap: var(--stats-gap, 24px);
+
+	// Alignment classes
+	&.align-left {
+		text-align: left;
+	}
+
+	&.align-center {
+		text-align: center;
+	}
+
+	&.align-right {
+		text-align: right;
+	}
+
+	// Vertical alignment
+	&.valign-top {
+		align-items: flex-start;
+	}
+
+	&.valign-center {
+		align-items: center;
+	}
+
+	&.valign-bottom {
+		align-items: flex-end;
+	}
+
+	&.valign-stretch {
+		align-items: stretch;
+
+		> * {
+			height: 100%;
+		}
+	}
+
+	// Equal height items
+	&.equal-height {
+		> * {
+			display: flex;
+			flex-direction: column;
+		}
+	}
+
+	// Dividers between items
+	&.has-dividers {
+		> *:not(:last-child) {
+			position: relative;
+
+			&::after {
+				content: '';
+				position: absolute;
+				right: calc(var(--stats-gap, 24px) / -2);
+				top: 10%;
+				height: 80%;
+				width: var(--divider-width, 1px);
+				background-color: var(--divider-color, #e5e7eb);
+				border-style: var(--divider-style, solid);
+			}
+		}
+	}
+
+	// Style variants
+	&.style-default {
+		// Default style - minimal
+	}
+
+	&.style-cards {
+		> * {
+			padding: 2rem;
+			background-color: var(--card-bg-color, #ffffff);
+			border-radius: var(--border-radius, 8px);
+			box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+		}
+	}
+
+	&.style-minimal {
+		> * {
+			padding: 1rem 0;
+		}
+	}
+
+	&.style-bordered {
+		> * {
+			padding: 2rem;
+			border: 1px solid var(--border-color, #e5e7eb);
+			border-radius: var(--border-radius, 8px);
+		}
+	}
+
+	&.style-background {
+		padding: 3rem;
+		background-color: var(--bg-color, #f9fafb);
+		border-radius: var(--border-radius, 8px);
+
+		> * {
+			padding: 1.5rem;
+			background-color: var(--card-bg-color, #ffffff);
+			border-radius: calc(var(--border-radius, 8px) / 2);
+		}
+	}
+
+	// Editor-specific placeholder
+	.block-editor-inner-blocks > .block-editor-block-list__layout {
+		display: contents;
+	}
+}
+
+// Responsive breakpoints (for editor preview)
+@media (max-width: 1024px) {
+	.wp-block-ria-stats-group,
+	.ria-stats-group {
+		grid-template-columns: repeat(var(--stats-columns-tablet, 2), 1fr);
+	}
+}
+
+@media (max-width: 768px) {
+	.wp-block-ria-stats-group,
+	.ria-stats-group {
+		grid-template-columns: repeat(var(--stats-columns-mobile, 1), 1fr);
+
+		// Hide dividers on mobile for better readability
+		&.has-dividers > *::after {
+			display: none;
+		}
+	}
+}

@@ -1,0 +1,187 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "ria/card",
+	"version": "0.1.0",
+	"title": "RIA Card",
+	"category": "ria",
+	"icon": "admin-page",
+	"description": "A flexible card combining image, heading, text, and button atoms.",
+	"keywords": [
+		"card",
+		"molecule",
+		"component",
+		"content",
+		"image"
+	],
+	"supports": {
+		"html": false,
+		"align": true,
+		"spacing": {
+			"margin": true,
+			"padding": false
+		}
+	},
+	"attributes": {
+		"variant": {
+			"type": "string",
+			"default": "neutral"
+		},
+		"customBackgroundColor": {
+			"type": "string",
+			"default": ""
+		},
+		"customBorderColor": {
+			"type": "string",
+			"default": ""
+		},
+		"layout": {
+			"type": "string",
+			"default": "vertical"
+		},
+		"imagePosition": {
+			"type": "string",
+			"default": "top"
+		},
+		"imageId": {
+			"type": "number",
+			"default": 0
+		},
+		"imageUrl": {
+			"type": "string",
+			"default": ""
+		},
+		"imageAlt": {
+			"type": "string",
+			"default": ""
+		},
+		"imageAspectRatio": {
+			"type": "string",
+			"default": "16/9"
+		},
+		"imageObjectFit": {
+			"type": "string",
+			"default": "cover"
+		},
+		"imageOverlayColor": {
+			"type": "string",
+			"default": ""
+		},
+		"imageOverlayOpacity": {
+			"type": "number",
+			"default": 0
+		},
+		"showImage": {
+			"type": "boolean",
+			"default": true
+		},
+		"headingText": {
+			"type": "string",
+			"default": "Card Heading"
+		},
+		"headingLevel": {
+			"type": "number",
+			"default": 3
+		},
+		"headingColor": {
+			"type": "string",
+			"default": ""
+		},
+		"bodyText": {
+			"type": "string",
+			"default": "Add your card description here. This text supports basic formatting."
+		},
+		"textColor": {
+			"type": "string",
+			"default": ""
+		},
+		"buttonText": {
+			"type": "string",
+			"default": "Learn More"
+		},
+		"buttonUrl": {
+			"type": "string",
+			"default": ""
+		},
+		"buttonStyle": {
+			"type": "string",
+			"default": "primary"
+		},
+		"buttonTarget": {
+			"type": "string",
+			"default": "_self"
+		},
+		"showButton": {
+			"type": "boolean",
+			"default": true
+		},
+		"contentAlignment": {
+			"type": "string",
+			"default": "left"
+		},
+		"verticalAlignment": {
+			"type": "string",
+			"default": "top"
+		},
+		"backgroundColor": {
+			"type": "string",
+			"default": "#ffffff"
+		},
+		"borderRadius": {
+			"type": "number",
+			"default": 8
+		},
+		"borderWidth": {
+			"type": "number",
+			"default": 1
+		},
+		"borderColor": {
+			"type": "string",
+			"default": "#e5e7eb"
+		},
+		"borderStyle": {
+			"type": "string",
+			"default": "solid"
+		},
+		"boxShadow": {
+			"type": "string",
+			"default": "small"
+		},
+		"paddingTop": {
+			"type": "number",
+			"default": 24
+		},
+		"paddingRight": {
+			"type": "number",
+			"default": 24
+		},
+		"paddingBottom": {
+			"type": "number",
+			"default": 24
+		},
+		"paddingLeft": {
+			"type": "number",
+			"default": 24
+		},
+		"hoverElevation": {
+			"type": "boolean",
+			"default": true
+		},
+		"makeEntireCardClickable": {
+			"type": "boolean",
+			"default": false
+		},
+		"imageWidth": {
+			"type": "number",
+			"default": 40
+		},
+		"customColor": {
+			"type": "string",
+			"default": ""
+		}
+	},
+	"textdomain": "ria-card",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}

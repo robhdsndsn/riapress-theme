@@ -1,0 +1,29 @@
+{
+	"name": "rp-address",
+	"version": "0.1.0",
+	"description": "This is a block to place an address",
+	"author": "Kobayashi + Zeitguys",
+	"license": "GPL-2.0-or-later",
+	"main": "build/index.js",
+	"scripts": {
+		"build": "wp-scripts build",
+		"format": "wp-scripts format",
+		"lint:css": "wp-scripts lint-style",
+		"lint:js": "wp-scripts lint-js",
+		"packages-update": "wp-scripts packages-update",
+		"plugin-zip": "wp-scripts plugin-zip",
+		"start": "wp-scripts start",
+		"make-pot": "wp i18n make-pot . languages/address.pot --slug=address --domain=address --exclude=node_modules,src",
+		"make-json": "wp i18n make-json languages/ --no-purge"
+	},
+	"devDependencies": {
+		"@wordpress/scripts": "^27.0.0"
+	},
+	"dependencies": {
+		"@wordpress/blob": "^4.1.0",
+		"@wordpress/components": "^28.1.0",
+		"@wordpress/compose": "^7.1.0",
+		"@wordpress/data": "^10.1.0",
+		"@wordpress/element": "^6.1.0"
+	}
+}

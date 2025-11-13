@@ -1,0 +1,26 @@
+// SCSS for .wp-block-gregius-query-clear and its button
+
+
+.wp-block-gregius-query-clear {
+  display: flex;
+
+  button {
+    all: unset;
+    display: inline-block;
+    padding: unset;
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    &:focus-visible {
+      outline: 2px solid currentColor;
+      outline-offset: 2px;
+      border-radius: .25em;
+    }
+  }
+}

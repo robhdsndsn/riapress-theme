@@ -1,0 +1,8 @@
+h1,
+h2 {
+  transition: var(--wp--custom--transitions--default);
+}
+
+a:where(:not(.wp-element-button)) {
+  transition: var(--wp--custom--transitions--default);
+}

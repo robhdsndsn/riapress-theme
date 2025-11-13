@@ -1,0 +1,177 @@
+/**
+ * Block Shadow System
+ * Box shadow presets for RIAPress blocks
+ *
+ * @package RIA
+ * @version 1.0.0
+ * @author Rob Hudson
+ * @date 2025-11-03
+ */
+
+/* ==========================================================================
+   Box Shadow Presets
+   ========================================================================== */
+
+/* None - No shadow */
+.ria-shadow-none {
+  box-shadow: none !important;
+}
+
+/* Small - Subtle elevation */
+.ria-shadow-small {
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1),
+              0 1px 2px 0 rgba(0, 0, 0, 0.06) !important;
+}
+
+/* Medium - Moderate elevation */
+.ria-shadow-medium {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+              0 2px 4px -1px rgba(0, 0, 0, 0.06) !important;
+}
+
+/* Large - High elevation */
+.ria-shadow-large {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+              0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
+}
+
+/* XL - Maximum elevation */
+.ria-shadow-xl {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+              0 10px 10px -5px rgba(0, 0, 0, 0.04) !important;
+}
+
+/* 2XL - Premium elevation */
+.ria-shadow-2xl {
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25) !important;
+}
+
+/* Inner - Inset shadow */
+.ria-shadow-inner {
+  box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06) !important;
+}
+
+/* ==========================================================================
+   Hover Shadow States
+   ========================================================================== */
+
+/* Small hover */
+.ria-hover-shadow-small:hover {
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1),
+              0 1px 2px 0 rgba(0, 0, 0, 0.06) !important;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+/* Medium hover */
+.ria-hover-shadow-medium:hover {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+              0 2px 4px -1px rgba(0, 0, 0, 0.06) !important;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+/* Large hover */
+.ria-hover-shadow-large:hover {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+              0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+/* XL hover */
+.ria-hover-shadow-xl:hover {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+              0 10px 10px -5px rgba(0, 0, 0, 0.04) !important;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+/* Lift hover effect */
+.ria-hover-shadow-lift:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.15),
+              0 4px 6px -2px rgba(0, 0, 0, 0.08) !important;
+  transition: all 0.3s ease-in-out;
+}
+
+/* ==========================================================================
+   Border Utilities
+   ========================================================================== */
+
+/* Border styles */
+.ria-border-solid { border-style: solid; }
+.ria-border-dashed { border-style: dashed; }
+.ria-border-dotted { border-style: dotted; }
+.ria-border-double { border-style: double; }
+.ria-border-none { border-style: none; }
+
+/* Border radius presets */
+.ria-radius-none { border-radius: 0; }
+.ria-radius-sm { border-radius: 4px; }
+.ria-radius-md { border-radius: 8px; }
+.ria-radius-lg { border-radius: 12px; }
+.ria-radius-xl { border-radius: 16px; }
+.ria-radius-2xl { border-radius: 24px; }
+.ria-radius-full { border-radius: 9999px; }
+
+/* ==========================================================================
+   Transition Utilities
+   ========================================================================== */
+
+/* Smooth transitions for shadows */
+.ria-shadow-transition {
+  transition: box-shadow 0.3s ease-in-out,
+              transform 0.3s ease-in-out;
+}
+
+/* Fast transitions */
+.ria-shadow-transition-fast {
+  transition: box-shadow 0.15s ease-in-out,
+              transform 0.15s ease-in-out;
+}
+
+/* Slow transitions */
+.ria-shadow-transition-slow {
+  transition: box-shadow 0.6s ease-in-out,
+              transform 0.6s ease-in-out;
+}
+
+/* ==========================================================================
+   Focus States
+   ========================================================================== */
+
+/* Accessible focus rings */
+.ria-focus-ring:focus {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+}
+
+.ria-focus-ring:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+}
+
+/* ==========================================================================
+   Colored Shadows (Optional Premium Effects)
+   ========================================================================== */
+
+/* Primary color shadow */
+.ria-shadow-primary {
+  box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.3),
+              0 4px 6px -2px rgba(37, 99, 235, 0.15) !important;
+}
+
+/* Success color shadow */
+.ria-shadow-success {
+  box-shadow: 0 10px 15px -3px rgba(34, 197, 94, 0.3),
+              0 4px 6px -2px rgba(34, 197, 94, 0.15) !important;
+}
+
+/* Warning color shadow */
+.ria-shadow-warning {
+  box-shadow: 0 10px 15px -3px rgba(245, 158, 11, 0.3),
+              0 4px 6px -2px rgba(245, 158, 11, 0.15) !important;
+}
+
+/* Error color shadow */
+.ria-shadow-error {
+  box-shadow: 0 10px 15px -3px rgba(239, 68, 68, 0.3),
+              0 4px 6px -2px rgba(239, 68, 68, 0.15) !important;
+}

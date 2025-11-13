@@ -1,0 +1,26 @@
+{
+	"name": "offcanvas",
+	"version": "0.1.0",
+	"description": "An offcanvas area",
+	"author": "Hector Jarquin and Tomas Llobet-Arany",
+	"license": "GPL-2.0-or-later",
+	"main": "build/index.js",
+	"scripts": {
+		"build": "wp-scripts build --experimental-modules",
+		"format": "wp-scripts format && stylelint \"**/*.scss\" --fix",
+		"lint:css": "wp-scripts lint-style --fix",
+		"lint:js": "wp-scripts lint-js",
+		"packages-update": "wp-scripts packages-update",
+		"start": "wp-scripts start --experimental-modules",
+		"make-pot": "wp i18n make-pot . languages/offcanvas.pot --slug=offcanvas --domain=offcanvas --exclude=node_modules,src",
+		"make-json": "wp i18n make-json languages/ --no-purge"
+	},
+	"devDependencies": {
+		"@wordpress/scripts": "^28.6.0"
+	},
+	"dependencies": {
+		"@wordpress/element": "^6.1.0",
+		"@wordpress/components": "^27.0.0",
+		"@wordpress/data": "^10.1.0"
+	}
+}

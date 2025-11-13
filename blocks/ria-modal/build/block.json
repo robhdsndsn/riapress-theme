@@ -1,0 +1,248 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "ria/modal",
+	"version": "1.0.0",
+	"title": "RIA Modal/Popup",
+	"category": "ria",
+	"icon": "welcome-view-site",
+	"description": "Create a button or link that opens content in a modal popup. Perfect for forms, videos, and content previews.",
+	"keywords": [
+		"modal",
+		"popup",
+		"lightbox",
+		"dialog",
+		"overlay",
+		"trigger",
+		"button"
+	],
+	"supports": {
+		"html": false,
+		"align": false,
+		"spacing": {
+			"margin": true,
+			"padding": false
+		}
+	},
+	"attributes": {
+		"variant": {
+			"type": "string",
+			"default": "neutral"
+		},
+		"customBackgroundColor": {
+			"type": "string",
+			"default": ""
+		},
+		"customBorderColor": {
+			"type": "string",
+			"default": ""
+		},
+		"triggerType": {
+			"type": "string",
+			"default": "button",
+			"enum": [
+				"button",
+				"link",
+				"image",
+				"icon"
+			]
+		},
+		"triggerText": {
+			"type": "string",
+			"default": "Open Modal"
+		},
+		"triggerButtonStyle": {
+			"type": "string",
+			"default": "primary",
+			"enum": [
+				"primary",
+				"secondary",
+				"tertiary",
+				"outline-primary",
+				"outline-secondary",
+				"outline-tertiary",
+				"ghost",
+				"link",
+				"custom"
+			]
+		},
+		"triggerButtonSize": {
+			"type": "string",
+			"default": "medium",
+			"enum": [
+				"small",
+				"medium",
+				"large"
+			]
+		},
+		"triggerIcon": {
+			"type": "string",
+			"default": ""
+		},
+		"triggerIconPosition": {
+			"type": "string",
+			"default": "left",
+			"enum": [
+				"left",
+				"right",
+				"none"
+			]
+		},
+		"triggerImageId": {
+			"type": "number",
+			"default": 0
+		},
+		"triggerImageUrl": {
+			"type": "string",
+			"default": ""
+		},
+		"modalSize": {
+			"type": "string",
+			"default": "medium",
+			"enum": [
+				"small",
+				"medium",
+				"large",
+				"xlarge",
+				"full"
+			]
+		},
+		"modalTitle": {
+			"type": "string",
+			"default": ""
+		},
+		"showModalTitle": {
+			"type": "boolean",
+			"default": true
+		},
+		"modalContentType": {
+			"type": "string",
+			"default": "custom",
+			"enum": [
+				"custom",
+				"video",
+				"image",
+				"form"
+			]
+		},
+		"videoUrl": {
+			"type": "string",
+			"default": ""
+		},
+		"imageId": {
+			"type": "number",
+			"default": 0
+		},
+		"imageUrl": {
+			"type": "string",
+			"default": ""
+		},
+		"formId": {
+			"type": "number",
+			"default": 0
+		},
+		"overlayColor": {
+			"type": "string",
+			"default": "rgba(0, 0, 0, 0.8)"
+		},
+		"closeOnOverlayClick": {
+			"type": "boolean",
+			"default": true
+		},
+		"closeOnEscape": {
+			"type": "boolean",
+			"default": true
+		},
+		"showCloseButton": {
+			"type": "boolean",
+			"default": true
+		},
+		"closeButtonStyle": {
+			"type": "string",
+			"default": "default",
+			"enum": [
+				"default",
+				"minimal",
+				"circle"
+			]
+		},
+		"modalBorderRadius": {
+			"type": "number",
+			"default": 8
+		},
+		"modalBoxShadow": {
+			"type": "string",
+			"default": "2xl"
+		},
+		"triggerAlignment": {
+			"type": "string",
+			"default": "left",
+			"enum": [
+				"left",
+				"center",
+				"right"
+			]
+		},
+		"borderWidth": {
+			"type": "number",
+			"default": 0
+		},
+		"borderStyle": {
+			"type": "string",
+			"default": "solid"
+		},
+		"borderColor": {
+			"type": "string",
+			"default": "#e5e7eb"
+		},
+		"borderRadius": {
+			"type": "number",
+			"default": 4
+		},
+		"boxShadow": {
+			"type": "string",
+			"default": "none"
+		},
+		"hoverShadow": {
+			"type": "string",
+			"default": "small"
+		},
+		"animationEnabled": {
+			"type": "boolean",
+			"default": true
+		},
+		"animationType": {
+			"type": "string",
+			"default": "fadeInUp"
+		},
+		"animationDuration": {
+			"type": "number",
+			"default": 0.6
+		},
+		"animationDelay": {
+			"type": "number",
+			"default": 0
+		},
+		"animationEasing": {
+			"type": "string",
+			"default": "ease-out"
+		},
+		"hoverAnimation": {
+			"type": "string",
+			"default": "none"
+		},
+		"customTextColor": {
+			"type": "string",
+			"default": ""
+		},
+		"customColor": {
+			"type": "string",
+			"default": ""
+		}
+	},
+	"textdomain": "ria-modal",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"viewScript": "file:./view.js"
+}

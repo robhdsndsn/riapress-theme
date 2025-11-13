@@ -1,0 +1,187 @@
+/**
+ * RIA Button Group - Frontend Styles
+ * Shadcn-inspired connected buttons
+ */
+
+.wp-block-ria-button-group {
+	display: flex;
+	position: relative;
+
+	// Horizontal layout (default)
+	&.button-group-horizontal {
+		flex-direction: row;
+
+		&.wrap {
+			flex-wrap: wrap;
+		}
+
+		&.align-start {
+			justify-content: flex-start;
+		}
+
+		&.align-center {
+			justify-content: center;
+		}
+
+		&.align-end {
+			justify-content: flex-end;
+		}
+
+		&.align-space-between {
+			justify-content: space-between;
+		}
+
+		// Connected buttons (gap: 0) - shadcn style
+		&:not([style*="gap"]) {
+			.wp-block-ria-button {
+				// Remove individual button border-radius
+				.ria-button {
+					border-radius: 0;
+				}
+
+				// First button: left rounded corners
+				&:first-child .ria-button {
+					border-top-left-radius: 6px;
+					border-bottom-left-radius: 6px;
+				}
+
+				// Last button: right rounded corners
+				&:last-child .ria-button {
+					border-top-right-radius: 6px;
+					border-bottom-right-radius: 6px;
+				}
+
+				// Remove left border for connected appearance (except first)
+				&:not(:first-child) .ria-button {
+					margin-left: -1px;
+				}
+			}
+		}
+	}
+
+	// Vertical layout
+	&.button-group-vertical {
+		flex-direction: column;
+
+		&.align-start {
+			align-items: flex-start;
+		}
+
+		&.align-center {
+			align-items: center;
+		}
+
+		&.align-end {
+			align-items: flex-end;
+		}
+
+		&.align-space-between {
+			justify-content: space-between;
+		}
+
+		// Connected buttons (gap: 0) - shadcn style
+		&:not([style*="gap"]) {
+			.wp-block-ria-button {
+				width: 100%;
+
+				// Remove individual button border-radius
+				.ria-button {
+					border-radius: 0;
+					width: 100%;
+				}
+
+				// First button: top rounded corners
+				&:first-child .ria-button {
+					border-top-left-radius: 6px;
+					border-top-right-radius: 6px;
+				}
+
+				// Last button: bottom rounded corners
+				&:last-child .ria-button {
+					border-bottom-left-radius: 6px;
+					border-bottom-right-radius: 6px;
+				}
+
+				// Remove top border for connected appearance (except first)
+				&:not(:first-child) .ria-button {
+					margin-top: -1px;
+				}
+			}
+		}
+	}
+
+	// Ensure buttons display properly
+	.wp-block-ria-button {
+		display: inline-block;
+	}
+
+	// Color Variants
+	&.has-primary-variant {
+		background-color: var(--color-primary-100);
+		border-color: var(--color-primary-300);
+		padding: 8px;
+		border-radius: 8px;
+		border-width: 1px;
+		border-style: solid;
+	}
+
+	&.has-secondary-variant {
+		background-color: var(--color-secondary-100);
+		border-color: var(--color-secondary-300);
+		padding: 8px;
+		border-radius: 8px;
+		border-width: 1px;
+		border-style: solid;
+	}
+
+	&.has-accent-variant {
+		background-color: var(--color-accent-100);
+		border-color: var(--color-accent-300);
+		padding: 8px;
+		border-radius: 8px;
+		border-width: 1px;
+		border-style: solid;
+	}
+
+	&.has-neutral-variant {
+		background-color: var(--color-neutral-100);
+		border-color: var(--color-neutral-300);
+		padding: 8px;
+		border-radius: 8px;
+		border-width: 1px;
+		border-style: solid;
+	}
+
+	// Custom colors
+	&.has-custom-colors {
+		color: var(--custom-color, currentColor);
+		background-color: var(--custom-background-color, transparent);
+		border-color: var(--custom-border-color, currentColor);
+		padding: 8px;
+		border-radius: 8px;
+		border-width: 1px;
+		border-style: solid;
+	}
+}
+
+// Responsive: Stack horizontal groups on mobile
+@media (max-width: 640px) {
+	.wp-block-ria-button-group.button-group-horizontal.wrap {
+		flex-direction: column;
+
+		.wp-block-ria-button {
+			width: 100%;
+
+			.ria-button {
+				width: 100%;
+			}
+		}
+	}
+}
+
+// Accessibility
+@media (prefers-reduced-motion: reduce) {
+	.wp-block-ria-button-group * {
+		transition: none !important;
+	}
+}

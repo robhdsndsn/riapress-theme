@@ -1,0 +1,17 @@
+.wp-block-media-text {
+  overflow: hidden;
+  border-radius: 12px;
+
+  .wp-block-media-text__content {
+    padding-top: var(--wp--style--block-gap);
+    padding-bottom: var(--wp--style--block-gap);
+  }
+
+  &.is-image-fill {
+    .wp-block-media-text__content {
+      padding-top: calc(var(--wp--style--block-gap) * 2);
+      padding-bottom: calc(var(--wp--style--block-gap) * 2);
+    }
+  }
+
+}

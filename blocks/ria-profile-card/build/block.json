@@ -1,0 +1,239 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "ria/profile-card",
+	"version": "1.0.0",
+	"title": "RIA Profile Card",
+	"category": "ria",
+	"icon": "admin-users",
+	"description": "Display researcher or staff member profile with photo, credentials, bio, and contact information.",
+	"keywords": [
+		"person",
+		"profile",
+		"researcher",
+		"staff",
+		"bio",
+		"team",
+		"member"
+	],
+	"supports": {
+		"html": false,
+		"align": false,
+		"spacing": {
+			"margin": true,
+			"padding": true
+		}
+	},
+	"attributes": {
+		"variant": {
+			"type": "string",
+			"default": "default"
+		},
+		"customBackgroundColor": {
+			"type": "string",
+			"default": ""
+		},
+		"customBorderColor": {
+			"type": "string",
+			"default": ""
+		},
+		"personId": {
+			"type": "number",
+			"default": 0
+		},
+		"layout": {
+			"type": "string",
+			"default": "vertical",
+			"enum": [
+				"vertical",
+				"horizontal",
+				"compact",
+				"card"
+			]
+		},
+		"photoId": {
+			"type": "number",
+			"default": 0
+		},
+		"photoUrl": {
+			"type": "string",
+			"default": ""
+		},
+		"photoShape": {
+			"type": "string",
+			"default": "circle",
+			"enum": [
+				"circle",
+				"square",
+				"rounded"
+			]
+		},
+		"photoSize": {
+			"type": "number",
+			"default": 150
+		},
+		"name": {
+			"type": "string",
+			"default": ""
+		},
+		"credentials": {
+			"type": "string",
+			"default": ""
+		},
+		"title": {
+			"type": "string",
+			"default": ""
+		},
+		"organization": {
+			"type": "string",
+			"default": ""
+		},
+		"bio": {
+			"type": "string",
+			"default": ""
+		},
+		"bioLength": {
+			"type": "string",
+			"default": "excerpt",
+			"enum": [
+				"full",
+				"excerpt",
+				"custom"
+			]
+		},
+		"customBioLength": {
+			"type": "number",
+			"default": 150
+		},
+		"email": {
+			"type": "string",
+			"default": ""
+		},
+		"phone": {
+			"type": "string",
+			"default": ""
+		},
+		"website": {
+			"type": "string",
+			"default": ""
+		},
+		"academicProfile": {
+			"type": "string",
+			"default": ""
+		},
+		"researchTopics": {
+			"type": "array",
+			"default": []
+		},
+		"showPhoto": {
+			"type": "boolean",
+			"default": true
+		},
+		"showCredentials": {
+			"type": "boolean",
+			"default": true
+		},
+		"showTitle": {
+			"type": "boolean",
+			"default": true
+		},
+		"showOrganization": {
+			"type": "boolean",
+			"default": true
+		},
+		"showBio": {
+			"type": "boolean",
+			"default": true
+		},
+		"showEmail": {
+			"type": "boolean",
+			"default": true
+		},
+		"showPhone": {
+			"type": "boolean",
+			"default": false
+		},
+		"showWebsite": {
+			"type": "boolean",
+			"default": true
+		},
+		"showAcademicProfile": {
+			"type": "boolean",
+			"default": true
+		},
+		"showResearchTopics": {
+			"type": "boolean",
+			"default": true
+		},
+		"linkToProfile": {
+			"type": "boolean",
+			"default": true
+		},
+		"profileUrl": {
+			"type": "string",
+			"default": ""
+		},
+		"textAlignment": {
+			"type": "string",
+			"default": "left",
+			"enum": [
+				"left",
+				"center",
+				"right"
+			]
+		},
+		"borderWidth": {
+			"type": "number",
+			"default": 1
+		},
+		"borderStyle": {
+			"type": "string",
+			"default": "solid"
+		},
+		"borderRadius": {
+			"type": "number",
+			"default": 8
+		},
+		"boxShadow": {
+			"type": "string",
+			"default": "small"
+		},
+		"hoverShadow": {
+			"type": "string",
+			"default": "medium"
+		},
+		"animationEnabled": {
+			"type": "boolean",
+			"default": true
+		},
+		"animationType": {
+			"type": "string",
+			"default": "fadeInUp"
+		},
+		"animationDuration": {
+			"type": "number",
+			"default": 0.6
+		},
+		"animationDelay": {
+			"type": "number",
+			"default": 0
+		},
+		"animationEasing": {
+			"type": "string",
+			"default": "ease-out"
+		},
+		"hoverAnimation": {
+			"type": "string",
+			"default": "none"
+		},
+		"customColor": {
+			"type": "string",
+			"default": ""
+		}
+	},
+	"textdomain": "riapress",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"viewScript": "file:./view.js"
+}

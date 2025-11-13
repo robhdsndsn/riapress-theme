@@ -1,0 +1,43 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "zp/address",
+  "version": "0.1.0",
+  "title": "Address",
+  "category": "text",
+  "icon": "location",
+  "description": "This is a block to place an address.",
+  "keywords": [
+    "address"
+  ],
+  "supports": {
+    "html": true,
+    "anchor": true,
+    "color": {
+      "background": false,
+      "text": true
+    }
+  },
+  "attributes": {
+    "variant": {
+      "type": "string",
+      "default": "default"
+    },
+    "customColor": {
+      "type": "string",
+      "default": ""
+    },
+    "customBackgroundColor": {
+      "type": "string",
+      "default": ""
+    },
+    "customBorderColor": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "textdomain": "address",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}

@@ -1,0 +1,10 @@
+/**
+ * RIA Tag Block - Editor Styles
+ */
+
+.wp-block-ria-tag {
+	// Editor-specific styles
+	&[href] {
+		cursor: pointer;
+	}
+}

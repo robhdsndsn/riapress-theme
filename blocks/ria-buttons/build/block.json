@@ -1,0 +1,76 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "ria/buttons",
+	"version": "1.0.0",
+	"title": "Buttons",
+	"category": "ria",
+	"icon": "editor-table",
+	"description": "Group multiple buttons together with consistent styling (shadcn-inspired)",
+	"keywords": [
+		"button",
+		"group",
+		"buttons",
+		"cta",
+		"actions"
+	],
+	"supports": {
+		"html": false,
+		"align": true,
+		"spacing": {
+			"margin": true,
+			"padding": false
+		}
+	},
+	"attributes": {
+		"orientation": {
+			"type": "string",
+			"default": "horizontal",
+			"enum": [
+				"horizontal",
+				"vertical"
+			]
+		},
+		"alignment": {
+			"type": "string",
+			"default": "start",
+			"enum": [
+				"start",
+				"center",
+				"end",
+				"space-between"
+			]
+		},
+		"gap": {
+			"type": "number",
+			"default": 0
+		},
+		"wrapButtons": {
+			"type": "boolean",
+			"default": true
+		},
+		"variant": {
+			"type": "string",
+			"default": "default"
+		},
+		"customColor": {
+			"type": "string",
+			"default": ""
+		},
+		"customBackgroundColor": {
+			"type": "string",
+			"default": ""
+		},
+		"customBorderColor": {
+			"type": "string",
+			"default": ""
+		}
+	},
+	"providesContext": {
+		"ria/buttonGroup/orientation": "orientation"
+	},
+	"textdomain": "riapress",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}

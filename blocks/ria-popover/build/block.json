@@ -1,0 +1,144 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "ria/popover",
+	"version": "1.0.0",
+	"title": "RIA Popover",
+	"category": "ria",
+	"description": "Display rich interactive content in a floating card - perfect for menus, filters, and contextual forms.",
+	"keywords": [
+		"popover",
+		"menu",
+		"dropdown",
+		"contextual",
+		"filter",
+		"shadcn"
+	],
+	"textdomain": "riapress",
+	"supports": {
+		"html": false,
+		"anchor": true,
+		"align": false,
+		"spacing": {
+			"margin": true,
+			"padding": false
+		}
+	},
+	"attributes": {
+		"triggerText": {
+			"type": "string",
+			"default": "Open"
+		},
+		"triggerType": {
+			"type": "string",
+			"default": "button",
+			"enum": [
+				"button",
+				"link",
+				"icon"
+			]
+		},
+		"triggerIcon": {
+			"type": "string",
+			"default": "menu"
+		},
+		"position": {
+			"type": "string",
+			"default": "bottom",
+			"enum": [
+				"top",
+				"right",
+				"bottom",
+				"left",
+				"top-start",
+				"top-end",
+				"bottom-start",
+				"bottom-end"
+			]
+		},
+		"align": {
+			"type": "string",
+			"default": "center",
+			"enum": [
+				"start",
+				"center",
+				"end"
+			]
+		},
+		"width": {
+			"type": "string",
+			"default": "320px"
+		},
+		"offset": {
+			"type": "number",
+			"default": 8
+		},
+		"showArrow": {
+			"type": "boolean",
+			"default": true
+		},
+		"closeOnOutsideClick": {
+			"type": "boolean",
+			"default": true
+		},
+		"closeOnEscape": {
+			"type": "boolean",
+			"default": true
+		},
+		"buttonVariant": {
+			"type": "string",
+			"default": "primary",
+			"enum": [
+				"primary",
+				"secondary",
+				"tertiary",
+				"outline-primary",
+				"outline-secondary",
+				"outline-tertiary",
+				"ghost",
+				"link",
+				"custom"
+			]
+		},
+		"buttonSize": {
+			"type": "string",
+			"default": "medium",
+			"enum": [
+				"small",
+				"medium",
+				"large"
+			]
+		},
+		"customBackgroundColor": {
+			"type": "string",
+			"default": ""
+		},
+		"customTextColor": {
+			"type": "string",
+			"default": ""
+		},
+		"customBorderColor": {
+			"type": "string",
+			"default": ""
+		},
+		"variant": {
+			"type": "string",
+			"default": "default"
+		},
+		"customColor": {
+			"type": "string",
+			"default": ""
+		}
+	},
+	"providesContext": {
+		"ria/popoverOpen": "isOpen"
+	},
+	"usesContext": [
+		"postId",
+		"postType"
+	],
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"viewScript": "file:./view.js"
+}

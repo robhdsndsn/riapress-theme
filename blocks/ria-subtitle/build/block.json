@@ -1,0 +1,105 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "ria/subtitle",
+  "version": "1.0.0",
+  "title": "RIA Subtitle",
+  "category": "text",
+  "icon": "editor-textcolor",
+  "description": "Display a subtitle or tagline with customizable styling.",
+  "keywords": [
+    "subtitle",
+    "tagline",
+    "subheading",
+    "caption",
+    "description"
+  ],
+  "supports": {
+    "html": false,
+    "anchor": true,
+    "spacing": {
+      "margin": true,
+      "padding": true
+    }
+  },
+  "attributes": {
+    "content": {
+      "type": "string",
+      "source": "html",
+      "selector": "p",
+      "default": ""
+    },
+    "fontSize": {
+      "type": "number",
+      "default": 18
+    },
+    "fontWeight": {
+      "type": "number",
+      "default": 400
+    },
+    "textColor": {
+      "type": "string",
+      "default": "#666666"
+    },
+    "textAlign": {
+      "type": "string",
+      "default": "left"
+    },
+    "textTransform": {
+      "type": "string",
+      "default": "none"
+    },
+    "letterSpacing": {
+      "type": "number",
+      "default": 0
+    },
+    "lineHeight": {
+      "type": "number",
+      "default": 1.6
+    },
+    "showBorder": {
+      "type": "boolean",
+      "default": false
+    },
+    "borderPosition": {
+      "type": "string",
+      "default": "left"
+    },
+    "borderColor": {
+      "type": "string",
+      "default": "#0073aa"
+    },
+    "borderWidth": {
+      "type": "number",
+      "default": 3
+    },
+    "animationEnabled": {
+      "type": "boolean",
+      "default": true
+    },
+    "animationType": {
+      "type": "string",
+      "default": "fadeInUp"
+    },
+    "animationDuration": {
+      "type": "number",
+      "default": 0.6
+    },
+    "animationDelay": {
+      "type": "number",
+      "default": 0
+    },
+    "animationEasing": {
+      "type": "string",
+      "default": "ease-out"
+    },
+    "hoverAnimation": {
+      "type": "string",
+      "default": "none"
+    }
+  },
+  "textdomain": "ria-subtitle",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}

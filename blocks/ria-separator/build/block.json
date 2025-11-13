@@ -1,0 +1,87 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "ria/separator",
+  "version": "0.1.0",
+  "title": "RIA Separator",
+  "category": "design",
+  "icon": "minus",
+  "description": "Visual separator and section divider.",
+  "keywords": [
+    "separator",
+    "divider",
+    "hr",
+    "line",
+    "break"
+  ],
+  "supports": {
+    "html": false,
+    "spacing": {
+      "margin": true,
+      "padding": true
+    },
+    "color": {
+      "background": false,
+      "text": true
+    }
+  },
+  "attributes": {
+    "style": {
+      "type": "string",
+      "default": "solid",
+      "enum": [
+        "solid",
+        "dashed",
+        "dotted",
+        "double",
+        "thick"
+      ]
+    },
+    "width": {
+      "type": "string",
+      "default": "full",
+      "enum": [
+        "narrow",
+        "medium",
+        "full"
+      ]
+    },
+    "alignment": {
+      "type": "string",
+      "default": "center",
+      "enum": [
+        "left",
+        "center",
+        "right"
+      ]
+    },
+    "animationEnabled": {
+      "type": "boolean",
+      "default": true
+    },
+    "animationType": {
+      "type": "string",
+      "default": "fadeInUp"
+    },
+    "animationDuration": {
+      "type": "number",
+      "default": 0.6
+    },
+    "animationDelay": {
+      "type": "number",
+      "default": 0
+    },
+    "animationEasing": {
+      "type": "string",
+      "default": "ease-out"
+    },
+    "hoverAnimation": {
+      "type": "string",
+      "default": "none"
+    }
+  },
+  "textdomain": "ria-separator",
+  "editorScript": "file:index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}

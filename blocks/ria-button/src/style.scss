@@ -1,0 +1,305 @@
+/**
+ * RIA Button Block - Unified Color System
+ *
+ * All colors reference CSS variables from theme.json
+ * Single source of truth: theme.json → CSS variables → blocks
+ */
+
+.ria-button {
+	// Base button styles
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.5rem;
+	padding: 0.75rem 1.5rem;
+	border-radius: 6px;
+	font-weight: 600;
+	font-size: 1rem;
+	line-height: 1.5;
+	text-decoration: none;
+	transition: all 0.2s ease-in-out;
+	cursor: pointer;
+	border: 2px solid transparent;
+	white-space: nowrap;
+
+	// Focus state for accessibility
+	&:focus-visible {
+		outline: 2px solid var(--wp--custom--colors--primary-400);
+		outline-offset: 2px;
+	}
+
+	// ============================================
+	// PRIMARY VARIANT (Navy)
+	// ============================================
+	&.ria-button--primary {
+		background-color: var(--wp--custom--colors--primary-400);
+		color: var(--wp--custom--colors--white);
+
+		&:hover {
+			background-color: var(--wp--custom--colors--primary-300);
+		}
+
+		&:active {
+			background-color: var(--wp--custom--colors--primary-500);
+		}
+	}
+
+	// ============================================
+	// SECONDARY VARIANT (Green)
+	// ============================================
+	&.ria-button--secondary {
+		background-color: var(--wp--custom--colors--secondary-400);
+		color: var(--wp--custom--colors--white);
+
+		&:hover {
+			background-color: var(--wp--custom--colors--secondary-300);
+		}
+
+		&:active {
+			background-color: var(--wp--custom--colors--secondary-500);
+		}
+	}
+
+	// ============================================
+	// TERTIARY VARIANT (Orange)
+	// ============================================
+	&.ria-button--tertiary {
+		background-color: var(--wp--custom--colors--tertiary-400);
+		color: var(--wp--custom--colors--white);
+
+		&:hover {
+			background-color: var(--wp--custom--colors--tertiary-300);
+		}
+
+		&:active {
+			background-color: var(--wp--custom--colors--tertiary-500);
+		}
+	}
+
+	// ============================================
+	// OUTLINE PRIMARY
+	// ============================================
+	&.ria-button--outline-primary {
+		background-color: transparent;
+		color: var(--wp--custom--colors--primary-400);
+		border-color: var(--wp--custom--colors--primary-400);
+
+		&:hover {
+			background-color: var(--wp--custom--colors--primary-400);
+			color: var(--wp--custom--colors--white);
+		}
+
+		&:active {
+			background-color: var(--wp--custom--colors--primary-500);
+			border-color: var(--wp--custom--colors--primary-500);
+		}
+	}
+
+	// ============================================
+	// OUTLINE SECONDARY
+	// ============================================
+	&.ria-button--outline-secondary {
+		background-color: transparent;
+		color: var(--wp--custom--colors--secondary-400);
+		border-color: var(--wp--custom--colors--secondary-400);
+
+		&:hover {
+			background-color: var(--wp--custom--colors--secondary-400);
+			color: var(--wp--custom--colors--white);
+		}
+
+		&:active {
+			background-color: var(--wp--custom--colors--secondary-500);
+			border-color: var(--wp--custom--colors--secondary-500);
+		}
+	}
+
+	// ============================================
+	// OUTLINE TERTIARY
+	// ============================================
+	&.ria-button--outline-tertiary {
+		background-color: transparent;
+		color: var(--wp--custom--colors--tertiary-400);
+		border-color: var(--wp--custom--colors--tertiary-400);
+
+		&:hover {
+			background-color: var(--wp--custom--colors--tertiary-400);
+			color: var(--wp--custom--colors--white);
+		}
+
+		&:active {
+			background-color: var(--wp--custom--colors--tertiary-500);
+			border-color: var(--wp--custom--colors--tertiary-500);
+		}
+	}
+
+	// ============================================
+	// GHOST VARIANT
+	// ============================================
+	&.ria-button--ghost {
+		background-color: transparent;
+		color: var(--wp--custom--colors--neutral-600);
+		border-color: transparent;
+
+		&:hover {
+			background-color: var(--wp--custom--colors--neutral-100);
+		}
+
+		&:active {
+			background-color: var(--wp--custom--colors--neutral-200);
+		}
+	}
+
+	// ============================================
+	// LINK VARIANT
+	// ============================================
+	&.ria-button--link {
+		background-color: transparent;
+		color: var(--wp--custom--colors--primary-400);
+		padding: 0;
+		text-decoration: underline;
+		border: none;
+
+		&:hover {
+			color: var(--wp--custom--colors--primary-300);
+			text-decoration: none;
+		}
+
+		&:active {
+			color: var(--wp--custom--colors--primary-500);
+		}
+	}
+
+	// ============================================
+	// CUSTOM VARIANT
+	// ============================================
+	&.ria-button--custom {
+		// Custom colors applied via inline styles
+		// No defaults - fully user-controlled
+	}
+
+	// ============================================
+	// SIZE VARIANTS
+	// ============================================
+	&.ria-button--small {
+		padding: 0.5rem 1rem;
+		font-size: 0.875rem;
+	}
+
+	&.ria-button--medium {
+		padding: 0.75rem 1.5rem;
+		font-size: 1rem;
+	}
+
+	&.ria-button--large {
+		padding: 1rem 2rem;
+		font-size: 1.125rem;
+	}
+
+	// ============================================
+	// ICON SUPPORT
+	// ============================================
+	.ria-button__icon {
+		display: inline-flex;
+		align-items: center;
+
+		.dashicons {
+			width: 20px;
+			height: 20px;
+			font-size: 20px;
+		}
+	}
+
+	&.ria-button--icon-left {
+		flex-direction: row;
+	}
+
+	&.ria-button--icon-right {
+		flex-direction: row;
+	}
+
+	// ============================================
+	// DISABLED STATE
+	// ============================================
+	&:disabled,
+	&.is-disabled {
+		opacity: 0.5;
+		cursor: not-allowed;
+		pointer-events: none;
+	}
+}
+
+// ============================================
+// RESPONSIVE ADJUSTMENTS
+// ============================================
+@media (max-width: 768px) {
+	.ria-button {
+		&.ria-button--large {
+			padding: 0.75rem 1.5rem;
+			font-size: 1rem;
+		}
+	}
+}
+
+// ============================================
+// EDITOR STYLES
+// ============================================
+.editor-styles-wrapper {
+	.ria-button {
+		// Ensure proper display in editor
+		display: inline-flex;
+	}
+}
+
+
+/* Color Variants */
+.wp-block-ria-button {
+	/* Variant: Primary */
+	&.has-primary-variant {
+		background-color: var(--color-primary-100);
+		color: var(--color-primary-900);
+		border-color: var(--color-primary-300);
+
+		a {
+			color: var(--color-primary-700);
+		}
+	}
+
+	/* Variant: Secondary */
+	&.has-secondary-variant {
+		background-color: var(--color-secondary-100);
+		color: var(--color-secondary-900);
+		border-color: var(--color-secondary-300);
+
+		a {
+			color: var(--color-secondary-700);
+		}
+	}
+
+	/* Variant: Accent */
+	&.has-accent-variant {
+		background-color: var(--color-accent-100);
+		color: var(--color-accent-900);
+		border-color: var(--color-accent-300);
+
+		a {
+			color: var(--color-accent-700);
+		}
+	}
+
+	/* Variant: Neutral */
+	&.has-neutral-variant {
+		background-color: var(--color-neutral-100);
+		color: var(--color-neutral-900);
+		border-color: var(--color-neutral-300);
+
+		a {
+			color: var(--color-neutral-700);
+		}
+	}
+
+	/* Custom colors via inline styles */
+	&.has-custom-colors {
+		/* Inline styles will override */
+	}
+}

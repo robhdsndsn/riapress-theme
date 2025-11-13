@@ -1,0 +1,37 @@
+@import "../../assets/src/styles/base/breakpoints";
+//@import "../../assets/src/styles/base/colors";
+//@import "../../assets/src/styles/base/layout";
+@import "../../assets/src/styles/base/spacing";
+//@import "../../assets/src/styles/base/transitions";
+
+.wp-block-rp-social-share {
+
+  // Spacing
+  &.block-spacing-1 {
+	> .block-editor-inner-blocks > .block-editor-block-list__layout > {
+	  [data-type="zp/accordion"] {
+		//margin-bottom: $padding-1;
+
+		&:last-of-type {
+		  margin-bottom: unset;
+		}
+	  }
+	}
+  }
+
+  &.block-spacing-2 {
+	> .block-editor-inner-blocks > .block-editor-block-list__layout > {
+	  [data-type="zp/accordion"] {
+		//margin-bottom: $padding-2;
+
+		&:last-of-type {
+		  margin-bottom: unset;
+		}
+	  }
+	}
+  }
+}
+
+.components-base-control__field {
+  margin-bottom: 0 !important;
+}

@@ -1,0 +1,84 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "ria/countdown",
+  "title": "RIA Countdown",
+  "category": "ria-blocks",
+  "icon": "clock",
+  "description": "Countdown timer to a specific date and time",
+  "keywords": [
+    "countdown",
+    "timer",
+    "event",
+    "deadline"
+  ],
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ],
+    "spacing": {
+      "margin": true,
+      "padding": true
+    }
+  },
+  "attributes": {
+    "targetDate": {
+      "type": "string",
+      "default": ""
+    },
+    "numberColor": {
+      "type": "string",
+      "default": "#1a1a1a"
+    },
+    "labelColor": {
+      "type": "string",
+      "default": "#666666"
+    },
+    "numberSize": {
+      "type": "number",
+      "default": 48
+    },
+    "labelSize": {
+      "type": "number",
+      "default": 14
+    },
+    "backgroundColor": {
+      "type": "string",
+      "default": "#f5f5f5"
+    },
+    "itemSpacing": {
+      "type": "number",
+      "default": 16
+    },
+    "showDays": {
+      "type": "boolean",
+      "default": true
+    },
+    "showHours": {
+      "type": "boolean",
+      "default": true
+    },
+    "showMinutes": {
+      "type": "boolean",
+      "default": true
+    },
+    "showSeconds": {
+      "type": "boolean",
+      "default": true
+    },
+    "expiredMessage": {
+      "type": "string",
+      "default": "Event has ended"
+    },
+    "textAlign": {
+      "type": "string",
+      "default": "center"
+    }
+  },
+  "textdomain": "ria",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}

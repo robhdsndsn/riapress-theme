@@ -1,0 +1,89 @@
+// RIA Quote Block - Editor Styles
+
+.wp-block-ria-quote {
+	// Editor-specific layout
+	padding: 1.5rem;
+	margin: 1rem 0;
+
+	// Author image upload in editor
+	.author-image-upload {
+		margin: 1rem 0;
+
+		img {
+			display: block;
+			margin-bottom: 0.5rem;
+			object-fit: cover;
+		}
+
+		.image-buttons {
+			display: flex;
+			gap: 0.5rem;
+			margin-top: 0.5rem;
+		}
+	}
+
+	// Quote content area
+	.quote-content {
+		margin-bottom: 1.5rem;
+
+		.quote-text {
+			font-family: Georgia, serif;
+			line-height: 1.6;
+
+			&::placeholder {
+				color: #9ca3af;
+				opacity: 0.6;
+			}
+		}
+	}
+
+	// Attribution area
+	.quote-attribution {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+
+		.author-image {
+			object-fit: cover;
+			flex-shrink: 0;
+
+			&.shape-circle {
+				border-radius: 50%;
+			}
+
+			&.shape-square {
+				border-radius: 0;
+			}
+
+			&.shape-rounded {
+				border-radius: 8px;
+			}
+		}
+
+		.author-info {
+			flex: 1;
+
+			.author-name,
+			.author-title,
+			.author-organization {
+				display: block;
+
+				&::placeholder {
+					color: #9ca3af;
+					opacity: 0.6;
+				}
+			}
+
+			.author-name {
+				font-weight: 600;
+				margin-bottom: 0.25rem;
+			}
+
+			.author-title,
+			.author-organization {
+				font-size: 0.875rem;
+				opacity: 0.8;
+			}
+		}
+	}
+}

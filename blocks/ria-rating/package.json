@@ -1,0 +1,15 @@
+{
+	"name": "ria-rating",
+	"version": "0.1.0",
+	"description": "RIA Rating - Star rating display for reviews and testimonials",
+	"author": "RIA",
+	"license": "GPL-2.0-or-later",
+	"main": "build/index.js",
+	"scripts": {
+		"build": "wp-scripts build",
+		"start": "wp-scripts start"
+	},
+	"devDependencies": {
+		"@wordpress/scripts": "^26.0.0"
+	}
+}

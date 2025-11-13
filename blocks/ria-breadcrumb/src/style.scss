@@ -1,0 +1,147 @@
+/**
+ * RIA Breadcrumb Block - Frontend & Editor Styles
+ */
+
+.wp-block-ria-breadcrumb {
+	// Default neutral variant
+	color: var(--wp--preset--color--neutral-text, #6b7280);
+
+	.ria-breadcrumb-list {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: 8px;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	.ria-breadcrumb-item {
+		display: flex;
+		align-items: center;
+		gap: 8px;
+	}
+
+	.ria-breadcrumb-link {
+		color: var(--wp--preset--color--neutral-text, #6b7280);
+		text-decoration: none;
+		transition: color 0.2s ease-out;
+
+		&:hover {
+			color: var(--wp--preset--color--neutral-accent, #374151);
+			text-decoration: underline;
+		}
+
+		&:focus-visible {
+			outline: 2px solid currentColor;
+			outline-offset: 2px;
+			border-radius: 2px;
+		}
+	}
+
+	.ria-breadcrumb-current {
+		color: var(--wp--preset--color--neutral-accent, #374151);
+		font-weight: 500;
+	}
+
+	.ria-breadcrumb-separator {
+		display: inline-flex;
+		align-items: center;
+		opacity: 0.6;
+		user-select: none;
+	}
+
+	// Font size variants
+	&.font-size-small {
+		font-size: 12px;
+	}
+
+	&.font-size-medium {
+		font-size: 14px;
+	}
+
+	&.font-size-large {
+		font-size: 16px;
+	}
+
+	// Color Variants
+	&.has-primary-variant {
+		color: var(--wp--preset--color--primary-text, #1e40af);
+
+		.ria-breadcrumb-link {
+			color: var(--wp--preset--color--primary-text, #1e40af);
+
+			&:hover {
+				color: var(--wp--preset--color--primary-accent, #3b82f6);
+			}
+		}
+
+		.ria-breadcrumb-current {
+			color: var(--wp--preset--color--primary-accent, #3b82f6);
+		}
+	}
+
+	&.has-secondary-variant {
+		color: var(--wp--preset--color--secondary-text, #6b21a8);
+
+		.ria-breadcrumb-link {
+			color: var(--wp--preset--color--secondary-text, #6b21a8);
+
+			&:hover {
+				color: var(--wp--preset--color--secondary-accent, #a855f7);
+			}
+		}
+
+		.ria-breadcrumb-current {
+			color: var(--wp--preset--color--secondary-accent, #a855f7);
+		}
+	}
+
+	&.has-accent-variant {
+		color: var(--wp--preset--color--accent-text, #92400e);
+
+		.ria-breadcrumb-link {
+			color: var(--wp--preset--color--accent-text, #92400e);
+
+			&:hover {
+				color: var(--wp--preset--color--accent-accent, #f59e0b);
+			}
+		}
+
+		.ria-breadcrumb-current {
+			color: var(--wp--preset--color--accent-accent, #f59e0b);
+		}
+	}
+
+	&.has-neutral-variant {
+		color: var(--wp--preset--color--neutral-text, #6b7280);
+
+		.ria-breadcrumb-link {
+			color: var(--wp--preset--color--neutral-text, #6b7280);
+
+			&:hover {
+				color: var(--wp--preset--color--neutral-accent, #374151);
+			}
+		}
+
+		.ria-breadcrumb-current {
+			color: var(--wp--preset--color--neutral-accent, #374151);
+		}
+	}
+
+	// Custom colors (inline styles applied)
+	&.has-custom-colors {
+		// Inline styles will override
+	}
+
+	// Responsive
+	@media (max-width: 768px) {
+		.ria-breadcrumb-list {
+			gap: 6px;
+		}
+
+		.ria-breadcrumb-item {
+			gap: 6px;
+		}
+	}
+}

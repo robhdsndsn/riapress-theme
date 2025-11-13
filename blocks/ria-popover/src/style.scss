@@ -1,0 +1,557 @@
+/**
+ * RIA Popover Styles
+ * Based on shadcn/ui design system
+ */
+
+// Variables
+$popover-bg: #ffffff;
+$popover-border: #e5e7eb;
+$popover-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+$popover-radius: 8px;
+$arrow-size: 8px;
+
+// Trigger button styles (shadcn/ui variants)
+// Button colors now use CSS variables from theme.json
+
+
+
+
+
+
+
+
+
+
+
+
+// Transition
+$transition: all 0.2s ease-in-out;
+
+// =======================
+// Wrapper
+// =======================
+.ria-popover-wrapper {
+	position: relative;
+	display: inline-block;
+}
+
+// =======================
+// Trigger Styles
+// =======================
+.ria-popover-trigger {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.5rem;
+	font-weight: 500;
+	font-size: 0.875rem;
+	line-height: 1.25rem;
+	white-space: nowrap;
+	border-radius: 6px;
+	transition: $transition;
+	cursor: pointer;
+	border: 1px solid transparent;
+	text-decoration: none;
+
+	&:focus-visible {
+		outline: 2px solid #18181b;
+		outline-offset: 2px;
+	}
+
+	&:disabled {
+		pointer-events: none;
+		opacity: 0.5;
+	}
+
+	// Button type
+	&.ria-popover-trigger--button {
+		// Primary variant (Navy)
+		&.ria-popover-trigger--primary {
+			background-color: var(--wp--custom--colors--primary-400);
+			color: var(--wp--custom--colors--white);
+
+			&:hover {
+				background-color: var(--wp--custom--colors--primary-300);
+			}
+
+			&:active {
+				background-color: var(--wp--custom--colors--primary-500);
+			}
+		}
+
+		// Secondary variant (Green)
+		&.ria-popover-trigger--secondary {
+			background-color: var(--wp--custom--colors--secondary-400);
+			color: var(--wp--custom--colors--white);
+
+			&:hover {
+				background-color: var(--wp--custom--colors--secondary-300);
+			}
+
+			&:active {
+				background-color: var(--wp--custom--colors--secondary-500);
+			}
+		}
+
+		// Tertiary variant (Orange)
+		&.ria-popover-trigger--tertiary {
+			background-color: var(--wp--custom--colors--tertiary-400);
+			color: var(--wp--custom--colors--white);
+
+			&:hover {
+				background-color: var(--wp--custom--colors--tertiary-300);
+			}
+
+			&:active {
+				background-color: var(--wp--custom--colors--tertiary-500);
+			}
+		}
+
+		// Outline Primary
+		&.ria-popover-trigger--outline-primary {
+			border-color: var(--wp--custom--colors--primary-400);
+			background-color: transparent;
+			color: var(--wp--custom--colors--primary-400);
+
+			&:hover {
+				background-color: var(--wp--custom--colors--primary-400);
+				color: var(--wp--custom--colors--white);
+			}
+
+			&:active {
+				background-color: var(--wp--custom--colors--primary-500);
+				border-color: var(--wp--custom--colors--primary-500);
+			}
+		}
+
+		// Outline Secondary
+		&.ria-popover-trigger--outline-secondary {
+			border-color: var(--wp--custom--colors--secondary-400);
+			background-color: transparent;
+			color: var(--wp--custom--colors--secondary-400);
+
+			&:hover {
+				background-color: var(--wp--custom--colors--secondary-400);
+				color: var(--wp--custom--colors--white);
+			}
+
+			&:active {
+				background-color: var(--wp--custom--colors--secondary-500);
+				border-color: var(--wp--custom--colors--secondary-500);
+			}
+		}
+
+		// Outline Tertiary
+		&.ria-popover-trigger--outline-tertiary {
+			border-color: var(--wp--custom--colors--tertiary-400);
+			background-color: transparent;
+			color: var(--wp--custom--colors--tertiary-400);
+
+			&:hover {
+				background-color: var(--wp--custom--colors--tertiary-400);
+				color: var(--wp--custom--colors--white);
+			}
+
+			&:active {
+				background-color: var(--wp--custom--colors--tertiary-500);
+				border-color: var(--wp--custom--colors--tertiary-500);
+			}
+		}
+
+		// Ghost variant
+		&.ria-popover-trigger--ghost {
+			background-color: transparent;
+			color: var(--wp--custom--colors--neutral-600);
+
+			&:hover {
+				background-color: var(--wp--custom--colors--neutral-100);
+			}
+
+			&:active {
+				background-color: var(--wp--custom--colors--neutral-200);
+			}
+		}
+
+		// Link variant
+		&.ria-popover-trigger--link {
+			background-color: transparent;
+			color: var(--wp--custom--colors--primary-400);
+			text-decoration: underline;
+			padding: 0;
+			border: none;
+
+			&:hover {
+				color: var(--wp--custom--colors--primary-300);
+				text-decoration: none;
+			}
+
+			&:active {
+				color: var(--wp--custom--colors--primary-500);
+			}
+		}
+
+		// Custom variant (inline styles will override)
+		&.ria-popover-trigger--custom {
+			// Custom colors applied via inline styles
+		}
+	}
+
+	// Sizes
+	&.ria-popover-trigger--small {
+		height: 2rem;
+		padding: 0 0.75rem;
+		font-size: 0.75rem;
+	}
+
+	&.ria-popover-trigger--medium {
+		height: 2.5rem;
+		padding: 0 1rem;
+	}
+
+	&.ria-popover-trigger--large {
+		height: 2.75rem;
+		padding: 0 2rem;
+		font-size: 1rem;
+	}
+
+	// Link type
+	&.ria-popover-trigger--link {
+		padding: 0;
+		height: auto;
+		color: #2563eb;
+		text-decoration: underline;
+		background: none;
+		border: none;
+
+		&:hover {
+			color: #1d4ed8;
+		}
+	}
+
+	// Icon type
+	&.ria-popover-trigger--icon {
+		width: 2.5rem;
+		height: 2.5rem;
+		padding: 0;
+		background-color: transparent;
+		color: var(--wp--custom--colors--neutral-600);
+
+		&:hover {
+			background-color: var(--wp--custom--colors--neutral-100);
+		}
+
+		&.ria-popover-trigger--small {
+			width: 2rem;
+			height: 2rem;
+		}
+
+		&.ria-popover-trigger--large {
+			width: 3rem;
+			height: 3rem;
+		}
+
+		.dashicons {
+			font-size: 20px;
+			width: 20px;
+			height: 20px;
+		}
+	}
+}
+
+// =======================
+// Popover Content
+// =======================
+.ria-popover-content {
+	position: absolute;
+	z-index: 1000;
+	background-color: $popover-bg;
+	border: 1px solid $popover-border;
+	border-radius: $popover-radius;
+	box-shadow: $popover-shadow;
+	padding: 1rem;
+	
+	// Hidden by default
+	opacity: 0;
+	visibility: hidden;
+	pointer-events: none;
+	transform: scale(0.95);
+	transition: opacity 0.15s ease-in-out, 
+	            transform 0.15s ease-in-out,
+	            visibility 0.15s ease-in-out;
+
+	// Open state
+	.ria-popover--open & {
+		opacity: 1;
+		visibility: visible;
+		pointer-events: auto;
+		transform: scale(1);
+	}
+}
+
+.ria-popover-inner {
+	// Content styles
+	h1, h2, h3, h4, h5, h6 {
+		margin-top: 0;
+		margin-bottom: 0.5rem;
+		font-weight: 600;
+	}
+
+	h4 {
+		font-size: 0.875rem;
+		line-height: 1.25rem;
+	}
+
+	p {
+		margin-top: 0;
+		margin-bottom: 0.75rem;
+		font-size: 0.875rem;
+		line-height: 1.5rem;
+		color: #71717a;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	// Grid layouts within popover
+	.wp-block-columns {
+		gap: 0.5rem;
+	}
+
+	// Form elements
+	input, textarea, select {
+		width: 100%;
+		margin-bottom: 0.5rem;
+	}
+
+	// Buttons within popover
+	button, .wp-block-button__link {
+		margin-top: 0.5rem;
+	}
+}
+
+// =======================
+// Arrow
+// =======================
+.ria-popover-arrow {
+	position: absolute;
+	width: $arrow-size;
+	height: $arrow-size;
+	background-color: $popover-bg;
+	border: 1px solid $popover-border;
+	transform: rotate(45deg);
+	z-index: -1;
+
+	// Position variants
+	&.ria-popover-arrow--top {
+		top: -#{$arrow-size / 2};
+		border-bottom: none;
+		border-right: none;
+	}
+
+	&.ria-popover-arrow--bottom {
+		bottom: -#{$arrow-size / 2};
+		border-top: none;
+		border-left: none;
+	}
+
+	&.ria-popover-arrow--left {
+		left: -#{$arrow-size / 2};
+		border-top: none;
+		border-right: none;
+	}
+
+	&.ria-popover-arrow--right {
+		right: -#{$arrow-size / 2};
+		border-bottom: none;
+		border-left: none;
+	}
+}
+
+// =======================
+// Editor Styles
+// =======================
+.ria-popover-editor {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	padding: 1rem;
+	background-color: #f9fafb;
+	border: 2px dashed #d1d5db;
+	border-radius: 8px;
+}
+
+.ria-popover-content-editor {
+	background-color: $popover-bg;
+	border: 1px solid $popover-border;
+	border-radius: $popover-radius;
+	box-shadow: $popover-shadow;
+	padding: 1rem;
+}
+
+.ria-popover-arrow-indicator {
+	font-size: 0.75rem;
+	color: #6b7280;
+	margin-bottom: 0.5rem;
+	text-align: center;
+	font-weight: 600;
+}
+
+// =======================
+// Accessibility
+// =======================
+.ria-popover-content[aria-hidden="true"] {
+	display: none;
+}
+
+// Focus trap
+.ria-popover--open {
+	.ria-popover-content {
+		&:focus {
+			outline: none;
+		}
+	}
+}
+
+// =======================
+// Responsive
+// =======================
+@media (max-width: 768px) {
+	.ria-popover-content {
+		max-width: calc(100vw - 2rem);
+		left: 1rem !important;
+		right: 1rem !important;
+		width: auto !important;
+	}
+}
+
+// =======================
+// Color Variants
+// =======================
+.ria-popover-content {
+	&.has-primary-variant {
+		background-color: var(--color-primary-100);
+		border-color: var(--color-primary-300);
+		color: var(--color-primary-900);
+
+		.ria-popover-arrow {
+			background-color: var(--color-primary-100);
+			border-color: var(--color-primary-300);
+		}
+
+		.ria-popover-inner p {
+			color: var(--color-primary-800);
+		}
+	}
+
+	&.has-secondary-variant {
+		background-color: var(--color-secondary-100);
+		border-color: var(--color-secondary-300);
+		color: var(--color-secondary-900);
+
+		.ria-popover-arrow {
+			background-color: var(--color-secondary-100);
+			border-color: var(--color-secondary-300);
+		}
+
+		.ria-popover-inner p {
+			color: var(--color-secondary-800);
+		}
+	}
+
+	&.has-accent-variant {
+		background-color: var(--color-accent-100);
+		border-color: var(--color-accent-300);
+		color: var(--color-accent-900);
+
+		.ria-popover-arrow {
+			background-color: var(--color-accent-100);
+			border-color: var(--color-accent-300);
+		}
+
+		.ria-popover-inner p {
+			color: var(--color-accent-800);
+		}
+	}
+
+	&.has-neutral-variant {
+		background-color: var(--color-neutral-100);
+		border-color: var(--color-neutral-300);
+		color: var(--color-neutral-900);
+
+		.ria-popover-arrow {
+			background-color: var(--color-neutral-100);
+			border-color: var(--color-neutral-300);
+		}
+
+		.ria-popover-inner p {
+			color: var(--color-neutral-800);
+		}
+	}
+
+	&.has-custom-colors {
+		background-color: var(--custom-background-color, transparent);
+		border-color: var(--custom-border-color, currentColor);
+		color: var(--custom-color, currentColor);
+
+		.ria-popover-arrow {
+			background-color: var(--custom-background-color, transparent);
+			border-color: var(--custom-border-color, currentColor);
+		}
+
+		.ria-popover-inner p {
+			color: var(--custom-color, currentColor);
+		}
+	}
+}
+
+// Editor variants
+.ria-popover-content-editor {
+	&.has-primary-variant {
+		background-color: var(--color-primary-100);
+		border-color: var(--color-primary-300);
+		color: var(--color-primary-900);
+	}
+
+	&.has-secondary-variant {
+		background-color: var(--color-secondary-100);
+		border-color: var(--color-secondary-300);
+		color: var(--color-secondary-900);
+	}
+
+	&.has-accent-variant {
+		background-color: var(--color-accent-100);
+		border-color: var(--color-accent-300);
+		color: var(--color-accent-900);
+	}
+
+	&.has-neutral-variant {
+		background-color: var(--color-neutral-100);
+		border-color: var(--color-neutral-300);
+		color: var(--color-neutral-900);
+	}
+
+	&.has-custom-colors {
+		background-color: var(--custom-background-color, transparent);
+		border-color: var(--custom-border-color, currentColor);
+		color: var(--custom-color, currentColor);
+	}
+}
+
+// Dark mode support (optional)
+@media (prefers-color-scheme: dark) {
+	.ria-popover-content:not([class*="has-"]) {
+		background-color: #1f2937;
+		border-color: #374151;
+		color: #f3f4f6;
+
+		.ria-popover-arrow {
+			background-color: #1f2937;
+			border-color: #374151;
+		}
+
+		.ria-popover-inner p {
+			color: #d1d5db;
+		}
+	}
+}

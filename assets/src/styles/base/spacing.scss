@@ -1,0 +1,9 @@
+// Media queries - tablet down spacing sizes
+@media screen and (max-width: $tablet) {
+  :root {
+    --wp--preset--spacing--6: 1.5rem;
+    --wp--preset--spacing--10: 6.5rem;
+    --wp--preset--spacing--11: 9.25rem;
+    --wp--preset--spacing--12: 15rem;
+  }
+}

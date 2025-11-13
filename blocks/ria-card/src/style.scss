@@ -1,0 +1,319 @@
+/**
+ * RIA Card Block - Frontend Styles
+ */
+
+.wp-block-ria-card {
+	.ria-card {
+		display: flex;
+		overflow: hidden;
+		transition: transform 0.3s ease, box-shadow 0.3s ease;
+		position: relative;
+
+		// Vertical layout (default)
+		&.layout-vertical {
+			flex-direction: column;
+		}
+
+		// Horizontal layout
+		&.layout-horizontal {
+			flex-direction: row;
+			align-items: stretch;
+
+			&.image-position-right {
+				flex-direction: row-reverse;
+			}
+
+			.ria-card-image-wrapper {
+				flex-shrink: 0;
+			}
+
+			.ria-card-content {
+				flex: 1;
+				display: flex;
+				flex-direction: column;
+			}
+		}
+
+		// Image wrapper
+		.ria-card-image-wrapper {
+			position: relative;
+			overflow: hidden;
+			width: 100%;
+		}
+
+		.ria-card-image {
+			display: block;
+			width: 100%;
+			height: auto;
+			object-fit: cover;
+			transition: transform 0.4s ease;
+		}
+
+		.ria-card-image-overlay {
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			pointer-events: none;
+		}
+
+		// Content area
+		.ria-card-content {
+			display: flex;
+			flex-direction: column;
+			gap: 1rem;
+		}
+
+		.ria-card-heading {
+			margin: 0;
+			font-weight: 600;
+			line-height: 1.3;
+			font-size: 1.5rem;
+		}
+
+		.ria-card-text {
+			margin: 0;
+			line-height: 1.6;
+			color: #6b7280;
+		}
+
+		.ria-card-button-wrapper {
+			margin-top: auto;
+		}
+
+		.ria-card-button {
+			display: inline-block;
+			padding: 0.75rem 1.5rem;
+			font-weight: 500;
+			text-decoration: none;
+			border-radius: 6px;
+			transition: all 0.2s ease;
+			cursor: pointer;
+			border: 2px solid transparent;
+
+			// Primary style
+			&.button-style-primary {
+				background: #2563eb;
+				color: #ffffff;
+
+				&:hover {
+					background: #1d4ed8;
+				}
+			}
+
+			// Secondary style
+			&.button-style-secondary {
+				background: #6b7280;
+				color: #ffffff;
+
+				&:hover {
+					background: #4b5563;
+				}
+			}
+
+			// Outline style
+			&.button-style-outline {
+				background: transparent;
+				color: #2563eb;
+				border-color: #2563eb;
+
+				&:hover {
+					background: #2563eb;
+					color: #ffffff;
+				}
+			}
+
+			// Text style
+			&.button-style-text {
+				background: transparent;
+				color: #2563eb;
+				padding: 0.5rem 1rem;
+
+				&:hover {
+					background: #eff6ff;
+				}
+			}
+		}
+
+		// Box shadows
+		&.shadow-small {
+			box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+		}
+
+		&.shadow-medium {
+			box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06);
+		}
+
+		&.shadow-large {
+			box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05);
+		}
+
+		&.shadow-xlarge {
+			box-shadow: 0 20px 25px rgba(0, 0, 0, 0.15), 0 10px 10px rgba(0, 0, 0, 0.04);
+		}
+
+		// Hover elevation effect
+		&.hover-elevation:hover {
+			transform: translateY(-8px);
+			box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15), 0 10px 20px rgba(0, 0, 0, 0.1);
+		}
+
+		// Image zoom on hover
+		&.hover-elevation:hover .ria-card-image {
+			transform: scale(1.05);
+		}
+
+		// Clickable card
+		&.clickable-card {
+			cursor: pointer;
+			text-decoration: none;
+			color: inherit;
+			display: flex;
+
+			&:hover {
+				.ria-card-button {
+					transform: translateX(4px);
+				}
+			}
+
+			.ria-card-button {
+				pointer-events: none;
+			}
+		}
+	}
+
+	// Alignment support
+	&.alignleft {
+		float: left;
+		margin-right: 2rem;
+		max-width: 400px;
+	}
+
+	&.alignright {
+		float: right;
+		margin-left: 2rem;
+		max-width: 400px;
+	}
+
+	&.aligncenter {
+		margin-left: auto;
+		margin-right: auto;
+		max-width: 600px;
+	}
+
+	&.alignwide {
+		max-width: 1200px;
+	}
+
+	&.alignfull {
+		max-width: none;
+	}
+
+	// Responsive
+	@media (max-width: 768px) {
+		.ria-card.layout-horizontal {
+			flex-direction: column !important;
+
+			.ria-card-image-wrapper {
+				width: 100% !important;
+			}
+		}
+	}
+}
+
+// Variant Color System
+.wp-block-ria-card {
+	// CSS Custom Properties
+	--variant-bg: var(--wp--preset--color--background, #ffffff);
+	--variant-border: var(--wp--preset--color--contrast, #000000);
+
+	// Primary variant
+	&.variant-primary {
+		--variant-bg: var(--wp--preset--color--primary, #0073aa);
+		--variant-border: var(--wp--preset--color--primary, #0073aa);
+	}
+
+	// Secondary variant
+	&.variant-secondary {
+		--variant-bg: var(--wp--preset--color--secondary, #005177);
+		--variant-border: var(--wp--preset--color--secondary, #005177);
+	}
+
+	// Tertiary variant
+	&.variant-tertiary {
+		--variant-bg: var(--wp--preset--color--tertiary, #7c3aed);
+		--variant-border: var(--wp--preset--color--tertiary, #7c3aed);
+	}
+
+	// Neutral variant (default)
+	&.variant-neutral {
+		--variant-bg: var(--wp--preset--color--base-2, #f9fafb);
+		--variant-border: var(--wp--preset--color--contrast-2, #e5e7eb);
+	}
+
+	// Custom variant
+	&.variant-custom {
+		--variant-bg: var(--custom-bg-color, transparent);
+		--variant-border: var(--custom-border-color, transparent);
+	}
+
+	// Apply variant colors to card
+	.ria-card {
+		background-color: var(--variant-bg);
+		border-color: var(--variant-border);
+	}
+}
+
+
+/* Color Variants */
+.wp-block-ria-card {
+	/* Variant: Primary */
+	&.has-primary-variant {
+		background-color: var(--color-primary-100);
+		color: var(--color-primary-900);
+		border-color: var(--color-primary-300);
+
+		a {
+			color: var(--color-primary-700);
+		}
+	}
+
+	/* Variant: Secondary */
+	&.has-secondary-variant {
+		background-color: var(--color-secondary-100);
+		color: var(--color-secondary-900);
+		border-color: var(--color-secondary-300);
+
+		a {
+			color: var(--color-secondary-700);
+		}
+	}
+
+	/* Variant: Accent */
+	&.has-accent-variant {
+		background-color: var(--color-accent-100);
+		color: var(--color-accent-900);
+		border-color: var(--color-accent-300);
+
+		a {
+			color: var(--color-accent-700);
+		}
+	}
+
+	/* Variant: Neutral */
+	&.has-neutral-variant {
+		background-color: var(--color-neutral-100);
+		color: var(--color-neutral-900);
+		border-color: var(--color-neutral-300);
+
+		a {
+			color: var(--color-neutral-700);
+		}
+	}
+
+	/* Custom colors via inline styles */
+	&.has-custom-colors {
+		/* Inline styles will override */
+	}
+}

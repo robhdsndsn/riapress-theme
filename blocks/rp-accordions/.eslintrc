@@ -1,0 +1,10 @@
+{
+  "extends": [
+	"plugin:@wordpress/eslint-plugin/recommended-with-formatting",
+	"prettier"
+  ],
+  "rules": {
+	"no-console": 0,
+	"one-var": 0
+  }
+}

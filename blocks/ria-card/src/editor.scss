@@ -1,0 +1,82 @@
+/**
+ * RIA Card Block - Editor Styles
+ */
+
+.wp-block-ria-card {
+	.ria-card-image-placeholder {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		min-height: 200px;
+		border: 2px dashed #ccc;
+		background: #f9f9f9;
+		cursor: pointer;
+		transition: all 0.2s ease;
+
+		&:hover {
+			border-color: #0073aa;
+			background: #f0f6fc;
+		}
+	}
+
+	.ria-card-image-controls {
+		position: absolute;
+		top: 8px;
+		right: 8px;
+		display: flex;
+		gap: 8px;
+		opacity: 0;
+		transition: opacity 0.2s ease;
+		z-index: 10;
+	}
+
+	.ria-card-image-wrapper:hover .ria-card-image-controls {
+		opacity: 1;
+	}
+
+	// Editor-specific styles
+	.ria-card {
+		.ria-card-heading {
+			&:focus {
+				outline: 1px solid #0073aa;
+				outline-offset: 2px;
+			}
+
+			&:empty:before {
+				content: attr(placeholder);
+				color: #999;
+			}
+		}
+
+		.ria-card-text {
+			&:focus {
+				outline: 1px solid #0073aa;
+				outline-offset: 2px;
+			}
+
+			&:empty:before {
+				content: attr(placeholder);
+				color: #999;
+			}
+		}
+
+		.ria-card-button {
+			&:focus {
+				outline: 1px solid #0073aa;
+				outline-offset: 2px;
+			}
+
+			&:empty:before {
+				content: attr(placeholder);
+				color: #999;
+			}
+		}
+	}
+
+	// Inspector control previews
+	.components-panel__body {
+		.components-base-control {
+			margin-bottom: 16px;
+		}
+	}
+}

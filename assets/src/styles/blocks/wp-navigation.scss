@@ -1,0 +1,12 @@
+.wp-block-navigation {
+  .wp-block-navigation-submenu {
+    padding: var(--wp--preset--spacing--2) 0;
+    border-radius: var(--wp--preset--spacing--1);
+
+    li {
+      font-size: var(--wp--preset--font-size--small) !important;
+      // fixing default medium font-size being thrown and unable to
+      // overwrite using editor
+    }
+  }
+}

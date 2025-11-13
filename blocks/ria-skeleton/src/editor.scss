@@ -1,0 +1,27 @@
+/**
+ * Editor styles for RIA Skeleton Loader block
+ */
+
+// Import shared skeleton styles
+@import '../../../components/skeletons/skeletons';
+
+.ria-skeleton-loader {
+	padding: 1rem;
+
+	// Editor-specific styles (if needed)
+	.skeleton-container {
+		margin-bottom: 1rem;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	// Make it easier to see in editor
+	border: 1px dashed #e0e0e0;
+	border-radius: 4px;
+
+	&:hover {
+		border-color: #999;
+	}
+}

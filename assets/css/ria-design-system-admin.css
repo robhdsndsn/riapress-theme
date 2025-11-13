@@ -1,0 +1,816 @@
+/**
+ * RIA Design System - Admin Styles
+ * Unified tabbed interface
+ *
+ * @package RIAPress
+ * @since 1.0.0
+ */
+
+.ria-design-system-wrap {
+	max-width: 1600px;
+	margin: 20px 0;
+}
+
+/* Tab Navigation */
+.ria-design-system-wrap .nav-tab-wrapper {
+	margin-bottom: 30px;
+	border-bottom: 2px solid #dcdcde;
+}
+
+.ria-design-system-wrap .nav-tab {
+	font-size: 14px;
+	padding: 12px 20px;
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.ria-design-system-wrap .nav-tab .dashicons {
+	font-size: 18px;
+	width: 18px;
+	height: 18px;
+}
+
+/* Tab Content */
+.ria-tab-content {
+	background: #fff;
+	padding: 0;
+}
+
+.ria-tab-panel {
+	padding: 30px;
+}
+
+.ria-tab-header {
+	margin-bottom: 30px;
+	padding-bottom: 20px;
+	border-bottom: 2px solid #f0f0f1;
+}
+
+.ria-tab-header h2 {
+	margin: 0 0 10px;
+	font-size: 24px;
+	font-weight: 600;
+	color: #1d2327;
+}
+
+.ria-tab-header p {
+	margin: 0;
+	color: #50575e;
+	font-size: 14px;
+}
+
+/* Card Styles */
+.ria-card {
+	background: #fff;
+	border: 1px solid #dcdcde;
+	border-radius: 8px;
+	padding: 24px;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+	margin-bottom: 20px;
+}
+
+.ria-card h3 {
+	margin: 0 0 16px;
+	font-size: 18px;
+	font-weight: 600;
+	color: #1d2327;
+	border-bottom: 2px solid #f0f0f1;
+	padding-bottom: 12px;
+}
+
+.ria-card p.description {
+	color: #50575e;
+	font-size: 13px;
+	margin: 0 0 16px;
+}
+
+/* Grid Layouts */
+.ria-settings-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+	gap: 24px;
+	margin-bottom: 30px;
+}
+
+.ria-performance-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+	gap: 20px;
+}
+
+.ria-hooks-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+	gap: 20px;
+}
+
+.ria-fonts-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+	gap: 20px;
+}
+
+/* Settings Section */
+.ria-settings-section {
+	background: #f9fafb;
+	border: 1px solid #e5e7eb;
+	border-radius: 8px;
+	padding: 20px;
+}
+
+.ria-settings-section h3 {
+	margin: 0 0 12px;
+	font-size: 16px;
+	font-weight: 600;
+	color: #1d2327;
+	border: none;
+	padding: 0;
+}
+
+/* Field Rows */
+.ria-field-row {
+	margin-bottom: 20px;
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.ria-field-row label {
+	font-weight: 500;
+	color: #1d2327;
+	font-size: 14px;
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.ria-field-row input[type="text"],
+.ria-field-row input[type="number"],
+.ria-field-row textarea {
+	max-width: 400px;
+}
+
+.ria-field-row .unit {
+	color: #50575e;
+	font-size: 13px;
+	margin-left: 8px;
+}
+
+.ria-field-row .description {
+	color: #50575e;
+	font-size: 12px;
+	font-style: italic;
+	margin: 0;
+}
+
+/* Form Actions */
+.ria-form-actions {
+	padding: 20px 0;
+	border-top: 1px solid #dcdcde;
+	display: flex;
+	gap: 12px;
+	align-items: center;
+}
+
+.ria-reset-button {
+	color: #d63638;
+}
+
+.ria-reset-button:hover {
+	color: #b32d2e;
+	border-color: #d63638;
+}
+
+/* Performance Tab Styles */
+.ria-score-card {
+	text-align: center;
+}
+
+.ria-score-display {
+	padding: 20px 0;
+}
+
+.ria-score-circle {
+	width: 160px;
+	height: 160px;
+	border-radius: 50%;
+	margin: 0 auto 20px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	border: 8px solid;
+}
+
+.ria-score-circle.grade-a {
+	border-color: #00a32a;
+	background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+}
+
+.ria-score-circle.grade-b {
+	border-color: #72aee6;
+	background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+}
+
+.ria-score-circle.grade-c {
+	border-color: #dba617;
+	background: linear-gradient(135deg, #fefce8 0%, #fef9c3 100%);
+}
+
+.ria-score-circle.grade-d,
+.ria-score-circle.grade-f {
+	border-color: #d63638;
+	background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
+}
+
+.score-number {
+	font-size: 48px;
+	font-weight: 700;
+	line-height: 1;
+	color: #1d2327;
+}
+
+.score-grade {
+	font-size: 24px;
+	font-weight: 600;
+	color: #50575e;
+	margin-top: 8px;
+}
+
+.score-description {
+	font-size: 14px;
+	color: #50575e;
+}
+
+.ria-metrics {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+}
+
+.metric-row {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 12px;
+	background: #f6f7f7;
+	border-radius: 4px;
+}
+
+.metric-label {
+	font-weight: 500;
+	color: #1d2327;
+}
+
+.metric-value {
+	font-weight: 600;
+	color: #2271b1;
+	font-size: 16px;
+}
+
+.metric-info {
+	margin-top: 12px;
+	padding: 12px;
+	background: #f0f6fc;
+	border-left: 4px solid #2271b1;
+	border-radius: 4px;
+	font-size: 13px;
+}
+
+.ria-recommendations {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+}
+
+.ria-recommendations-card {
+	grid-column: span 2;
+}
+
+.recommendation-item {
+	display: flex;
+	gap: 16px;
+	padding: 16px;
+	border-radius: 6px;
+	border-left: 4px solid;
+}
+
+.recommendation-success {
+	background: #f0fdf4;
+	border-left-color: #00a32a;
+}
+
+.recommendation-warning {
+	background: #fef9c3;
+	border-left-color: #dba617;
+}
+
+.recommendation-info {
+	background: #f0f6fc;
+	border-left-color: #2271b1;
+}
+
+.recommendation-icon {
+	font-size: 24px;
+	line-height: 1;
+	min-width: 24px;
+}
+
+.recommendation-success .recommendation-icon {
+	color: #00a32a;
+}
+
+.recommendation-warning .recommendation-icon {
+	color: #dba617;
+}
+
+.recommendation-info .recommendation-icon {
+	color: #2271b1;
+}
+
+.recommendation-content h4 {
+	margin: 0 0 8px;
+	font-size: 14px;
+	font-weight: 600;
+	color: #1d2327;
+}
+
+.recommendation-content p {
+	margin: 0;
+	font-size: 13px;
+	color: #50575e;
+	line-height: 1.6;
+}
+
+/* Hooks Tab Styles */
+.ria-hooks-stats {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	gap: 20px;
+	margin-bottom: 30px;
+}
+
+.stat-card {
+	background: linear-gradient(135deg, #2271b1 0%, #1e5a8e 100%);
+	color: #fff;
+	padding: 24px;
+	border-radius: 8px;
+	text-align: center;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.stat-number {
+	display: block;
+	font-size: 42px;
+	font-weight: 700;
+	line-height: 1;
+	margin-bottom: 8px;
+}
+
+.stat-label {
+	display: block;
+	font-size: 14px;
+	opacity: 0.9;
+	font-weight: 500;
+}
+
+.hooks-category-card {
+	border-left: 4px solid #2271b1;
+}
+
+.hooks-list {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+}
+
+.hook-item {
+	padding: 12px;
+	background: #f9fafb;
+	border-radius: 4px;
+	border-left: 3px solid #dcdcde;
+}
+
+.hook-name {
+	display: inline-block;
+	background: #1d2327;
+	color: #fff;
+	padding: 4px 8px;
+	border-radius: 3px;
+	font-family: monospace;
+	font-size: 13px;
+	margin-bottom: 8px;
+}
+
+.hook-item p {
+	margin: 8px 0 0;
+	font-size: 13px;
+	color: #50575e;
+}
+
+.hook-example {
+	margin-top: 12px;
+}
+
+.hook-example summary {
+	cursor: pointer;
+	color: #2271b1;
+	font-weight: 500;
+	font-size: 13px;
+}
+
+.hook-example summary:hover {
+	color: #1e5a8e;
+}
+
+.hook-example pre {
+	margin: 12px 0 0;
+	background: #1d2327;
+	color: #f0f0f1;
+	padding: 16px;
+	border-radius: 4px;
+	overflow-x: auto;
+}
+
+.hook-example code {
+	font-family: 'Courier New', Courier, monospace;
+	font-size: 12px;
+	line-height: 1.6;
+}
+
+/* Fonts Tab Styles */
+.ria-font-upload {
+	display: flex;
+	gap: 12px;
+	align-items: center;
+	margin-top: 16px;
+}
+
+.ria-font-upload input[type="text"] {
+	flex: 1;
+	max-width: 400px;
+}
+
+.fonts-list {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+}
+
+.font-item {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 16px;
+	background: #f9fafb;
+	border: 1px solid #dcdcde;
+	border-radius: 6px;
+}
+
+.font-info h4 {
+	margin: 0 0 4px;
+	font-size: 16px;
+	font-weight: 600;
+	color: #1d2327;
+}
+
+.font-info .description {
+	margin: 0;
+	font-size: 12px;
+	color: #50575e;
+}
+
+.ria-delete-font {
+	color: #d63638;
+}
+
+.ria-delete-font:hover {
+	color: #b32d2e;
+	border-color: #d63638;
+}
+
+.ria-tips-list {
+	list-style-type: disc;
+	margin-left: 20px;
+	color: #50575e;
+	font-size: 13px;
+	line-height: 1.8;
+}
+
+.ria-tips-list li {
+	margin-bottom: 8px;
+}
+
+.ria-installed-fonts-card {
+	grid-column: span 2;
+}
+
+/* Color Picker Styles - Design Tokens Tab */
+.ria-colors-editor {
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+}
+
+.ria-card-header {
+	margin-bottom: 20px;
+}
+
+.ria-card-header h3 {
+	margin: 0 0 8px;
+	font-size: 18px;
+	font-weight: 600;
+	color: #1d2327;
+	border: none;
+	padding: 0;
+}
+
+.ria-card-header .description {
+	margin: 0;
+	color: #50575e;
+	font-size: 13px;
+}
+
+.ria-color-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+	gap: 16px;
+	margin-top: 16px;
+}
+
+.ria-color-item {
+	display: flex;
+	gap: 16px;
+	padding: 16px;
+	background: #f9fafb;
+	border: 2px solid #dcdcde;
+	border-radius: 8px;
+	transition: all 0.2s ease;
+}
+
+.ria-color-item:hover {
+	border-color: #2271b1;
+	background: #fff;
+	box-shadow: 0 2px 8px rgba(34, 113, 177, 0.1);
+}
+
+.ria-color-item.is-customized {
+	border-color: #dba617;
+	background: #fefce8;
+}
+
+.ria-color-item.is-modified {
+	border-color: #00a32a;
+	background: #f0fdf4;
+}
+
+.ria-color-preview {
+	width: 60px;
+	height: 60px;
+	border-radius: 8px;
+	border: 3px solid #fff;
+	box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+	flex-shrink: 0;
+	transition: transform 0.2s ease;
+}
+
+.ria-color-item:hover .ria-color-preview {
+	transform: scale(1.05);
+}
+
+.ria-color-details {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	min-width: 0;
+}
+
+.ria-color-details label {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	font-size: 14px;
+	font-weight: 600;
+	color: #1d2327;
+	margin: 0;
+}
+
+.ria-badge {
+	display: inline-block;
+	padding: 2px 8px;
+	background: #dba617;
+	color: #fff;
+	font-size: 11px;
+	font-weight: 600;
+	text-transform: uppercase;
+	border-radius: 3px;
+	letter-spacing: 0.5px;
+}
+
+.ria-color-controls {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.ria-color-controls .wp-picker-container {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.ria-color-controls input[type="text"] {
+	flex: 1;
+	font-family: monospace;
+	font-size: 13px;
+}
+
+.ria-color-slug {
+	display: inline-block;
+	background: #1d2327;
+	color: #fff;
+	padding: 4px 8px;
+	border-radius: 4px;
+	font-family: 'Courier New', Courier, monospace;
+	font-size: 11px;
+	letter-spacing: 0.5px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.ria-actions-toolbar {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	padding: 20px 0;
+	border-top: 2px solid #f0f0f1;
+	flex-wrap: wrap;
+}
+
+.ria-actions-toolbar .button-large {
+	height: 44px;
+	line-height: 42px;
+	padding: 0 24px;
+	font-size: 14px;
+	font-weight: 600;
+}
+
+.ria-actions-toolbar .button-large .dashicons {
+	font-size: 20px;
+	width: 20px;
+	height: 20px;
+	margin-right: 8px;
+	vertical-align: middle;
+	margin-top: -2px;
+}
+
+.ria-save-status {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	padding: 8px 16px;
+	border-radius: 4px;
+	font-weight: 500;
+	font-size: 13px;
+}
+
+.ria-save-status .dashicons {
+	font-size: 18px;
+	width: 18px;
+	height: 18px;
+}
+
+.ria-save-status .spinner {
+	margin: 0;
+}
+
+.ria-help-text {
+	background: #f0f6fc;
+	border-left: 4px solid #2271b1;
+	padding: 16px;
+	border-radius: 4px;
+	margin-top: 16px;
+}
+
+.ria-help-text p {
+	margin: 0;
+	color: #1d2327;
+	font-size: 13px;
+	line-height: 1.6;
+}
+
+.ria-help-text strong {
+	color: #2271b1;
+}
+
+.ria-notice {
+	padding: 12px 16px;
+	border-left: 4px solid;
+	border-radius: 4px;
+	margin: 16px 0;
+	font-size: 13px;
+}
+
+.ria-notice-info {
+	background: #f0f6fc;
+	border-left-color: #2271b1;
+	color: #1d2327;
+}
+
+.ria-notice-success {
+	background: #f0fdf4;
+	border-left-color: #00a32a;
+	color: #1d2327;
+}
+
+.ria-notice-warning {
+	background: #fef9c3;
+	border-left-color: #dba617;
+	color: #1d2327;
+}
+
+.ria-notice-error {
+	background: #fef2f2;
+	border-left-color: #d63638;
+	color: #1d2327;
+}
+
+/* Responsive */
+@media screen and (max-width: 1200px) {
+	.ria-settings-grid,
+	.ria-performance-grid,
+	.ria-hooks-grid,
+	.ria-fonts-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.ria-color-grid {
+		grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+	}
+
+	.ria-recommendations-card,
+	.ria-installed-fonts-card {
+		grid-column: span 1;
+	}
+}
+
+@media screen and (max-width: 782px) {
+	.ria-design-system-wrap .nav-tab {
+		font-size: 12px;
+		padding: 10px 12px;
+	}
+
+	.ria-tab-panel {
+		padding: 20px;
+	}
+
+	.ria-score-circle {
+		width: 120px;
+		height: 120px;
+		border-width: 6px;
+	}
+
+	.score-number {
+		font-size: 36px;
+	}
+
+	.score-grade {
+		font-size: 18px;
+	}
+
+	.ria-font-upload {
+		flex-direction: column;
+		align-items: stretch;
+	}
+
+	.ria-font-upload input[type="text"] {
+		max-width: 100%;
+	}
+
+	.ria-color-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.ria-color-item {
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+	}
+
+	.ria-color-details label {
+		justify-content: center;
+	}
+
+	.ria-actions-toolbar {
+		flex-direction: column;
+		align-items: stretch;
+	}
+
+	.ria-actions-toolbar .button {
+		width: 100%;
+		justify-content: center;
+	}
+}

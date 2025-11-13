@@ -1,0 +1,71 @@
+.wp-block-rp-accordions {
+
+	.accordion-toggle {
+		cursor: default; // Remove pointer cursor from entire toggle area
+
+		.accordion-icon {
+			cursor: pointer; // Add pointer cursor only to the icon
+
+			&:after {
+				top: -0.25rem;
+			}
+		}
+
+		.accordion-intro {
+			cursor: text; // Make it clear the text is editable
+		}
+
+		&.is-active {
+			.accordion-icon {
+				&:after {
+					top: 0.1rem;
+				}
+			}
+		}
+	}
+
+	// Colours
+	&.has-text-color {
+		.accordion {
+			border-color: inherit;
+
+			.accordion-toggle {
+				&:focus,
+				&:hover {
+					color: inherit;
+				}
+
+				&.is-active {
+					color: inherit;
+
+					.accordion-icon {
+						&:after {
+							color: inherit;
+						}
+					}
+				}
+			}
+
+			.accordion-content {
+				border-color: inherit;
+			}
+		}
+	}
+}
+
+.components-base-control__field {
+	margin-bottom: 0 !important;
+}
+
+.components-flex {
+	&.components-select-control {
+		align-items: center;
+		flex-direction: row;
+		justify-content: center;
+		gap: 10px;
+
+		label {
+			margin-bottom: 0 !important;
+		}
+	}
+}

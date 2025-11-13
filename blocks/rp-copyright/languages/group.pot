@@ -1,0 +1,53 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2022-11-15T17:18:42+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.6.0\n"
+"X-Domain: group\n"
+
+#: build/index.js:1
+msgctxt "Block - Group"
+msgid "Top Spacing"
+msgstr ""
+
+#: build/index.js:1
+msgctxt "Block - Group"
+msgid "Bottom Spacing"
+msgstr ""
+
+#: build/index.js:1
+msgctxt "Block - Group"
+msgid "Block Spacing"
+msgstr ""
+
+#: build/block.json
+msgctxt "block title"
+msgid "Group"
+msgstr ""
+
+#: build/block.json
+msgctxt "block description"
+msgid "Grouping other blocks together."
+msgstr ""
+
+#: build/block.json
+msgctxt "block keyword"
+msgid "group"
+msgstr ""
+
+#: build/block.json
+msgctxt "block keyword"
+msgid "design"
+msgstr ""
+
+#: build/block.json
+msgctxt "block keyword"
+msgid "layout"
+msgstr ""

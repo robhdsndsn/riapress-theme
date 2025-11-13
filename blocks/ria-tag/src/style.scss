@@ -1,0 +1,137 @@
+/**
+ * RIA Tag Block - Frontend & Editor Styles
+ */
+
+.wp-block-ria-tag {
+	display: inline-flex;
+	align-items: center;
+	gap: 4px;
+	font-weight: 500;
+	border: 1px solid;
+	transition: all 0.2s ease-out;
+	cursor: default;
+	text-decoration: none;
+	white-space: nowrap;
+
+	// Default neutral variant
+	background-color: var(--wp--preset--color--neutral-bg, #f3f4f6);
+	color: var(--wp--preset--color--neutral-text, #374151);
+	border-color: var(--wp--preset--color--neutral-accent, #d1d5db);
+
+	// Size variants
+	&.size-small {
+		padding: 2px 8px;
+		font-size: 11px;
+		line-height: 1.4;
+	}
+
+	&.size-medium {
+		padding: 4px 12px;
+		font-size: 13px;
+		line-height: 1.5;
+	}
+
+	&.size-large {
+		padding: 6px 16px;
+		font-size: 14px;
+		line-height: 1.5;
+	}
+
+	// Shape variants
+	&.shape-rounded {
+		border-radius: 4px;
+	}
+
+	&.shape-pill {
+		border-radius: 999px;
+	}
+
+	&.shape-square {
+		border-radius: 0;
+	}
+
+	// Tag text
+	.ria-tag-text {
+		flex-shrink: 0;
+	}
+
+	// Icon
+	.ria-tag-icon {
+		flex-shrink: 0;
+		display: inline-flex;
+	}
+
+	// Remove button
+	.ria-tag-remove {
+		background: none;
+		border: none;
+		color: inherit;
+		cursor: pointer;
+		padding: 0;
+		margin-left: 2px;
+		font-size: 18px;
+		line-height: 1;
+		opacity: 0.7;
+		transition: opacity 0.2s ease-out;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+
+		&:hover {
+			opacity: 1;
+		}
+
+		&:focus {
+			outline: 2px solid currentColor;
+			outline-offset: 2px;
+			opacity: 1;
+		}
+	}
+
+	// Color Variants
+	&.has-primary-variant {
+		background-color: var(--wp--preset--color--primary-bg, #dbeafe);
+		color: var(--wp--preset--color--primary-text, #1e40af);
+		border-color: var(--wp--preset--color--primary-accent, #3b82f6);
+	}
+
+	&.has-secondary-variant {
+		background-color: var(--wp--preset--color--secondary-bg, #f3e8ff);
+		color: var(--wp--preset--color--secondary-text, #6b21a8);
+		border-color: var(--wp--preset--color--secondary-accent, #a855f7);
+	}
+
+	&.has-accent-variant {
+		background-color: var(--wp--preset--color--accent-bg, #fef3c7);
+		color: var(--wp--preset--color--accent-text, #92400e);
+		border-color: var(--wp--preset--color--accent-accent, #f59e0b);
+	}
+
+	&.has-neutral-variant {
+		background-color: var(--wp--preset--color--neutral-bg, #f3f4f6);
+		color: var(--wp--preset--color--neutral-text, #374151);
+		border-color: var(--wp--preset--color--neutral-accent, #d1d5db);
+	}
+
+	// Custom colors (inline styles applied)
+	&.has-custom-colors {
+		// Inline styles will override
+	}
+
+	// Link tag hover
+	&[href] {
+		cursor: pointer;
+
+		&:hover {
+			transform: translateY(-1px);
+			box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+			text-decoration: none;
+		}
+	}
+
+	// Focus state
+	&:focus-visible {
+		outline: 2px solid currentColor;
+		outline-offset: 2px;
+	}
+}

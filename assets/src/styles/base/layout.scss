@@ -1,0 +1,13 @@
+.wp-site-blocks, 
+:where(.wp-site-blocks) > * {
+  padding: 0;
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+// main.has-global-padding,
+// main > .has-global-padding {
+//   //TODO: Birdi, this is redundant as this can be accomplished at the template level using the Full Site Editor. I will leave it here until I get clear from Tom.
+//   padding-top: 0 !important;
+//   padding-bottom: 0 !important;
+// }

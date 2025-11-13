@@ -1,0 +1,39 @@
+/**
+ * RIA Alert Block - Editor Styles
+ */
+
+// Editor-specific adjustments
+.wp-block-ria-notification {
+	// CRITICAL: Make block visible in editor (animations only apply on frontend)
+	// Target the block itself (not a child) since useBlockProps applies classes to same element
+	&[data-animation] {
+		opacity: 1 !important;
+	}
+
+	// Make RichText editable areas more visible in editor
+	.ria-alert-title,
+	.ria-alert-description {
+		min-height: 1.5em;
+
+		&:focus {
+			outline: 1px dashed currentColor;
+			outline-offset: 2px;
+		}
+
+		&:empty::before {
+			opacity: 0.5;
+		}
+	}
+
+	// Editor cursor styling
+	.ria-alert-title[contenteditable="true"],
+	.ria-alert-description[contenteditable="true"] {
+		cursor: text;
+	}
+
+	// Prevent dismiss button from being clickable in editor
+	.ria-alert-dismiss {
+		pointer-events: none;
+		cursor: not-allowed;
+	}
+}

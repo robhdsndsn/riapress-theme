@@ -1,0 +1,206 @@
+/**
+ * RIA Accordion Item - Editor Styles
+ */
+
+.wp-block-ria-accordion-item {
+	position: relative;
+	background: #fff;
+	transition: all 0.2s ease;
+	margin-bottom: 8px;
+
+	// Item controls
+	.accordion-item-controls {
+		display: flex;
+		gap: 8px;
+		padding: 6px 12px;
+		background: #f0f0f0;
+		border-bottom: 1px solid #ddd;
+		font-size: 12px;
+		color: #666;
+		align-items: center;
+
+		.item-label {
+			font-weight: 600;
+		}
+	}
+
+	// Editor hint - show when collapsed
+	&:not(.is-open) {
+		position: relative;
+
+		&:after {
+			content: '👆 Click title to expand and add content';
+			display: block;
+			padding: 12px;
+			background: #f0f6ff;
+			border-top: 1px dashed #3b82f6;
+			color: #1e40af;
+			font-size: 13px;
+			text-align: center;
+			font-style: italic;
+		}
+	}
+
+	// Title
+	.accordion-item-title {
+		display: flex;
+		align-items: center;
+		gap: 12px;
+		cursor: pointer;
+		user-select: none;
+		transition: all 0.2s ease;
+		position: relative;
+		border: none;
+		width: 100%;
+		text-align: left;
+
+		&:hover {
+			background-color: #f0f6ff !important;
+			opacity: 1;
+		}
+
+		&:focus {
+			outline: 2px solid #2271b1;
+			outline-offset: 2px;
+		}
+
+		// Clickable indicator
+		&:before {
+			content: '';
+			position: absolute;
+			left: 0;
+			top: 0;
+			bottom: 0;
+			width: 4px;
+			background: #3b82f6;
+			opacity: 0;
+			transition: opacity 0.2s ease;
+		}
+
+		&:hover:before {
+			opacity: 1;
+		}
+
+		.accordion-title-text {
+			flex: 1;
+			margin: 0;
+
+			.rich-text {
+				margin: 0;
+			}
+		}
+
+		.accordion-icon {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-shrink: 0;
+			transition: transform 0.3s ease;
+			font-size: 16px;
+
+			svg {
+				display: block;
+			}
+		}
+
+		// Icon positions
+		&.icon-left {
+			.accordion-icon {
+				order: -1;
+			}
+		}
+
+		&.icon-right {
+			.accordion-icon {
+				order: 1;
+			}
+		}
+
+		&.icon-none {
+			.accordion-icon {
+				display: none;
+			}
+		}
+
+		// Toggle button - always visible and clickable
+		.accordion-toggle-button {
+			flex-shrink: 0;
+			width: 32px;
+			height: 32px;
+			border-radius: 4px;
+			border: 2px solid #3b82f6;
+			background: #fff;
+			color: #3b82f6;
+			font-size: 20px;
+			font-weight: bold;
+			cursor: pointer;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			transition: all 0.2s ease;
+			margin-left: auto; // Push to the right
+			line-height: 1;
+			padding: 0;
+
+			&:hover {
+				background: #3b82f6;
+				color: #fff;
+				transform: scale(1.1);
+			}
+
+			&:active {
+				transform: scale(0.95);
+			}
+
+			&:focus {
+				outline: 2px solid #2271b1;
+				outline-offset: 2px;
+			}
+		}
+	}
+
+	// Content
+	.accordion-item-content {
+		overflow: visible; // Allow block controls to show
+
+		.accordion-content-inner {
+			margin: 0;
+
+			// InnerBlocks styling
+			.block-editor-inner-blocks {
+				margin: 0;
+			}
+
+			.block-editor-block-list__layout {
+				margin: 0;
+			}
+
+			// Add some spacing for nested blocks
+			> * {
+				margin-bottom: 1em;
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+		}
+	}
+
+	// Open state
+	&.is-open {
+		.accordion-item-title {
+			.accordion-icon {
+				transform: rotate(180deg);
+			}
+		}
+	}
+}
+
+// Appender button styling
+.wp-block-ria-accordion-item {
+	.accordion-content-inner {
+		.block-list-appender {
+			margin-top: 1em;
+		}
+	}
+}

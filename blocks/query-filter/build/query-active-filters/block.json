@@ -1,0 +1,57 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "gregius/query-active-filters",
+  "version": "0.1.0",
+  "title": "Query Active Filters",
+  "category": "widgets",
+  "icon": "filter",
+  "description": "Display and remove active query filters",
+  "ancestor": [
+    "core/query"
+  ],
+  "usesContext": [
+    "queryId",
+    "query"
+  ],
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ],
+    "spacing": {
+      "margin": true,
+      "padding": true
+    },
+    "typography": {
+      "fontSize": true,
+      "lineHeight": true
+    },
+    "__experimentalBorder": {
+      "color": false,
+      "radius": false,
+      "style": false,
+      "width": false
+    },
+    "interactivity": {
+      "clientNavigation": true
+    }
+  },
+  "attributes": {
+    "filterBadgeTextColor": {
+      "type": "string",
+      "default": ""
+    },
+    "filterBadgeBgColor": {
+      "type": "string",
+      "default": "var(--wp--custom--colors--primary-50)"
+    }
+  },
+  "textdomain": "gregius-query-filter",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "viewScriptModule": "file:./view.js",
+  "render": "file:./render.php"
+}

@@ -1,0 +1,224 @@
+/**
+ * RIA Tooltip - Frontend Styles
+ */
+
+.wp-block-ria-tooltip {
+	display: inline-block;
+	position: relative;
+
+	// Trigger wrapper
+	.tooltip-trigger-wrapper {
+		display: inline-block;
+		position: relative;
+	}
+
+	// Trigger element
+	.tooltip-trigger {
+		display: inline-block;
+		position: relative;
+		cursor: help;
+
+		// Ensure trigger content is inline
+		> * {
+			display: inline-block;
+		}
+	}
+
+	// Tooltip content
+	.tooltip-content {
+		position: fixed;
+		display: inline-block;
+		padding: 8px 12px;
+		border-radius: 6px;
+		font-size: 14px;
+		line-height: 1.4;
+		font-weight: 400;
+		text-align: center;
+		white-space: nowrap;
+		pointer-events: none;
+		z-index: 10000;
+		opacity: 0;
+		transition: opacity 0.2s ease-in-out;
+		box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+					0 2px 4px -1px rgba(0, 0, 0, 0.06);
+
+		// Hidden by default
+		&:not(.visible) {
+			visibility: hidden;
+		}
+
+		&.visible {
+			visibility: visible;
+		}
+
+		// Color Schemes
+		&.scheme-dark {
+			background-color: hsl(var(--color-foreground, 222.2 84% 4.9%));
+			color: hsl(var(--color-background, 0 0% 100%));
+		}
+
+		&.scheme-light {
+			background-color: hsl(var(--color-background, 0 0% 100%));
+			color: hsl(var(--color-foreground, 222.2 84% 4.9%));
+			border: 1px solid hsl(var(--color-border, 214.3 31.8% 91.4%));
+		}
+
+		// Tooltip text
+		.tooltip-text {
+			display: inline-block;
+		}
+
+		// Arrow
+		.tooltip-arrow {
+			position: absolute;
+			width: 8px;
+			height: 8px;
+			transform: rotate(45deg);
+
+			&[data-position="top"] {
+				bottom: -4px;
+				left: 50%;
+				margin-left: -4px;
+			}
+
+			&[data-position="bottom"] {
+				top: -4px;
+				left: 50%;
+				margin-left: -4px;
+			}
+
+			&[data-position="left"] {
+				right: -4px;
+				top: 50%;
+				margin-top: -4px;
+			}
+
+			&[data-position="right"] {
+				left: -4px;
+				top: 50%;
+				margin-top: -4px;
+			}
+		}
+
+		// Arrow colors
+		&.scheme-dark .tooltip-arrow {
+			background-color: hsl(var(--color-foreground, 222.2 84% 4.9%));
+		}
+
+		&.scheme-light .tooltip-arrow {
+			background-color: hsl(var(--color-background, 0 0% 100%));
+			border-left: 1px solid hsl(var(--color-border, 214.3 31.8% 91.4%));
+			border-bottom: 1px solid hsl(var(--color-border, 214.3 31.8% 91.4%));
+		}
+	}
+
+	// Editor-only preview note
+	.tooltip-preview-note {
+		display: inline-block;
+		margin-top: 8px;
+		font-size: 12px;
+		color: #666;
+		font-style: italic;
+	}
+
+	// Reduced motion support
+	@media (prefers-reduced-motion: reduce) {
+		.tooltip-content {
+			transition: none;
+		}
+	}
+
+	// Mobile adjustments
+	@media (max-width: 768px) {
+		.tooltip-content {
+			max-width: 90vw;
+			white-space: normal;
+			text-align: left;
+		}
+	}
+}
+
+/**
+ * Editor-specific styles
+ */
+.editor-styles-wrapper,
+.block-editor-block-list__layout {
+	.wp-block-ria-tooltip {
+		// Show tooltip preview in editor
+		.tooltip-content {
+			position: relative;
+			display: inline-block;
+			margin-top: 12px;
+			opacity: 0.7;
+			visibility: visible;
+			pointer-events: none;
+
+			&::before {
+				content: 'Preview:';
+				display: block;
+				font-size: 10px;
+				opacity: 0.6;
+				margin-bottom: 4px;
+				text-transform: uppercase;
+				letter-spacing: 0.5px;
+			}
+		}
+
+		.tooltip-preview-note {
+			display: block;
+		}
+	}
+}
+
+
+/* Color Variants */
+.wp-block-ria-tooltip {
+	/* Variant: Primary */
+	&.has-primary-variant {
+		background-color: var(--color-primary-100);
+		color: var(--color-primary-900);
+		border-color: var(--color-primary-300);
+
+		a {
+			color: var(--color-primary-700);
+		}
+	}
+
+	/* Variant: Secondary */
+	&.has-secondary-variant {
+		background-color: var(--color-secondary-100);
+		color: var(--color-secondary-900);
+		border-color: var(--color-secondary-300);
+
+		a {
+			color: var(--color-secondary-700);
+		}
+	}
+
+	/* Variant: Accent */
+	&.has-accent-variant {
+		background-color: var(--color-accent-100);
+		color: var(--color-accent-900);
+		border-color: var(--color-accent-300);
+
+		a {
+			color: var(--color-accent-700);
+		}
+	}
+
+	/* Variant: Neutral */
+	&.has-neutral-variant {
+		background-color: var(--color-neutral-100);
+		color: var(--color-neutral-900);
+		border-color: var(--color-neutral-300);
+
+		a {
+			color: var(--color-neutral-700);
+		}
+	}
+
+	/* Custom colors via inline styles */
+	&.has-custom-colors {
+		/* Inline styles will override */
+	}
+}

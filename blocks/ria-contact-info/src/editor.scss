@@ -1,0 +1,81 @@
+/**
+ * RIA Contact Info Block - Editor Styles
+ */
+
+.wp-block-ria-contact-info {
+	.contact-items {
+		display: flex;
+		flex-direction: column;
+		gap: var(--item-spacing, 12px);
+		margin-bottom: 16px;
+	}
+
+	.contact-item {
+		display: flex;
+		align-items: center;
+		gap: 12px;
+		padding: 8px;
+		border: 1px dashed #e5e7eb;
+		border-radius: 4px;
+		background: #f9fafb;
+	}
+
+	.contact-icon {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-shrink: 0;
+		color: var(--icon-color, #4b5563);
+
+		svg {
+			width: var(--icon-size, 20px);
+			height: var(--icon-size, 20px);
+		}
+	}
+
+	.contact-content {
+		display: flex;
+		flex-direction: column;
+		gap: 4px;
+		flex: 1;
+	}
+
+	.contact-label {
+		font-size: 12px;
+		font-weight: 600;
+		color: #6b7280;
+		text-transform: uppercase;
+		letter-spacing: 0.5px;
+	}
+
+	.contact-value {
+		color: var(--text-color, #1f2937);
+	}
+
+	.social-links {
+		display: flex;
+		gap: 12px;
+		padding-top: 8px;
+		border-top: 1px dashed #e5e7eb;
+		margin-top: 8px;
+
+		.social-link {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: var(--social-icon-size, 24px);
+			height: var(--social-icon-size, 24px);
+			color: var(--icon-color, #4b5563);
+			transition: color 0.2s ease;
+
+			&:hover {
+				color: var(--link-color, #2563eb);
+			}
+
+			svg {
+				width: 100%;
+				height: 100%;
+			}
+		}
+	}
+}

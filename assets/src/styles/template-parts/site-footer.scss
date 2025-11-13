@@ -1,0 +1,26 @@
+// Site Footer
+.site-footer {
+  margin-top: var(--wp--style--block-gap);
+  padding-top: var(--wp--style--block-gap);
+  padding-bottom: var(--wp--style--block-gap);
+  border-top: 1px var(--wp--custom--colors--neutral) solid;
+
+  .layout-container {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    max-width: var(--wp--style--global--content-size);
+    margin-right: auto;
+    margin-left: auto;
+
+    @media screen and (max-width: $laptop) {
+      flex-direction: column;
+      padding-right: var(--wp--style--block-gap);
+      padding-left: var(--wp--style--block-gap);
+    }
+
+    .navigation {
+      flex: 1 1 auto;
+    }
+  }
+}

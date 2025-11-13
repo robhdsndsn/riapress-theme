@@ -1,0 +1,109 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "ria/tooltip",
+	"version": "1.0.0",
+	"title": "RIA Tooltip",
+	"category": "ria",
+	"description": "Display contextual information on hover or focus - perfect for help text, definitions, and feature descriptions.",
+	"keywords": [
+		"tooltip",
+		"hover",
+		"help",
+		"info",
+		"hint",
+		"popover"
+	],
+	"textdomain": "riapress",
+	"supports": {
+		"html": false,
+		"anchor": true,
+		"align": false,
+		"spacing": {
+			"margin": true,
+			"padding": true
+		},
+		"typography": {
+			"fontSize": true,
+			"lineHeight": true
+		},
+		"color": {
+			"text": true,
+			"background": false,
+			"gradients": false
+		}
+	},
+	"attributes": {
+		"tooltipText": {
+			"type": "string",
+			"default": "Tooltip text"
+		},
+		"position": {
+			"type": "string",
+			"default": "top",
+			"enum": [
+				"top",
+				"right",
+				"bottom",
+				"left"
+			]
+		},
+		"align": {
+			"type": "string",
+			"default": "center",
+			"enum": [
+				"start",
+				"center",
+				"end"
+			]
+		},
+		"showArrow": {
+			"type": "boolean",
+			"default": true
+		},
+		"delayDuration": {
+			"type": "number",
+			"default": 700
+		},
+		"colorScheme": {
+			"type": "string",
+			"default": "dark",
+			"enum": [
+				"dark",
+				"light"
+			]
+		},
+		"sideOffset": {
+			"type": "number",
+			"default": 8
+		},
+		"maxWidth": {
+			"type": "string",
+			"default": "300px"
+		},
+		"ariaLabel": {
+			"type": "string",
+			"default": ""
+		},
+		"variant": {
+			"type": "string",
+			"default": "default"
+		},
+		"customColor": {
+			"type": "string",
+			"default": ""
+		},
+		"customBackgroundColor": {
+			"type": "string",
+			"default": ""
+		},
+		"customBorderColor": {
+			"type": "string",
+			"default": ""
+		}
+	},
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"viewScript": "file:./view.js"
+}

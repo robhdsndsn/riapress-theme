@@ -1,0 +1,16 @@
+.wp-block-gregius-query-keyword {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    form {
+        margin: unset;
+    }
+
+    input[type="search"] {
+        width: 100%;
+        border: none;
+        background-color: #fff; 
+    }
+} 
+ 

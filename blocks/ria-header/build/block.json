@@ -1,0 +1,106 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "ria/header",
+  "version": "0.1.0",
+  "title": "RIA Header",
+  "category": "ria-blocks",
+  "icon": "menu",
+  "description": "Customizable site header with logo, navigation, and CTA area",
+  "keywords": [
+    "header",
+    "site-header",
+    "navigation",
+    "navbar",
+    "organism"
+  ],
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ],
+    "spacing": {
+      "padding": true,
+      "margin": true
+    }
+  },
+  "attributes": {
+    "layout": {
+      "type": "string",
+      "default": "default"
+    },
+    "stickyHeader": {
+      "type": "boolean",
+      "default": false
+    },
+    "backgroundColor": {
+      "type": "string",
+      "default": "#ffffff"
+    },
+    "textColor": {
+      "type": "string",
+      "default": "#1a1a1a"
+    },
+    "height": {
+      "type": "number",
+      "default": 80
+    },
+    "logoPosition": {
+      "type": "string",
+      "default": "left"
+    },
+    "showSearch": {
+      "type": "boolean",
+      "default": false
+    },
+    "showCTA": {
+      "type": "boolean",
+      "default": true
+    },
+    "ctaText": {
+      "type": "string",
+      "default": "Get Started"
+    },
+    "ctaLink": {
+      "type": "string",
+      "default": "#"
+    },
+    "transparentOnTop": {
+      "type": "boolean",
+      "default": false
+    },
+    "shadowOnScroll": {
+      "type": "boolean",
+      "default": true
+    },
+    "animationEnabled": {
+      "type": "boolean",
+      "default": true
+    },
+    "animationType": {
+      "type": "string",
+      "default": "fadeInUp"
+    },
+    "animationDuration": {
+      "type": "number",
+      "default": 0.6
+    },
+    "animationDelay": {
+      "type": "number",
+      "default": 0
+    },
+    "animationEasing": {
+      "type": "string",
+      "default": "ease-out"
+    },
+    "hoverAnimation": {
+      "type": "string",
+      "default": "none"
+    }
+  },
+  "textdomain": "ria",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}

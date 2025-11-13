@@ -1,0 +1,1 @@
+{"version":3,"file":"query-active-filters/index.css","mappings":";;;AAAA;EACI;AACJ,C","sources":["webpack://query-loop-filter/./src/query-active-filters/editor.scss"],"sourcesContent":[".wp-block-gregius-query-active-filters {\r\n    background-color: orange;\r\n}\r\n"],"names":[],"sourceRoot":""}

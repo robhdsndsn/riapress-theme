@@ -1,0 +1,98 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "ria/heading",
+  "version": "0.1.0",
+  "title": "RIA Heading",
+  "category": "text",
+  "icon": "heading",
+  "description": "Branded heading with customizable levels and style variants.",
+  "keywords": [
+    "heading",
+    "title",
+    "h1",
+    "h2",
+    "h3",
+    "typography"
+  ],
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ],
+    "spacing": {
+      "margin": true,
+      "padding": true
+    },
+    "color": {
+      "text": true,
+      "background": false
+    }
+  },
+  "attributes": {
+    "content": {
+      "type": "string",
+      "default": "Heading"
+    },
+    "level": {
+      "type": "number",
+      "default": 2,
+      "enum": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    "variant": {
+      "type": "string",
+      "default": "default",
+      "enum": [
+        "default",
+        "display",
+        "subtitle",
+        "label"
+      ]
+    },
+    "textAlign": {
+      "type": "string",
+      "default": "left",
+      "enum": [
+        "left",
+        "center",
+        "right"
+      ]
+    },
+    "animationEnabled": {
+      "type": "boolean",
+      "default": true
+    },
+    "animationType": {
+      "type": "string",
+      "default": "fadeInUp"
+    },
+    "animationDuration": {
+      "type": "number",
+      "default": 0.6
+    },
+    "animationDelay": {
+      "type": "number",
+      "default": 0
+    },
+    "animationEasing": {
+      "type": "string",
+      "default": "ease-out"
+    },
+    "hoverAnimation": {
+      "type": "string",
+      "default": "none"
+    }
+  },
+  "textdomain": "ria-heading",
+  "editorScript": "file:index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}

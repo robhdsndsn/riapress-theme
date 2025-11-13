@@ -1,0 +1,264 @@
+/**
+ * RIA Accordion - Editor Styles
+ *
+ * Styles specific to the WordPress block editor
+ */
+
+.wp-block-ria-accordion {
+	margin: 20px 0;
+
+	// Accordion items wrapper
+	.accordion-items-wrapper {
+		display: flex;
+		flex-direction: column;
+		gap: 8px;
+	}
+
+	// Individual accordion item
+	.accordion-item {
+		position: relative;
+		background: #fff;
+		transition: all 0.2s ease;
+
+		// Item controls (move up/down/delete)
+		.accordion-item-controls {
+			display: flex;
+			gap: 4px;
+			padding: 8px;
+			background: #f0f0f0;
+			border-bottom: 1px solid #ddd;
+
+			.components-button {
+				min-width: auto;
+				padding: 4px 8px;
+			}
+		}
+
+		// Editor hint - show when collapsed
+		&:not(.is-open) {
+			position: relative;
+
+			&:after {
+				content: '👆 Click to expand and edit content';
+				display: block;
+				padding: 12px;
+				background: #f0f6ff;
+				border-top: 1px dashed #3b82f6;
+				color: #1e40af;
+				font-size: 13px;
+				text-align: center;
+				font-style: italic;
+			}
+		}
+
+		// Accordion title
+		.accordion-item-title {
+			display: flex;
+			align-items: center;
+			gap: 12px;
+			cursor: pointer;
+			user-select: none;
+			transition: all 0.2s ease;
+			position: relative;
+
+			// Visual indicator that it's clickable
+			&:hover {
+				background-color: #f0f6ff;
+				opacity: 1;
+			}
+
+			&:focus {
+				outline: 2px solid #2271b1;
+				outline-offset: 2px;
+			}
+
+			// Make it obvious it's clickable
+			&:before {
+				content: '';
+				position: absolute;
+				left: 0;
+				top: 0;
+				bottom: 0;
+				width: 4px;
+				background: #3b82f6;
+				opacity: 0;
+				transition: opacity 0.2s ease;
+			}
+
+			&:hover:before {
+				opacity: 1;
+			}
+
+			.accordion-title-text {
+				flex: 1;
+				margin: 0;
+
+				// RichText component styling
+				.rich-text {
+					margin: 0;
+				}
+			}
+
+			.accordion-icon {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				flex-shrink: 0;
+				transition: transform 0.3s ease;
+
+				svg {
+					display: block;
+				}
+			}
+
+			// Icon positions
+			&.icon-left {
+				.accordion-icon {
+					order: -1;
+				}
+			}
+
+			&.icon-right {
+				.accordion-icon {
+					order: 1;
+				}
+			}
+
+			&.icon-none {
+				.accordion-icon {
+					display: none;
+				}
+			}
+		}
+
+		// Accordion content
+		.accordion-item-content {
+			overflow: hidden;
+			transition: max-height 0.3s ease;
+
+			.rich-text {
+				margin: 0;
+
+				p {
+					margin: 0 0 1em 0;
+
+					&:last-child {
+						margin-bottom: 0;
+					}
+				}
+			}
+		}
+
+		// Open state
+		&.is-open {
+			.accordion-item-title {
+				.accordion-icon {
+					transform: rotate(180deg);
+				}
+			}
+		}
+
+		// Divider
+		.accordion-divider {
+			width: 100%;
+		}
+	}
+
+	// Layout variants
+	&.layout-default {
+		.accordion-item {
+			border: 1px solid #e0e0e0;
+			border-radius: 4px;
+		}
+	}
+
+	&.layout-minimal {
+		.accordion-item {
+			border: none;
+			border-bottom: 1px solid #e0e0e0;
+			border-radius: 0;
+
+			&:last-child {
+				border-bottom: none;
+			}
+		}
+	}
+
+	&.layout-bordered {
+		.accordion-item {
+			border: 2px solid #e0e0e0;
+			border-radius: 8px;
+		}
+	}
+
+	&.layout-filled {
+		.accordion-item {
+			background: #f9fafb;
+			border: 1px solid #e0e0e0;
+			border-radius: 8px;
+		}
+	}
+
+	// Shadow variants
+	.accordion-item {
+		&.shadow-small {
+			box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+		}
+
+		&.shadow-medium {
+			box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+		}
+
+		&.shadow-large {
+			box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+		}
+
+		&.shadow-xlarge {
+			box-shadow: 0 20px 25px rgba(0, 0, 0, 0.15);
+		}
+
+		&:hover {
+			&.hover-shadow-small {
+				box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+			}
+
+			&.hover-shadow-medium {
+				box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+			}
+
+			&.hover-shadow-large {
+				box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+			}
+
+			&.hover-shadow-xlarge {
+				box-shadow: 0 20px 25px rgba(0, 0, 0, 0.15);
+			}
+		}
+	}
+
+	// Add item button
+	.add-item-button {
+		width: 100%;
+		margin-top: 8px;
+	}
+
+	// Placeholder state
+	.components-placeholder {
+		min-height: 200px;
+	}
+}
+
+// Inspector controls customization
+.components-panel__body {
+	.accordion-item-preview {
+		padding: 8px;
+		background: #f0f0f0;
+		border-radius: 4px;
+		margin-bottom: 8px;
+
+		strong {
+			display: block;
+			margin-bottom: 4px;
+		}
+	}
+}

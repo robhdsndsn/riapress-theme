@@ -1,0 +1,373 @@
+/**
+ * RIA Accordion Item - Frontend Styles
+ * Inspired by shadcn/ui for clean, professional appearance
+ */
+
+// More specific selector to override parent accordion styles
+.wp-block-ria-accordion .wp-block-ria-accordion-item,
+.wp-block-ria-accordion-item {
+	background: transparent !important;
+	border: none !important;
+	border-bottom: 1px solid #e5e7eb !important;
+	border-radius: 0 !important;
+	margin-bottom: 0 !important;
+	position: relative;
+	box-shadow: none !important;
+
+	// Remove border from last item
+	&:last-child {
+		border-bottom: none;
+	}
+
+	// Title button
+	.accordion-item-title {
+		align-items: center;
+		background: transparent !important;
+		border: none;
+		cursor: pointer;
+		display: flex;
+		gap: 16px;
+		padding: 20px 0 !important;
+		position: relative;
+		text-align: left;
+		transition: all 0.2s ease;
+		user-select: none;
+		width: 100%;
+
+		&:hover {
+			color: #374151;
+		}
+
+		&:focus {
+			outline: none;
+		}
+
+		&:focus-visible {
+			outline: 2px solid #3b82f6;
+			outline-offset: 2px;
+			border-radius: 4px;
+		}
+
+		&::-moz-focus-inner {
+			border: 0;
+		}
+
+		.accordion-title-text {
+			flex: 1;
+			font-size: 16px;
+			font-weight: 500;
+			line-height: 1.5;
+			margin: 0;
+			color: #111827;
+			transition: color 0.2s ease;
+		}
+
+		.accordion-icon {
+			align-items: center;
+			display: flex;
+			flex-shrink: 0;
+			justify-content: center;
+			width: 16px;
+			height: 16px;
+			color: #6b7280;
+			transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+
+			&.icon-open {
+				display: none;
+			}
+
+			&.icon-close {
+				display: flex;
+			}
+
+			svg {
+				display: block;
+				width: 100%;
+				height: 100%;
+			}
+		}
+
+		// Icon positions
+		&.icon-left {
+			.accordion-icon {
+				order: -1;
+			}
+		}
+
+		&.icon-right {
+			.accordion-icon {
+				order: 1;
+			}
+		}
+
+		&.icon-none {
+			.accordion-icon {
+				display: none !important;
+			}
+		}
+	}
+
+	// Content area
+	.accordion-item-content {
+		max-height: 0;
+		overflow: hidden;
+		transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+		.accordion-content-inner {
+			padding: 0 0 20px 0;
+			font-size: 15px;
+			line-height: 1.7;
+			color: #4b5563;
+
+			// Content spacing
+			p {
+				margin: 0 0 1em 0;
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+
+			ul, ol {
+				margin: 0 0 1em 0;
+				padding-left: 1.5em;
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+
+			h1, h2, h3, h4, h5, h6 {
+				margin: 0 0 0.75em 0;
+				color: #111827;
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+
+			// Nested blocks
+			> * {
+				margin-bottom: 1em;
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+
+			// Images
+			img {
+				border-radius: 8px;
+			}
+
+			// Lists
+			ul, ol {
+				li {
+					margin-bottom: 0.5em;
+
+					&:last-child {
+						margin-bottom: 0;
+					}
+				}
+			}
+		}
+	}
+
+	// Open state
+	&.is-open {
+		.accordion-item-title {
+			.accordion-icon {
+				transform: rotate(180deg);
+
+				&.icon-open {
+					display: flex;
+				}
+
+				&.icon-close {
+					display: none;
+				}
+			}
+		}
+
+		.accordion-item-content {
+			max-height: 5000px; // Large enough for most content
+		}
+	}
+
+	// Color Variants
+	&.has-primary-variant {
+		background-color: var(--color-primary-100) !important;
+
+		.accordion-item-title {
+			.accordion-title-text {
+				color: var(--color-primary-900);
+			}
+
+			.accordion-icon {
+				color: var(--color-primary-700);
+			}
+
+			&:hover {
+				.accordion-title-text {
+					color: var(--color-primary-800);
+				}
+			}
+		}
+
+		.accordion-item-content .accordion-content-inner {
+			color: var(--color-primary-800);
+
+			h1, h2, h3, h4, h5, h6 {
+				color: var(--color-primary-900);
+			}
+		}
+
+		border-color: var(--color-primary-300) !important;
+	}
+
+	&.has-secondary-variant {
+		background-color: var(--color-secondary-100) !important;
+
+		.accordion-item-title {
+			.accordion-title-text {
+				color: var(--color-secondary-900);
+			}
+
+			.accordion-icon {
+				color: var(--color-secondary-700);
+			}
+
+			&:hover {
+				.accordion-title-text {
+					color: var(--color-secondary-800);
+				}
+			}
+		}
+
+		.accordion-item-content .accordion-content-inner {
+			color: var(--color-secondary-800);
+
+			h1, h2, h3, h4, h5, h6 {
+				color: var(--color-secondary-900);
+			}
+		}
+
+		border-color: var(--color-secondary-300) !important;
+	}
+
+	&.has-accent-variant {
+		background-color: var(--color-accent-100) !important;
+
+		.accordion-item-title {
+			.accordion-title-text {
+				color: var(--color-accent-900);
+			}
+
+			.accordion-icon {
+				color: var(--color-accent-700);
+			}
+
+			&:hover {
+				.accordion-title-text {
+					color: var(--color-accent-800);
+				}
+			}
+		}
+
+		.accordion-item-content .accordion-content-inner {
+			color: var(--color-accent-800);
+
+			h1, h2, h3, h4, h5, h6 {
+				color: var(--color-accent-900);
+			}
+		}
+
+		border-color: var(--color-accent-300) !important;
+	}
+
+	&.has-neutral-variant {
+		background-color: var(--color-neutral-100) !important;
+
+		.accordion-item-title {
+			.accordion-title-text {
+				color: var(--color-neutral-900);
+			}
+
+			.accordion-icon {
+				color: var(--color-neutral-700);
+			}
+
+			&:hover {
+				.accordion-title-text {
+					color: var(--color-neutral-800);
+				}
+			}
+		}
+
+		.accordion-item-content .accordion-content-inner {
+			color: var(--color-neutral-800);
+
+			h1, h2, h3, h4, h5, h6 {
+				color: var(--color-neutral-900);
+			}
+		}
+
+		border-color: var(--color-neutral-300) !important;
+	}
+
+	// Custom colors
+	&.has-custom-colors {
+		.accordion-item-title {
+			.accordion-title-text,
+			.accordion-icon {
+				color: var(--custom-color, currentColor);
+			}
+		}
+
+		background-color: var(--custom-background-color, transparent) !important;
+		border-color: var(--custom-border-color, currentColor) !important;
+
+		.accordion-item-content .accordion-content-inner {
+			color: var(--custom-color, currentColor);
+		}
+	}
+}
+
+// Accessibility
+@media (prefers-reduced-motion: reduce) {
+	.wp-block-ria-accordion-item {
+		.accordion-item-title,
+		.accordion-item-title .accordion-icon {
+			transition: none;
+		}
+
+		.accordion-item-content {
+			transition: none !important;
+		}
+	}
+}
+
+@media (prefers-contrast: high) {
+	.wp-block-ria-accordion-item {
+		.accordion-item-title:focus {
+			outline-width: 3px;
+			outline-offset: 3px;
+		}
+	}
+}
+
+// Print support
+@media print {
+	.wp-block-ria-accordion-item {
+		.accordion-item-content {
+			max-height: none !important;
+			overflow: visible !important;
+		}
+
+		.accordion-icon {
+			display: none !important;
+		}
+
+		page-break-inside: avoid;
+	}
+}

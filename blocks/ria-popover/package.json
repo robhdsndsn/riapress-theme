@@ -1,0 +1,24 @@
+{
+  "name": "ria-popover",
+  "version": "1.0.0",
+  "description": "RIA Popover - Rich interactive content in floating card",
+  "main": "build/index.js",
+  "scripts": {
+    "build": "wp-scripts build",
+    "start": "wp-scripts start"
+  },
+  "keywords": [
+    "wordpress",
+    "block",
+    "popover",
+    "shadcn"
+  ],
+  "author": "RIA",
+  "license": "GPL-2.0-or-later",
+  "devDependencies": {
+    "@wordpress/scripts": "^26.0.0"
+  },
+  "dependencies": {
+    "lucide-react": "^0.553.0"
+  }
+}

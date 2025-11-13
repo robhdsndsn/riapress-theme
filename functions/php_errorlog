@@ -1,0 +1,4 @@
+[30-Oct-2025 15:11:18 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function add_action() in /home/customer/www/staging57.the-ria.ca/public_html/wp-content/themes/riapress/functions/gutenberg-support.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/customer/www/staging57.the-ria.ca/public_html/wp-content/themes/riapress/functions/gutenberg-support.php on line 19

@@ -1,0 +1,290 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "ria/progress-bar",
+	"version": "1.0.0",
+	"title": "RIA Progress Bar",
+	"category": "ria",
+	"icon": "chart-line",
+	"description": "Display progress bars, skill levels, or percentage indicators with animated fills and customizable styling.",
+	"keywords": [
+		"progress",
+		"bar",
+		"skill",
+		"percentage",
+		"indicator",
+		"meter",
+		"chart"
+	],
+	"supports": {
+		"html": false,
+		"align": false,
+		"spacing": {
+			"margin": true,
+			"padding": true
+		}
+	},
+	"attributes": {
+		"bars": {
+			"type": "array",
+			"default": [
+				{
+					"label": "Progress",
+					"percentage": 75
+				}
+			]
+		},
+		"layout": {
+			"type": "string",
+			"default": "default",
+			"enum": [
+				"default",
+				"thin",
+				"thick",
+				"rounded",
+				"minimal"
+			]
+		},
+		"showLabel": {
+			"type": "boolean",
+			"default": true
+		},
+		"labelPosition": {
+			"type": "string",
+			"default": "above",
+			"enum": [
+				"above",
+				"below",
+				"inside",
+				"left",
+				"right"
+			]
+		},
+		"showPercentage": {
+			"type": "boolean",
+			"default": true
+		},
+		"percentagePosition": {
+			"type": "string",
+			"default": "right",
+			"enum": [
+				"inside",
+				"right",
+				"above",
+				"below",
+				"none"
+			]
+		},
+		"height": {
+			"type": "number",
+			"default": 24
+		},
+		"variant": {
+			"type": "string",
+			"default": "default"
+		},
+		"useGradient": {
+			"type": "boolean",
+			"default": false
+		},
+		"gradientDirection": {
+			"type": "string",
+			"default": "horizontal",
+			"enum": [
+				"horizontal",
+				"vertical",
+				"diagonal"
+			]
+		},
+		"customBarColor": {
+			"type": "string",
+			"default": ""
+		},
+		"customBackgroundColor": {
+			"type": "string",
+			"default": ""
+		},
+		"customTextColor": {
+			"type": "string",
+			"default": ""
+		},
+		"customInsideTextColor": {
+			"type": "string",
+			"default": ""
+		},
+		"customBorderColor": {
+			"type": "string",
+			"default": ""
+		},
+		"customGradientStart": {
+			"type": "string",
+			"default": ""
+		},
+		"customGradientEnd": {
+			"type": "string",
+			"default": ""
+		},
+		"stripedPattern": {
+			"type": "boolean",
+			"default": false
+		},
+		"animated": {
+			"type": "boolean",
+			"default": true
+		},
+		"animateOnScroll": {
+			"type": "boolean",
+			"default": true
+		},
+		"animationDuration": {
+			"type": "number",
+			"default": 1.5
+		},
+		"animationDelay": {
+			"type": "number",
+			"default": 0
+		},
+		"easing": {
+			"type": "string",
+			"default": "ease-out",
+			"enum": [
+				"linear",
+				"ease",
+				"ease-in",
+				"ease-out",
+				"ease-in-out"
+			]
+		},
+		"showIcon": {
+			"type": "boolean",
+			"default": false
+		},
+		"icon": {
+			"type": "string",
+			"default": ""
+		},
+		"iconPosition": {
+			"type": "string",
+			"default": "left",
+			"enum": [
+				"left",
+				"right"
+			]
+		},
+		"borderWidth": {
+			"type": "number",
+			"default": 0
+		},
+		"borderStyle": {
+			"type": "string",
+			"default": "solid",
+			"enum": [
+				"none",
+				"solid",
+				"dashed",
+				"dotted",
+				"double",
+				"groove",
+				"ridge"
+			]
+		},
+		"borderRadius": {
+			"type": "number",
+			"default": 4
+		},
+		"boxShadow": {
+			"type": "string",
+			"default": "none",
+			"enum": [
+				"none",
+				"small",
+				"medium",
+				"large",
+				"xlarge",
+				"2xlarge",
+				"inner"
+			]
+		},
+		"hoverShadow": {
+			"type": "string",
+			"default": "none",
+			"enum": [
+				"none",
+				"small",
+				"medium",
+				"large",
+				"xlarge",
+				"2xlarge"
+			]
+		},
+		"animationEnabled": {
+			"type": "boolean",
+			"default": true
+		},
+		"animationType": {
+			"type": "string",
+			"default": "fadeInUp",
+			"enum": [
+				"fadeIn",
+				"fadeInUp",
+				"fadeInDown",
+				"fadeInLeft",
+				"fadeInRight",
+				"slideInUp",
+				"slideInDown",
+				"slideInLeft",
+				"slideInRight",
+				"zoomIn",
+				"zoomInUp",
+				"bounceIn",
+				"rotateIn",
+				"flipInX",
+				"flipInY",
+				"none"
+			]
+		},
+		"containerAnimationDuration": {
+			"type": "number",
+			"default": 0.6
+		},
+		"containerAnimationDelay": {
+			"type": "number",
+			"default": 0
+		},
+		"animationEasing": {
+			"type": "string",
+			"default": "ease-out",
+			"enum": [
+				"linear",
+				"ease",
+				"ease-in",
+				"ease-out",
+				"ease-in-out"
+			]
+		},
+		"hoverAnimation": {
+			"type": "string",
+			"default": "none",
+			"enum": [
+				"none",
+				"lift",
+				"grow",
+				"shrink",
+				"rotate",
+				"tilt",
+				"glow",
+				"pulse",
+				"bounce"
+			]
+		},
+		"customColor": {
+			"type": "string",
+			"default": ""
+		}
+	},
+	"textdomain": "ria-progress-bar",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"viewScript": "file:./view.js"
+}

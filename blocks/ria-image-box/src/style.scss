@@ -1,0 +1,224 @@
+/**
+ * Frontend Styles for RIA Image Box Block
+ */
+
+.wp-block-ria-image-box {
+	position: relative;
+	margin: 20px 0;
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+	// Hover animations
+	&.hover-zoom:hover .image-box-image img {
+		transform: scale(1.1);
+	}
+
+	&.hover-lift:hover {
+		transform: translateY(-4px);
+		box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+	}
+
+	&.hover-glow:hover {
+		box-shadow: 0 0 20px rgba(0, 115, 170, 0.3);
+	}
+
+	.image-box-inner {
+		position: relative;
+		overflow: hidden;
+		border-radius: 8px;
+	}
+
+	.image-box-image {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+
+		img {
+			display: block;
+			transition: transform 0.5s ease;
+		}
+	}
+
+	.image-box-overlay {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		pointer-events: none;
+		transition: opacity 0.3s ease;
+	}
+
+	.image-box-content {
+		position: absolute;
+		z-index: 5;
+		padding: 20px;
+		max-width: 100%;
+	}
+
+	&.overlay-bottom-left .image-box-content {
+		bottom: 0;
+		left: 0;
+	}
+
+	&.overlay-bottom-right .image-box-content {
+		bottom: 0;
+		right: 0;
+	}
+
+	&.overlay-top-left .image-box-content {
+		top: 0;
+		left: 0;
+	}
+
+	&.overlay-top-right .image-box-content {
+		top: 0;
+		right: 0;
+	}
+
+	&.overlay-center .image-box-content {
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		text-align: center;
+	}
+
+	&.overlay-full .image-box-content {
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+	}
+
+	.image-box-heading {
+		margin: 0 0 12px 0;
+		font-size: 28px;
+		font-weight: 700;
+		text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+		line-height: 1.2;
+	}
+
+	.image-box-description {
+		margin: 0;
+		font-size: 16px;
+		line-height: 1.5;
+		text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+	}
+
+	.image-box-link {
+		text-decoration: none;
+		color: inherit;
+		display: block;
+
+		&:hover {
+			text-decoration: none;
+		}
+	}
+
+	// Responsive design
+	@media (max-width: 768px) {
+		.image-box-inner {
+			height: 300px !important;
+		}
+
+		.image-box-heading {
+			font-size: 22px;
+		}
+
+		.image-box-description {
+			font-size: 14px;
+		}
+
+		.image-box-content {
+			padding: 16px;
+		}
+	}
+
+	@media (max-width: 480px) {
+		.image-box-inner {
+			height: 250px !important;
+		}
+
+		.image-box-heading {
+			font-size: 18px;
+		}
+
+		.image-box-description {
+			font-size: 13px;
+		}
+
+		.image-box-content {
+			padding: 12px;
+		}
+	}
+}
+
+// Animation support (handled by ria-animations-v2.js)
+.wp-block-ria-image-box[data-animation] {
+	opacity: 0;
+
+	&.animate {
+		opacity: 1;
+	}
+}
+
+// Accessibility
+@media (prefers-reduced-motion: reduce) {
+	.wp-block-ria-image-box {
+		transition: none !important;
+
+		* {
+			transition: none !important;
+			animation: none !important;
+		}
+	}
+}
+
+// Variant Color System
+.wp-block-ria-image-box {
+	// CSS Custom Properties
+	--variant-bg: var(--wp--preset--color--background, #ffffff);
+	--variant-border: var(--wp--preset--color--contrast, #000000);
+
+	// Primary variant
+	&.variant-primary {
+		--variant-bg: var(--wp--preset--color--primary, #0073aa);
+		--variant-border: var(--wp--preset--color--primary, #0073aa);
+	}
+
+	// Secondary variant
+	&.variant-secondary {
+		--variant-bg: var(--wp--preset--color--secondary, #005177);
+		--variant-border: var(--wp--preset--color--secondary, #005177);
+	}
+
+	// Accent variant
+	&.variant-accent {
+		--variant-bg: var(--wp--preset--color--accent, #7c3aed);
+		--variant-border: var(--wp--preset--color--accent, #7c3aed);
+	}
+
+	// Neutral variant (default)
+	&.variant-neutral {
+		--variant-bg: var(--wp--preset--color--base-2, #f9fafb);
+		--variant-border: var(--wp--preset--color--contrast-2, #e5e7eb);
+	}
+
+	// Custom variant
+	&.variant-custom {
+		--variant-bg: var(--custom-bg-color, transparent);
+		--variant-border: var(--custom-border-color, transparent);
+	}
+
+	// Apply variant colors
+	.ria-image-box {
+		background-color: var(--variant-bg);
+		border-color: var(--variant-border);
+	}
+}

@@ -1,0 +1,60 @@
+// Skip Link
+.skip-link {
+  position: absolute;
+  z-index: 9999;
+  top: 0;
+  right: 100%;
+  padding: 5rem;
+  font-size: 20rem;
+}
+
+.skip-link:focus {
+  z-index: 1000;
+  top: 2rem;
+  right: auto;
+  left: 2rem;
+  width: inherit;
+  height: inherit;
+  padding: 5px 10px;
+  font-size: 2rem;
+  text-decoration: underline;
+  color: var(--wp--custom--colors--dark);
+  border: 2px solid var(--wp--custom--colors--dark);
+  border-radius: 5px;
+  outline: 0;
+  background-color: var(--wp--custom--colors--white);
+}
+
+// Site Header
+.site-header {
+  margin-bottom: var(--wp--style--block-gap);
+  padding-top: var(--wp--style--block-gap);
+  padding-bottom: var(--wp--style--block-gap);
+  border-bottom: 1px var(--wp--custom--colors--neutral) solid;
+
+  .layout-container {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    max-width: var(--wp--style--global--content-size);
+    margin-right: var(--wp--style--block-gap);
+    margin-left: var(--wp--style--block-gap);
+
+    @media screen and (min-width: $laptop) {
+      margin-right: auto;
+      margin-left: auto;
+    }
+
+    .navigation {
+      flex: 1 1 auto;
+    }
+  }
+
+  .brand {
+    .logo {
+      img {
+        display: block;
+      }
+    }
+  }
+}

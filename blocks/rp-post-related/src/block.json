@@ -1,0 +1,106 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "zp/post-related",
+  "version": "0.1.0",
+  "title": "Related Resources",
+  "category": "widgets",
+  "icon": "admin-post",
+  "description": "Display related resources using smart algorithm or manual selection.",
+  "supports": {
+    "html": false
+  },
+  "attributes": {
+    "postType": {
+      "type": "string",
+      "default": "resource"
+    },
+    "numberOfPosts": {
+      "type": "number",
+      "default": 3
+    },
+    "displayFeaturedImage": {
+      "type": "boolean",
+      "default": false
+    },
+    "displayExcerpt": {
+      "type": "boolean",
+      "default": true
+    },
+    "displayMeta": {
+      "type": "boolean",
+      "default": false
+    },
+    "order": {
+      "type": "string",
+      "default": "desc"
+    },
+    "orderBy": {
+      "type": "string",
+      "default": "date"
+    },
+    "categories": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "headingLevel": {
+      "type": "number",
+      "default": 3
+    },
+    "columns": {
+      "type": "number",
+      "default": 3
+    },
+    "columnsGap": {
+      "type": "string",
+      "default": "var(--wp--custom--cards--gap)"
+    },
+    "selectedPosts": {
+      "type": "array",
+      "default": []
+    },
+    "selectedTaxonomy": {
+      "type": "string",
+      "default": ""
+    },
+    "selectedTaxonomies": {
+      "type": "array",
+      "default": [
+        "clri-projects",
+        "clri-site",
+        "format",
+        "fltca-alignment",
+        "page-type",
+        "primary-role",
+        "topic"
+      ]
+    },
+    "currentPostTaxonomies": {
+      "type": "object",
+      "default": {}
+    },
+    "variant": {
+      "type": "string",
+      "default": "default"
+    },
+    "customColor": {
+      "type": "string",
+      "default": ""
+    },
+    "customBackgroundColor": {
+      "type": "string",
+      "default": ""
+    },
+    "customBorderColor": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "textdomain": "post-related",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "render": "file:./render.php"
+}

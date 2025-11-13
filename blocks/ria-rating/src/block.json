@@ -1,0 +1,113 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "ria/rating",
+	"version": "0.1.0",
+	"title": "RIA Rating",
+	"category": "ria",
+	"icon": "star-filled",
+	"description": "Star rating display for reviews, testimonials, and product ratings.",
+	"keywords": [
+		"rating",
+		"star",
+		"review",
+		"score",
+		"atom"
+	],
+	"supports": {
+		"html": false,
+		"align": false,
+		"spacing": {
+			"margin": true,
+			"padding": false
+		}
+	},
+	"attributes": {
+		"variant": {
+			"type": "string",
+			"default": "accent"
+		},
+		"customColor": {
+			"type": "string",
+			"default": ""
+		},
+		"customBackgroundColor": {
+			"type": "string",
+			"default": ""
+		},
+		"customBorderColor": {
+			"type": "string",
+			"default": ""
+		},
+		"rating": {
+			"type": "number",
+			"default": 5
+		},
+		"maxRating": {
+			"type": "number",
+			"default": 5
+		},
+		"size": {
+			"type": "string",
+			"default": "medium",
+			"enum": [
+				"small",
+				"medium",
+				"large",
+				"xlarge"
+			]
+		},
+		"showValue": {
+			"type": "boolean",
+			"default": true
+		},
+		"valueFormat": {
+			"type": "string",
+			"default": "decimal",
+			"enum": [
+				"decimal",
+				"fraction"
+			]
+		},
+		"iconName": {
+			"type": "string",
+			"default": "Star"
+		},
+		"filledColor": {
+			"type": "string",
+			"default": ""
+		},
+		"emptyColor": {
+			"type": "string",
+			"default": ""
+		},
+		"animationType": {
+			"type": "string",
+			"default": "none"
+		},
+		"animationDuration": {
+			"type": "number",
+			"default": 0.6
+		},
+		"animationDelay": {
+			"type": "number",
+			"default": 0
+		},
+		"animationEasing": {
+			"type": "string",
+			"default": "ease-out"
+		},
+		"animateOnScroll": {
+			"type": "boolean",
+			"default": false
+		},
+		"staggerDelay": {
+			"type": "number",
+			"default": 0.05
+		}
+	},
+	"textdomain": "riapress",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}

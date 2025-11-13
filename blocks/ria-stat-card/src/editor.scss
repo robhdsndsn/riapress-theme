@@ -1,0 +1,88 @@
+/**
+ * Editor Styles for RIA Number Box Block
+ */
+
+.wp-block-ria-number-box {
+	padding: 20px;
+	min-height: 100px;
+
+	.number-box-inner {
+		display: flex;
+		flex-direction: column;
+		gap: 16px;
+		align-items: center;
+	}
+
+	.number-box-number {
+		font-weight: 700;
+		line-height: 1;
+		display: flex;
+		align-items: baseline;
+		gap: 4px;
+
+		.number-prefix,
+		.number-suffix {
+			font-size: 0.6em;
+			opacity: 0.8;
+		}
+
+		.number-value {
+			font-weight: 900;
+		}
+	}
+
+	.number-box-content {
+		display: flex;
+		flex-direction: column;
+		gap: 8px;
+		width: 100%;
+	}
+
+	.number-box-label {
+		margin: 0;
+		font-size: 18px;
+		font-weight: 600;
+		color: #333;
+
+		&:empty::before {
+			content: attr(placeholder);
+			color: #999;
+		}
+	}
+
+	.number-box-description {
+		margin: 0;
+		font-size: 14px;
+		line-height: 1.6;
+		color: #666;
+
+		&:empty::before {
+			content: attr(placeholder);
+			color: #999;
+		}
+	}
+
+	&.text-align-left {
+		text-align: left;
+
+		.number-box-inner {
+			align-items: flex-start;
+		}
+	}
+
+	&.text-align-center {
+		text-align: center;
+
+		.number-box-inner {
+			align-items: center;
+		}
+	}
+
+	&.text-align-right {
+		text-align: right;
+
+		.number-box-inner {
+			align-items: flex-end;
+		}
+	}
+}

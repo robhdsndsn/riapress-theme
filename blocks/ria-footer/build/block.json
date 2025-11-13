@@ -1,0 +1,82 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "ria/footer",
+  "version": "0.1.0",
+  "title": "RIA Footer",
+  "category": "ria-blocks",
+  "icon": "admin-page",
+  "description": "Flexible footer section with multiple columns for navigation, copyright, and custom content",
+  "keywords": [
+    "footer",
+    "site-footer",
+    "navigation",
+    "copyright",
+    "organism"
+  ],
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ]
+  },
+  "attributes": {
+    "columns": {
+      "type": "number",
+      "default": 4
+    },
+    "layout": {
+      "type": "string",
+      "default": "columns"
+    },
+    "backgroundColor": {
+      "type": "string",
+      "default": "#1a1a1a"
+    },
+    "textColor": {
+      "type": "string",
+      "default": "#ffffff"
+    },
+    "linkColor": {
+      "type": "string",
+      "default": "#60a5fa"
+    },
+    "borderTopColor": {
+      "type": "string",
+      "default": "#374151"
+    },
+    "showBorder": {
+      "type": "boolean",
+      "default": true
+    },
+    "animationEnabled": {
+      "type": "boolean",
+      "default": true
+    },
+    "animationType": {
+      "type": "string",
+      "default": "fadeInUp"
+    },
+    "animationDuration": {
+      "type": "number",
+      "default": 0.6
+    },
+    "animationDelay": {
+      "type": "number",
+      "default": 0
+    },
+    "animationEasing": {
+      "type": "string",
+      "default": "ease-out"
+    },
+    "hoverAnimation": {
+      "type": "string",
+      "default": "none"
+    }
+  },
+  "textdomain": "ria",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}

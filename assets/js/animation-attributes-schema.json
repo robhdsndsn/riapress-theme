@@ -1,0 +1,245 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "title": "RIAPress Block Animation Attributes Schema",
+  "description": "Standard animation attributes for all RIAPress Gutenberg blocks. Include these attributes in block.json to enable the animation system.",
+  "version": "1.0.0",
+  "author": "Rob Hudson",
+  "date": "2025-10-31",
+  "attributes": {
+    "animationEnabled": {
+      "type": "boolean",
+      "default": true,
+      "description": "Enable or disable entrance animations for this block"
+    },
+    "animationType": {
+      "type": "string",
+      "default": "fadeInUp",
+      "enum": [
+        "none",
+        "fadeIn",
+        "fadeInUp",
+        "fadeInDown",
+        "fadeInLeft",
+        "fadeInRight",
+        "zoomIn",
+        "zoomOut",
+        "slideInUp",
+        "slideInLeft",
+        "slideInRight"
+      ],
+      "description": "Type of entrance animation to apply when block enters viewport"
+    },
+    "animationDuration": {
+      "type": "number",
+      "default": 0.6,
+      "minimum": 0.1,
+      "maximum": 3.0,
+      "description": "Animation duration in seconds (0.1 to 3.0)"
+    },
+    "animationDelay": {
+      "type": "number",
+      "default": 0,
+      "minimum": 0,
+      "maximum": 2.0,
+      "description": "Delay before animation starts in seconds (0 to 2.0)"
+    },
+    "animationEasing": {
+      "type": "string",
+      "default": "ease-out",
+      "enum": [
+        "linear",
+        "ease",
+        "ease-in",
+        "ease-out",
+        "ease-in-out"
+      ],
+      "description": "Animation timing function / easing"
+    },
+    "hoverAnimation": {
+      "type": "string",
+      "default": "none",
+      "enum": [
+        "none",
+        "lift",
+        "grow",
+        "shrink",
+        "glow"
+      ],
+      "description": "Hover effect to apply on mouse over / focus"
+    }
+  },
+  "usage": {
+    "description": "How to use this schema in your block.json",
+    "example": {
+      "step1": "Copy the attributes object above",
+      "step2": "Paste into your block.json file under 'attributes' property",
+      "step3": "Add animation controls to your edit.js component",
+      "step4": "Add data attributes to your render.php or save.js output",
+      "step5": "Add 'ria-animate' class to your block wrapper element"
+    }
+  },
+  "htmlOutput": {
+    "description": "Expected HTML structure for animated blocks",
+    "example": "<div class=\"wp-block-ria-card ria-animate\" data-animation=\"fadeInUp\" data-animation-duration=\"0.6\" data-animation-delay=\"0\" data-animation-easing=\"ease-out\" data-hover-animation=\"lift\">\n  <!-- Block content -->\n</div>"
+  },
+  "blockJsonExample": {
+    "apiVersion": 3,
+    "name": "ria/example-block",
+    "title": "Example Block",
+    "category": "ria-blocks",
+    "attributes": {
+      "content": {
+        "type": "string",
+        "default": ""
+      },
+      "animationEnabled": {
+        "type": "boolean",
+        "default": true
+      },
+      "animationType": {
+        "type": "string",
+        "default": "fadeInUp",
+        "enum": [
+          "none",
+          "fadeIn",
+          "fadeInUp",
+          "fadeInDown",
+          "fadeInLeft",
+          "fadeInRight",
+          "zoomIn",
+          "zoomOut",
+          "slideInUp",
+          "slideInLeft",
+          "slideInRight"
+        ]
+      },
+      "animationDuration": {
+        "type": "number",
+        "default": 0.6
+      },
+      "animationDelay": {
+        "type": "number",
+        "default": 0
+      },
+      "animationEasing": {
+        "type": "string",
+        "default": "ease-out",
+        "enum": [
+          "linear",
+          "ease",
+          "ease-in",
+          "ease-out",
+          "ease-in-out"
+        ]
+      },
+      "hoverAnimation": {
+        "type": "string",
+        "default": "none",
+        "enum": [
+          "none",
+          "lift",
+          "grow",
+          "shrink",
+          "glow"
+        ]
+      }
+    }
+  },
+  "editJsExample": {
+    "description": "Example edit.js component with animation controls",
+    "code": "import { useBlockProps, InspectorControls } from '@wordpress/block-editor';\nimport { PanelBody, ToggleControl, SelectControl, RangeControl } from '@wordpress/components';\n\nexport default function Edit({ attributes, setAttributes }) {\n  const blockProps = useBlockProps();\n\n  return (\n    <>\n      <InspectorControls>\n        <PanelBody title=\"Animation Settings\" initialOpen={false}>\n          <ToggleControl\n            label=\"Enable Animation\"\n            checked={attributes.animationEnabled}\n            onChange={(value) => setAttributes({ animationEnabled: value })}\n          />\n          {attributes.animationEnabled && (\n            <>\n              <SelectControl\n                label=\"Animation Type\"\n                value={attributes.animationType}\n                options={[\n                  { label: 'None', value: 'none' },\n                  { label: 'Fade In', value: 'fadeIn' },\n                  { label: 'Fade In Up', value: 'fadeInUp' },\n                  { label: 'Fade In Down', value: 'fadeInDown' },\n                  { label: 'Fade In Left', value: 'fadeInLeft' },\n                  { label: 'Fade In Right', value: 'fadeInRight' },\n                  { label: 'Zoom In', value: 'zoomIn' },\n                  { label: 'Zoom Out', value: 'zoomOut' },\n                  { label: 'Slide In Up', value: 'slideInUp' },\n                  { label: 'Slide In Left', value: 'slideInLeft' },\n                  { label: 'Slide In Right', value: 'slideInRight' },\n                ]}\n                onChange={(value) => setAttributes({ animationType: value })}\n              />\n              <RangeControl\n                label=\"Duration (seconds)\"\n                value={attributes.animationDuration}\n                onChange={(value) => setAttributes({ animationDuration: value })}\n                min={0.1}\n                max={3.0}\n                step={0.1}\n              />\n              <RangeControl\n                label=\"Delay (seconds)\"\n                value={attributes.animationDelay}\n                onChange={(value) => setAttributes({ animationDelay: value })}\n                min={0}\n                max={2.0}\n                step={0.1}\n              />\n              <SelectControl\n                label=\"Easing\"\n                value={attributes.animationEasing}\n                options={[\n                  { label: 'Linear', value: 'linear' },\n                  { label: 'Ease', value: 'ease' },\n                  { label: 'Ease In', value: 'ease-in' },\n                  { label: 'Ease Out', value: 'ease-out' },\n                  { label: 'Ease In Out', value: 'ease-in-out' },\n                ]}\n                onChange={(value) => setAttributes({ animationEasing: value })}\n              />\n              <SelectControl\n                label=\"Hover Animation\"\n                value={attributes.hoverAnimation}\n                options={[\n                  { label: 'None', value: 'none' },\n                  { label: 'Lift', value: 'lift' },\n                  { label: 'Grow', value: 'grow' },\n                  { label: 'Shrink', value: 'shrink' },\n                  { label: 'Glow', value: 'glow' },\n                ]}\n                onChange={(value) => setAttributes({ hoverAnimation: value })}\n              />\n            </>\n          )}\n        </PanelBody>\n      </InspectorControls>\n\n      <div {...blockProps}>\n        {/* Block content */}\n      </div>\n    </>\n  );\n}"
+  },
+  "renderPhpExample": {
+    "description": "Example render.php with animation data attributes",
+    "code": "<?php\n/**\n * Render callback for animated block\n */\n\n$animation_enabled = $attributes['animationEnabled'] ?? true;\n$animation_type = $attributes['animationType'] ?? 'fadeInUp';\n$animation_duration = $attributes['animationDuration'] ?? 0.6;\n$animation_delay = $attributes['animationDelay'] ?? 0;\n$animation_easing = $attributes['animationEasing'] ?? 'ease-out';\n$hover_animation = $attributes['hoverAnimation'] ?? 'none';\n\n// Build class list\n$classes = ['wp-block-ria-example-block'];\nif ($animation_enabled && $animation_type !== 'none') {\n  $classes[] = 'ria-animate';\n}\n\n// Build data attributes\n$data_attrs = '';\nif ($animation_enabled && $animation_type !== 'none') {\n  $data_attrs .= sprintf(\n    'data-animation=\"%s\" data-animation-duration=\"%s\" data-animation-delay=\"%s\" data-animation-easing=\"%s\"',\n    esc_attr($animation_type),\n    esc_attr($animation_duration),\n    esc_attr($animation_delay),\n    esc_attr($animation_easing)\n  );\n}\nif ($hover_animation !== 'none') {\n  $data_attrs .= sprintf(' data-hover-animation=\"%s\"', esc_attr($hover_animation));\n}\n\n?>\n<div class=\"<?php echo esc_attr(implode(' ', $classes)); ?>\" <?php echo $data_attrs; ?>>\n  <!-- Block content -->\n</div>"
+  },
+  "animationTypes": {
+    "fadeIn": {
+      "description": "Simple opacity fade from 0 to 1",
+      "useCases": ["Text", "Images", "Cards"]
+    },
+    "fadeInUp": {
+      "description": "Fade in while sliding up from below",
+      "useCases": ["Hero sections", "Content blocks", "Cards"]
+    },
+    "fadeInDown": {
+      "description": "Fade in while sliding down from above",
+      "useCases": ["Headers", "Banners", "Navigation"]
+    },
+    "fadeInLeft": {
+      "description": "Fade in while sliding from left to center",
+      "useCases": ["Side content", "Callouts", "Alternating layouts"]
+    },
+    "fadeInRight": {
+      "description": "Fade in while sliding from right to center",
+      "useCases": ["Side content", "Callouts", "Alternating layouts"]
+    },
+    "zoomIn": {
+      "description": "Fade in while scaling from 0.8 to 1",
+      "useCases": ["Icons", "Buttons", "Emphasis elements"]
+    },
+    "zoomOut": {
+      "description": "Fade in while scaling from 1.2 to 1",
+      "useCases": ["Images", "Media", "Hero backgrounds"]
+    },
+    "slideInUp": {
+      "description": "Slide up from below (100% translateY)",
+      "useCases": ["Cards", "List items", "Sequential content"]
+    },
+    "slideInLeft": {
+      "description": "Slide in from left side (100% translateX)",
+      "useCases": ["Side panels", "Images", "Modals"]
+    },
+    "slideInRight": {
+      "description": "Slide in from right side (100% translateX)",
+      "useCases": ["Side panels", "Images", "Modals"]
+    }
+  },
+  "hoverAnimations": {
+    "lift": {
+      "description": "Lift element with box shadow on hover",
+      "effect": "translateY(-5px) + box-shadow",
+      "useCases": ["Cards", "Buttons", "Interactive elements"]
+    },
+    "grow": {
+      "description": "Scale element to 1.05 on hover",
+      "effect": "scale(1.05)",
+      "useCases": ["Images", "Icons", "Thumbnails"]
+    },
+    "shrink": {
+      "description": "Scale element to 0.95 on hover",
+      "effect": "scale(0.95)",
+      "useCases": ["Buttons", "Pressed states"]
+    },
+    "glow": {
+      "description": "Add glowing box shadow on hover",
+      "effect": "box-shadow with color",
+      "useCases": ["Buttons", "Links", "Call-to-action elements"]
+    }
+  },
+  "browserSupport": {
+    "IntersectionObserver": "Modern browsers (Chrome, Firefox, Safari, Edge)",
+    "CSSAnimations": "All modern browsers",
+    "prefersReducedMotion": "All modern browsers"
+  },
+  "accessibility": {
+    "prefersReducedMotion": "System automatically respects user's motion preferences",
+    "implementation": "@media (prefers-reduced-motion: reduce) disables all animations",
+    "keyboardNavigation": "Hover effects also apply on :focus for keyboard users",
+    "screenReaders": "Animation attributes are ignored by screen readers"
+  },
+  "performance": {
+    "bundleSize": {
+      "javascript": "~4KB minified",
+      "css": "~8KB minified",
+      "total": "~12KB total"
+    },
+    "optimizations": [
+      "IntersectionObserver (efficient viewport detection)",
+      "Unobserve after animation (no memory leaks)",
+      "GPU acceleration (transform, opacity)",
+      "will-change property for smoother animations",
+      "CSS containment to prevent layout thrashing"
+    ]
+  }
+}

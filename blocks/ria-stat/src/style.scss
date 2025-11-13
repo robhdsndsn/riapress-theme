@@ -1,0 +1,158 @@
+/**
+ * Stat Item Block - Frontend Styles
+ * Child block for ria-stats-group
+ */
+
+ // Dual selector pattern for CSS specificity (parent can't override)
+.wp-block-ria-stats-group .wp-block-ria-stat,
+.wp-block-ria-stat,
+.ria-stat {
+	display: flex !important;
+	flex-direction: column !important;
+	gap: 8px !important;
+	text-align: center !important;
+	padding: 0 !important;
+	background: transparent !important;
+	border: none !important;
+	box-shadow: none !important;
+	margin: 0 !important;
+
+	// Value styles
+	.stat-value {
+		font-size: var(--value-font-size, 48px) !important;
+		font-weight: 700 !important;
+		line-height: 1.1 !important;
+		color: var(--value-color, #1e293b) !important;
+		margin: 0 !important;
+		padding: 0 !important;
+		background: transparent !important;
+		border: none !important;
+	}
+
+	// Label styles
+	.stat-label {
+		font-size: var(--label-font-size, 16px) !important;
+		font-weight: 500 !important;
+		line-height: 1.5 !important;
+		color: var(--label-color, #64748b) !important;
+		margin: 0 !important;
+		padding: 0 !important;
+		background: transparent !important;
+		border: none !important;
+	}
+
+	// Alignment variants
+	&.align-left {
+		text-align: left !important;
+	}
+
+	&.align-center {
+		text-align: center !important;
+	}
+
+	&.align-right {
+		text-align: right !important;
+	}
+
+	// Animation support
+	&[data-animate="true"] .stat-value {
+		transition: opacity 0.3s ease;
+	}
+
+	&.counting .stat-value {
+		color: var(--value-color, #3b82f6) !important;
+	}
+}
+
+// Accessibility
+@media (prefers-reduced-motion: reduce) {
+	.wp-block-ria-stat,
+	.ria-stat {
+		* {
+			animation: none !important;
+			transition: none !important;
+		}
+	}
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+	.wp-block-ria-stats-group .wp-block-ria-stat,
+	.wp-block-ria-stat,
+	.ria-stat {
+		.stat-value {
+			font-size: calc(var(--value-font-size, 48px) * 0.75) !important;
+		}
+
+		.stat-label {
+			font-size: calc(var(--label-font-size, 16px) * 0.9) !important;
+		}
+	}
+}
+
+@media (max-width: 480px) {
+	.wp-block-ria-stats-group .wp-block-ria-stat,
+	.wp-block-ria-stat,
+	.ria-stat {
+		.stat-value {
+			font-size: calc(var(--value-font-size, 48px) * 0.6) !important;
+		}
+
+		.stat-label {
+			font-size: calc(var(--label-font-size, 16px) * 0.85) !important;
+		}
+	}
+}
+
+
+/* Color Variants */
+.wp-block-ria-stat {
+	/* Variant: Primary */
+	&.has-primary-variant {
+		background-color: var(--color-primary-100);
+		color: var(--color-primary-900);
+		border-color: var(--color-primary-300);
+
+		a {
+			color: var(--color-primary-700);
+		}
+	}
+
+	/* Variant: Secondary */
+	&.has-secondary-variant {
+		background-color: var(--color-secondary-100);
+		color: var(--color-secondary-900);
+		border-color: var(--color-secondary-300);
+
+		a {
+			color: var(--color-secondary-700);
+		}
+	}
+
+	/* Variant: Accent */
+	&.has-accent-variant {
+		background-color: var(--color-accent-100);
+		color: var(--color-accent-900);
+		border-color: var(--color-accent-300);
+
+		a {
+			color: var(--color-accent-700);
+		}
+	}
+
+	/* Variant: Neutral */
+	&.has-neutral-variant {
+		background-color: var(--color-neutral-100);
+		color: var(--color-neutral-900);
+		border-color: var(--color-neutral-300);
+
+		a {
+			color: var(--color-neutral-700);
+		}
+	}
+
+	/* Custom colors via inline styles */
+	&.has-custom-colors {
+		/* Inline styles will override */
+	}
+}

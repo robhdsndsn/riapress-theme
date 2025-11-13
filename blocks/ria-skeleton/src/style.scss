@@ -1,0 +1,106 @@
+/**
+ * Frontend styles for RIA Skeleton Loader block
+ */
+
+// Import shared skeleton styles
+@import '../../../components/skeletons/skeletons';
+
+.wp-block-ria-skeleton {
+	// Container styles
+	.ria-skeleton-loader {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+
+		// Multiple instances spacing
+		.skeleton-container {
+			margin-bottom: 1rem;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	// Responsive adjustments
+	@media (max-width: 768px) {
+		.ria-skeleton-loader {
+			gap: 0.75rem;
+
+			.skeleton-container {
+				margin-bottom: 0.75rem;
+			}
+		}
+	}
+}
+
+// ============================================================================
+// Color Variants
+// ============================================================================
+
+.wp-block-ria-skeleton {
+  // Variant: Primary
+  &.has-primary-variant {
+    background-color: var(--color-primary-100);
+    color: var(--color-primary-900);
+    border-color: var(--color-primary-300);
+
+    a {
+      color: var(--color-primary-700);
+
+      &:hover {
+        color: var(--color-primary-900);
+      }
+    }
+  }
+
+  // Variant: Secondary
+  &.has-secondary-variant {
+    background-color: var(--color-secondary-100);
+    color: var(--color-secondary-900);
+    border-color: var(--color-secondary-300);
+
+    a {
+      color: var(--color-secondary-700);
+
+      &:hover {
+        color: var(--color-secondary-900);
+      }
+    }
+  }
+
+  // Variant: Accent
+  &.has-accent-variant {
+    background-color: var(--color-accent-100);
+    color: var(--color-accent-900);
+    border-color: var(--color-accent-300);
+
+    a {
+      color: var(--color-accent-700);
+
+      &:hover {
+        color: var(--color-accent-900);
+      }
+    }
+  }
+
+  // Variant: Neutral
+  &.has-neutral-variant {
+    background-color: var(--color-neutral-100);
+    color: var(--color-neutral-900);
+    border-color: var(--color-neutral-300);
+
+    a {
+      color: var(--color-neutral-700);
+
+      &:hover {
+        color: var(--color-neutral-900);
+      }
+    }
+  }
+
+  // Custom variant uses inline styles
+  &.has-custom-colors {
+    // Custom colors applied via inline styles
+  }
+}

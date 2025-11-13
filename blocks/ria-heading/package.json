@@ -1,0 +1,26 @@
+{
+	"name": "ria-heading",
+	"version": "0.1.0",
+	"description": "Branded heading block with multiple style variants for RIA website.",
+	"author": "Rob Hudson",
+	"license": "GPL-2.0-or-later",
+	"main": "build/index.js",
+	"scripts": {
+		"build": "wp-scripts build",
+		"format": "wp-scripts format",
+		"lint:css": "wp-scripts lint-style",
+		"lint:js": "wp-scripts lint-js",
+		"packages-update": "wp-scripts packages-update",
+		"start": "wp-scripts start"
+	},
+	"devDependencies": {
+		"@wordpress/scripts": "^27.0.0"
+	},
+	"dependencies": {
+		"@wordpress/block-editor": "^13.1.0",
+		"@wordpress/blocks": "^13.1.0",
+		"@wordpress/components": "^28.1.0",
+		"@wordpress/element": "^6.1.0",
+		"@wordpress/i18n": "^5.1.0"
+	}
+}

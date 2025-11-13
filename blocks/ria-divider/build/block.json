@@ -1,0 +1,83 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "ria/divider",
+  "version": "1.0.0",
+  "title": "RIA Divider",
+  "category": "design",
+  "icon": "minus",
+  "description": "Add a visual divider between content sections with customizable styles.",
+  "keywords": [
+    "divider",
+    "separator",
+    "line",
+    "hr",
+    "break"
+  ],
+  "supports": {
+    "html": false,
+    "anchor": true,
+    "spacing": {
+      "margin": true,
+      "padding": true
+    }
+  },
+  "attributes": {
+    "lineStyle": {
+      "type": "string",
+      "default": "solid"
+    },
+    "lineWidth": {
+      "type": "number",
+      "default": 2
+    },
+    "lineColor": {
+      "type": "string",
+      "default": "#e0e0e0"
+    },
+    "dividerWidth": {
+      "type": "number",
+      "default": 100
+    },
+    "alignment": {
+      "type": "string",
+      "default": "center"
+    },
+    "marginTop": {
+      "type": "number",
+      "default": 20
+    },
+    "marginBottom": {
+      "type": "number",
+      "default": 20
+    },
+    "animationEnabled": {
+      "type": "boolean",
+      "default": true
+    },
+    "animationType": {
+      "type": "string",
+      "default": "fadeInUp"
+    },
+    "animationDuration": {
+      "type": "number",
+      "default": 0.6
+    },
+    "animationDelay": {
+      "type": "number",
+      "default": 0
+    },
+    "animationEasing": {
+      "type": "string",
+      "default": "ease-out"
+    },
+    "hoverAnimation": {
+      "type": "string",
+      "default": "none"
+    }
+  },
+  "textdomain": "ria-divider",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}

@@ -1,0 +1,162 @@
+/**
+ * Stat Item Block - Editor Styles
+ */
+
+.wp-block-ria-stat {
+	.stat-value,
+	.stat-label {
+		cursor: text;
+
+		&:focus {
+			outline: 2px solid #007cba;
+			outline-offset: 2px;
+		}
+
+		&:empty:before {
+			opacity: 0.6;
+		}
+	}
+
+	.stat-value {
+		font-weight: 700;
+	}
+
+	.stat-label {
+		font-weight: 500;
+	}
+}
+
+// Editor-specific adjustments
+.editor-styles-wrapper {
+	.wp-block-ria-stat {
+		padding: 12px;
+		border: 1px dashed #e2e8f0;
+		border-radius: 4px;
+		transition: border-color 0.2s ease;
+
+		&:hover {
+			border-color: #cbd5e1;
+		}
+
+		&.is-selected {
+			border-color: #007cba;
+			border-style: solid;
+		}
+
+		// Icon display in editor
+		.stat-icon {
+			display: flex;
+			justify-content: center;
+			margin-bottom: 8px;
+
+			svg {
+				display: block;
+			}
+		}
+
+		&.icon-left .stat-value-wrapper {
+			display: flex;
+			align-items: center;
+			gap: 8px;
+		}
+	}
+}
+
+// Icon Picker Styles
+.ria-stat-icon-picker__toggle {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	width: 100%;
+	justify-content: flex-start;
+	padding: 8px 12px;
+
+	svg {
+		flex-shrink: 0;
+	}
+
+	span {
+		font-weight: 500;
+	}
+}
+
+.ria-stat-icon-picker__dropdown {
+	min-width: 320px;
+	max-width: 400px;
+}
+
+.ria-stat-icon-picker {
+	padding: 12px;
+
+	// Search input
+	.components-base-control {
+		margin-bottom: 12px;
+
+		.components-text-control__input {
+			width: 100%;
+		}
+	}
+
+	// Icon grid
+	&__grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+		gap: 8px;
+		max-height: 400px;
+		overflow-y: auto;
+		padding: 4px;
+	}
+
+	// Individual icon button
+	&__button {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 4px;
+		padding: 12px 8px;
+		border: 2px solid #e2e8f0;
+		border-radius: 6px;
+		background: #fff;
+		cursor: pointer;
+		transition: all 0.2s ease;
+		min-height: 80px;
+
+		&:hover {
+			border-color: #cbd5e1;
+			background: #f8fafc;
+			transform: translateY(-2px);
+		}
+
+		&.is-selected {
+			border-color: #007cba;
+			background: #e6f2ff;
+			box-shadow: 0 0 0 1px #007cba;
+		}
+
+		svg {
+			color: #64748b;
+			flex-shrink: 0;
+		}
+	}
+
+	// Icon name label
+	&__name {
+		font-size: 11px;
+		color: #64748b;
+		text-align: center;
+		line-height: 1.2;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		max-width: 100%;
+		word-break: break-word;
+	}
+
+	// No results message
+	&__no-results {
+		text-align: center;
+		color: #94a3b8;
+		padding: 24px;
+		font-size: 14px;
+	}
+}

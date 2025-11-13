@@ -1,0 +1,292 @@
+@import "../../assets/src/styles/base/breakpoints";
+
+.wp-block-rp-offcanvas {
+	display: none !important;
+	align-items: center;
+	align-self: stretch;
+	justify-content: center;
+	display: flex;
+	color: var(--wp--preset--color--dark);
+
+	@media screen and (max-width: 600px) {
+		// 660px seems to be the core/navigation breakpoint
+		display: flex !important;
+	}
+
+	// The toggle button needs to be visible in mobile view
+	.offcanvas-toggle {
+		display: none; // Show by default, hide with media queries if needed
+		width: 30px;
+		height: 30px;
+		margin: unset;
+		padding: unset;
+		cursor: pointer;
+		border: unset;
+		background: unset;
+		align-self: center;
+		fill: var(--wp--preset--color--dark);
+		z-index: 9;
+
+		@media screen and (max-width: 600px) {
+			// 660px seems to be the core/navigation breakpoint
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		.offcanvas-icon {
+			width: 25px;
+			height: 25px;
+			position: relative;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			padding: 4px 0;
+
+			.offcanvas-line {
+				display: block;
+				width: 100%;
+				height: 3px;
+				background-color: var(--wp--preset--color--dark);
+				transition: all 0.3s ease;
+
+				&.line1 {
+					transform-origin: center;
+					margin-top: 5px;
+				}
+
+				&.line2 {
+					transform-origin: center;
+					margin-bottom: 5px;
+				}
+			}
+		}
+
+		&.active {
+			&.open {
+				display: none !important;
+			}
+
+			.line1 {
+				transform: translateY(6px) rotate(45deg);
+			}
+
+			.line2 {
+				transform: translateY(-6px) rotate(-45deg);
+			}
+		}
+	}
+
+	// Improve offcanvas animation and usability
+	.offcanvas {
+		position: fixed;
+		z-index: 1;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		overflow: auto;
+		align-items: center;
+		justify-content: center;
+		background: rgba(255, 255, 255, 0.75);
+
+		&.hidden {
+			display: none;
+		}
+
+		&:not(.hidden) {
+			display: flex;
+			z-index: 11;
+
+			.content-container {
+				.offcanvas-toggle {
+					&.close {
+						display: flex;
+						align-self: flex-end;
+						margin-top: 2em;
+						margin-bottom: 2em;
+						align-items: center;
+						justify-content: center;
+					}
+				}
+			}
+		}
+
+		.content-container {
+			position: absolute;
+			top: 0;
+			right: 0;
+			display: flex;
+			flex-direction: column;
+			width: 100%;
+			max-width: 510px;
+			height: 100%;
+			position: fixed !important;
+			background-color: var(--wp--custom--colors--white);
+			padding-right: 2rem;
+			padding-left: 2rem;
+			padding-bottom: 3rem;
+			box-sizing: border-box;
+			overflow-y: auto;
+
+			transform: translateY(-100%);
+			transition: transform 0.4s ease-in-out;
+
+			&.slide-in {
+				transform: translateY(0);
+				// Add a box-shadow for visual depth
+				box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+
+				// Ensure content doesn't overflow
+				overflow-y: auto;
+				-webkit-overflow-scrolling: touch; // Smooth scrolling on iOS
+			}
+		}
+	}
+
+	// Blocks
+	.wp-block-navigation {
+		&.is-vertical {
+			width: inherit;
+
+			.wp-block-navigation-submenu {
+				&.wp-block-navigation-item {
+					width: inherit;
+					display: inline-block;
+					// padding: unset;
+
+					.wp-block-navigation-item__content,
+					.wp-block-navigation__submenu-icon {
+						display: inline-block;
+					}
+
+					.wp-block-navigation__submenu-icon {
+						float: right;
+						width: 1em;
+						height: 1em;
+						margin-right: 0.25em;
+
+						&[aria-expanded] {
+							transition: all 0.3s ease;
+						}
+
+						&[aria-expanded="true"] {
+							transform: rotate(-180deg);
+							margin-bottom: 1em;
+						}
+
+						&[aria-expanded="false"] {
+							transform: rotate(0deg);
+						}
+					}
+
+					.wp-block-navigation__submenu-container {
+						width: inherit;
+						position: relative;
+						top: 0;
+						left: 0;
+						margin-block-start: var(--wp--preset--spacing--2);
+					}
+				}
+
+			}
+		}
+	}
+
+	// Force disable hover behavior for navigation inside offcanvas
+	.wp-block-navigation {
+		.wp-block-navigation-submenu {
+
+			// Override any hover styles that might open submenus
+			&:hover,
+			&:focus-within {
+				.wp-block-navigation__submenu-container {
+					display: none;
+				}
+			}
+
+			// Only show submenus when explicitly opened via click (is-open class)
+			.wp-block-navigation__submenu-container {
+				display: none;
+			}
+
+			&.is-open {
+				.wp-block-navigation__submenu-container {
+					display: block;
+				}
+			}
+
+			// Disable pointer events on hover that might trigger submenu opening
+			&.click-only-submenu {
+
+				.wp-block-navigation-item__content:hover+.wp-block-navigation__submenu-icon,
+				.wp-block-navigation__submenu-icon:hover {
+					pointer-events: auto; // Keep pointer events for click
+				}
+
+				// Ensure no hover-based submenu opening
+				&:hover .wp-block-navigation__submenu-container,
+				&:focus-within .wp-block-navigation__submenu-container {
+					display: none !important;
+				}
+
+				&.is-open:hover .wp-block-navigation__submenu-container,
+				&.is-open:focus-within .wp-block-navigation__submenu-container {
+					display: block !important;
+				}
+			}
+		}
+	}
+}
+
+// Consider reorganizing these deeply nested selectors for better maintainability
+body {
+	&.logged-in {
+		.wp-block-rp-offcanvas {
+			.offcanvas {
+				.content-container {
+					padding-top: 46px;
+
+					@media screen and (min-width: $tablet) {
+						padding-top: 32px;
+					}
+				}
+			}
+		}
+	}
+}
+
+// Color Variants
+.wp-block-rp-offcanvas {
+	&.has-primary-variant {
+		background-color: var(--color-primary-100);
+		color: var(--color-primary-900);
+		border-color: var(--color-primary-300);
+	}
+
+	&.has-secondary-variant {
+		background-color: var(--color-secondary-100);
+		color: var(--color-secondary-900);
+		border-color: var(--color-secondary-300);
+	}
+
+	&.has-accent-variant {
+		background-color: var(--color-accent-100);
+		color: var(--color-accent-900);
+		border-color: var(--color-accent-300);
+	}
+
+	&.has-neutral-variant {
+		background-color: var(--color-neutral-100);
+		color: var(--color-neutral-900);
+		border-color: var(--color-neutral-300);
+	}
+
+	&.has-custom-colors {
+		color: var(--custom-color, currentColor);
+		background-color: var(--custom-background-color, transparent);
+		border-color: var(--custom-border-color, currentColor);
+	}
+}

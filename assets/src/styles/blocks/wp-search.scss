@@ -1,0 +1,11 @@
+.wp-block-search {
+  .wp-block-search__inside-wrapper {
+    border: 1px solid var(--wp--custom--colors--dark);
+  }
+  .wp-block-search__input {
+    padding: var(--wp--preset--spacing--1) var(--wp--preset--spacing--2) !important;
+  }
+  .wp-block-search__button {
+    padding: var(--wp--preset--spacing--1);
+  }
+}

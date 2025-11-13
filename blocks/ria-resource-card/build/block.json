@@ -1,0 +1,302 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "ria/resource-card",
+	"version": "1.0.0",
+	"title": "RIA Resource Card",
+	"category": "ria",
+	"icon": "media-document",
+	"description": "Display a downloadable resource with thumbnail, file type icon, topics, and download/link button.",
+	"keywords": [
+		"resource",
+		"download",
+		"document",
+		"pdf",
+		"file",
+		"publication",
+		"research"
+	],
+	"supports": {
+		"html": false,
+		"align": false,
+		"spacing": {
+			"margin": true,
+			"padding": true
+		}
+	},
+	"attributes": {
+		"variant": {
+			"type": "string",
+			"default": "default"
+		},
+		"customBackgroundColor": {
+			"type": "string",
+			"default": ""
+		},
+		"customBorderColor": {
+			"type": "string",
+			"default": ""
+		},
+		"resourceId": {
+			"type": "number",
+			"default": 0
+		},
+		"layout": {
+			"type": "string",
+			"default": "card",
+			"enum": [
+				"card",
+				"list",
+				"compact",
+				"featured"
+			]
+		},
+		"title": {
+			"type": "string",
+			"default": ""
+		},
+		"excerpt": {
+			"type": "string",
+			"default": ""
+		},
+		"thumbnailId": {
+			"type": "number",
+			"default": 0
+		},
+		"thumbnailUrl": {
+			"type": "string",
+			"default": ""
+		},
+		"fileType": {
+			"type": "string",
+			"default": "pdf",
+			"enum": [
+				"pdf",
+				"doc",
+				"docx",
+				"xls",
+				"xlsx",
+				"ppt",
+				"pptx",
+				"zip",
+				"external",
+				"video"
+			]
+		},
+		"fileUrl": {
+			"type": "string",
+			"default": ""
+		},
+		"fileSize": {
+			"type": "string",
+			"default": ""
+		},
+		"isExternal": {
+			"type": "boolean",
+			"default": false
+		},
+		"externalUrl": {
+			"type": "string",
+			"default": ""
+		},
+		"topics": {
+			"type": "array",
+			"default": []
+		},
+		"categories": {
+			"type": "array",
+			"default": []
+		},
+		"publicationDate": {
+			"type": "string",
+			"default": ""
+		},
+		"authors": {
+			"type": "array",
+			"default": []
+		},
+		"relatedProducts": {
+			"type": "array",
+			"default": []
+		},
+		"showThumbnail": {
+			"type": "boolean",
+			"default": true
+		},
+		"showFileTypeIcon": {
+			"type": "boolean",
+			"default": true
+		},
+		"showExcerpt": {
+			"type": "boolean",
+			"default": true
+		},
+		"showTopics": {
+			"type": "boolean",
+			"default": true
+		},
+		"showCategories": {
+			"type": "boolean",
+			"default": false
+		},
+		"showDate": {
+			"type": "boolean",
+			"default": true
+		},
+		"showAuthors": {
+			"type": "boolean",
+			"default": false
+		},
+		"showFileSize": {
+			"type": "boolean",
+			"default": true
+		},
+		"showRelatedProducts": {
+			"type": "boolean",
+			"default": false
+		},
+		"buttonText": {
+			"type": "string",
+			"default": "Download"
+		},
+		"buttonStyle": {
+			"type": "string",
+			"default": "primary",
+			"enum": [
+				"primary",
+				"secondary",
+				"tertiary",
+				"ghost"
+			]
+		},
+		"openInNewTab": {
+			"type": "boolean",
+			"default": true
+		},
+		"hoverEffect": {
+			"type": "string",
+			"default": "elevate",
+			"enum": [
+				"none",
+				"elevate",
+				"scale",
+				"border"
+			]
+		},
+		"borderWidth": {
+			"type": "number",
+			"default": 1
+		},
+		"borderStyle": {
+			"type": "string",
+			"default": "solid",
+			"enum": [
+				"none",
+				"solid",
+				"dashed",
+				"dotted",
+				"double",
+				"groove",
+				"ridge"
+			]
+		},
+		"borderRadius": {
+			"type": "number",
+			"default": 8
+		},
+		"boxShadow": {
+			"type": "string",
+			"default": "small",
+			"enum": [
+				"none",
+				"small",
+				"medium",
+				"large",
+				"xlarge",
+				"2xlarge",
+				"inner"
+			]
+		},
+		"hoverShadow": {
+			"type": "string",
+			"default": "medium",
+			"enum": [
+				"none",
+				"small",
+				"medium",
+				"large",
+				"xlarge",
+				"2xlarge"
+			]
+		},
+		"animationEnabled": {
+			"type": "boolean",
+			"default": true
+		},
+		"animationType": {
+			"type": "string",
+			"default": "fadeInUp",
+			"enum": [
+				"fadeIn",
+				"fadeInUp",
+				"fadeInDown",
+				"fadeInLeft",
+				"fadeInRight",
+				"slideInUp",
+				"slideInDown",
+				"slideInLeft",
+				"slideInRight",
+				"zoomIn",
+				"zoomInUp",
+				"bounceIn",
+				"rotateIn",
+				"flipInX",
+				"flipInY",
+				"none"
+			]
+		},
+		"animationDuration": {
+			"type": "number",
+			"default": 1000
+		},
+		"animationDelay": {
+			"type": "number",
+			"default": 0
+		},
+		"animationEasing": {
+			"type": "string",
+			"default": "ease-out",
+			"enum": [
+				"linear",
+				"ease",
+				"ease-in",
+				"ease-out",
+				"ease-in-out"
+			]
+		},
+		"hoverAnimation": {
+			"type": "string",
+			"default": "none",
+			"enum": [
+				"none",
+				"lift",
+				"grow",
+				"shrink",
+				"rotate",
+				"tilt",
+				"glow",
+				"pulse",
+				"bounce"
+			]
+		},
+		"customColor": {
+			"type": "string",
+			"default": ""
+		}
+	},
+	"textdomain": "ria-resource-card",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"viewScript": "file:./view.js"
+}

@@ -1,0 +1,104 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "ria/stat",
+	"version": "1.0.0",
+	"title": "Stat Item",
+	"category": "ria",
+	"icon": "chart-line",
+	"description": "A single stat item with value and label",
+	"keywords": [
+		"stat",
+		"statistic",
+		"metric",
+		"number",
+		"count"
+	],
+	"parent": [
+		"ria/stats-group"
+	],
+	"supports": {
+		"html": false,
+		"reusable": false
+	},
+	"attributes": {
+		"value": {
+			"type": "string",
+			"default": "100+"
+		},
+		"label": {
+			"type": "string",
+			"default": "Stat Label"
+		},
+		"valueColor": {
+			"type": "string",
+			"default": ""
+		},
+		"labelColor": {
+			"type": "string",
+			"default": ""
+		},
+		"valueFontSize": {
+			"type": "number",
+			"default": 48
+		},
+		"labelFontSize": {
+			"type": "number",
+			"default": 16
+		},
+		"animateValue": {
+			"type": "boolean",
+			"default": true
+		},
+		"showIcon": {
+			"type": "boolean",
+			"default": false
+		},
+		"iconName": {
+			"type": "string",
+			"default": "TrendingUp"
+		},
+		"iconSize": {
+			"type": "number",
+			"default": 32
+		},
+		"iconColor": {
+			"type": "string",
+			"default": ""
+		},
+		"iconPosition": {
+			"type": "string",
+			"default": "top",
+			"enum": [
+				"top",
+				"left"
+			]
+		},
+		"variant": {
+			"type": "string",
+			"default": "default"
+		},
+		"customColor": {
+			"type": "string",
+			"default": ""
+		},
+		"customBackgroundColor": {
+			"type": "string",
+			"default": ""
+		},
+		"customBorderColor": {
+			"type": "string",
+			"default": ""
+		}
+	},
+	"usesContext": [
+		"ria/statsGroupStyle",
+		"ria/statsGroupAlignment",
+		"ria/statsGroupCardBackground",
+		"ria/statsGroupBorderRadius"
+	],
+	"textdomain": "ria-stat",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}

@@ -1,0 +1,72 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "zp/social-share",
+  "version": "0.1.0",
+  "title": "Social Share",
+  "category": "design",
+  "icon": "share",
+  "description": "Social Sharing Tool: Twitter, Facebook, Linked In, Pinterest, Email. NOTE: you need og meta tags for this to work on all platforms. Yoast SEO can set this up.",
+  "keywords": [
+    "share",
+    "social"
+  ],
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ],
+    "color": {
+      "background": true,
+      "text": true
+    },
+    "typography": {
+      "fontSize": true
+    }
+  },
+  "textdomain": "social-share",
+  "editorScript": "file:index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "attributes": {
+    "align": {
+      "type": "string",
+      "default": ""
+    },
+    "postURL": {
+      "type": "string",
+      "default": ""
+    },
+    "postTitle": {
+      "type": "string",
+      "default": ""
+    },
+    "enabledPlatforms": {
+      "type": "object",
+      "default": {
+        "twitter": true,
+        "facebook": true,
+        "linkedin": true,
+        "pinterest": true,
+        "email": true
+      }
+    },
+    "variant": {
+      "type": "string",
+      "default": "default"
+    },
+    "customColor": {
+      "type": "string",
+      "default": ""
+    },
+    "customBackgroundColor": {
+      "type": "string",
+      "default": ""
+    },
+    "customBorderColor": {
+      "type": "string",
+      "default": ""
+    }
+  }
+}

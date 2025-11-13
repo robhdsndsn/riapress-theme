@@ -1,0 +1,28 @@
+.wp-block-social-links {
+  .wp-block-social-link {
+    a {
+      padding: 0.5rem 0.75rem;
+      border-radius: 50px;
+
+      &:focus,
+      &:hover {
+      }
+    }
+
+    &:focus,
+    &:hover {
+      transform: unset;
+    }
+  }
+
+  &.is-style-logos-only {
+    .wp-block-social-link {
+      a {
+        padding: 0.5rem 0.75rem;
+        border: unset;
+        border-radius: unset;
+        background-color: unset;
+      }
+    }
+  }
+}

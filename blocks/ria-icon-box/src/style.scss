@@ -1,0 +1,204 @@
+/**
+ * Frontend Styles for RIA Icon Box Block
+ */
+
+.wp-block-ria-icon-box {
+	position: relative;
+	margin: 20px 0;
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+	// Shadow utilities
+	&.shadow-small {
+		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	}
+
+	&.shadow-medium {
+		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
+	}
+
+	&.shadow-large {
+		box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+	}
+
+	// Hover shadow utilities
+	&.hover-shadow-small:hover {
+		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	}
+
+	&.hover-shadow-medium:hover {
+		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
+	}
+
+	&.hover-shadow-large:hover {
+		box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+	}
+
+	// Hover animations
+	&.hover-lift:hover {
+		transform: translateY(-4px);
+	}
+
+	&.hover-grow:hover {
+		transform: scale(1.02);
+	}
+
+	&.hover-glow:hover {
+		box-shadow: 0 0 20px rgba(0, 115, 170, 0.3);
+	}
+
+	.icon-box-inner {
+		display: flex;
+		gap: 20px;
+		align-items: flex-start;
+	}
+
+	&.icon-position-top .icon-box-inner {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	&.icon-position-left .icon-box-inner {
+		flex-direction: row;
+		align-items: flex-start;
+	}
+
+	&.icon-position-right .icon-box-inner {
+		flex-direction: row-reverse;
+		align-items: flex-start;
+	}
+
+	.icon-box-icon {
+		flex-shrink: 0;
+		line-height: 1;
+
+		.dashicons {
+			display: block;
+			width: 1em;
+			height: 1em;
+		}
+	}
+
+	.icon-box-content {
+		flex: 1;
+	}
+
+	.icon-box-heading {
+		margin: 0 0 12px 0;
+		font-size: 24px;
+		font-weight: 600;
+		color: #1a1a1a;
+	}
+
+	.icon-box-description {
+		margin: 0;
+		font-size: 16px;
+		line-height: 1.6;
+		color: #555;
+	}
+
+	.icon-box-link {
+		text-decoration: none;
+		color: inherit;
+		display: block;
+
+		&:hover {
+			text-decoration: none;
+		}
+	}
+
+	&.text-align-left {
+		text-align: left;
+	}
+
+	&.text-align-center {
+		text-align: center;
+	}
+
+	&.text-align-right {
+		text-align: right;
+	}
+
+	// Responsive design
+	@media (max-width: 768px) {
+		padding: 16px;
+
+		&.icon-position-left .icon-box-inner,
+		&.icon-position-right .icon-box-inner {
+			flex-direction: column;
+			align-items: center;
+			text-align: center;
+		}
+
+		.icon-box-heading {
+			font-size: 20px;
+		}
+
+		.icon-box-description {
+			font-size: 14px;
+		}
+	}
+}
+
+// Animation support (handled by ria-animations-v2.js)
+.wp-block-ria-icon-box[data-animation] {
+	opacity: 0;
+
+	&.animate {
+		opacity: 1;
+	}
+}
+
+// Accessibility
+@media (prefers-reduced-motion: reduce) {
+	.wp-block-ria-icon-box {
+		transition: none !important;
+
+		* {
+			transition: none !important;
+			animation: none !important;
+		}
+	}
+}
+
+// Variant Color System
+.wp-block-ria-icon-box {
+	// CSS Custom Properties
+	--variant-bg: var(--wp--preset--color--background, #ffffff);
+	--variant-border: var(--wp--preset--color--contrast, #000000);
+
+	// Primary variant
+	&.variant-primary {
+		--variant-bg: var(--wp--preset--color--primary, #0073aa);
+		--variant-border: var(--wp--preset--color--primary, #0073aa);
+	}
+
+	// Secondary variant
+	&.variant-secondary {
+		--variant-bg: var(--wp--preset--color--secondary, #005177);
+		--variant-border: var(--wp--preset--color--secondary, #005177);
+	}
+
+	// Accent variant
+	&.variant-accent {
+		--variant-bg: var(--wp--preset--color--accent, #7c3aed);
+		--variant-border: var(--wp--preset--color--accent, #7c3aed);
+	}
+
+	// Neutral variant (default)
+	&.variant-neutral {
+		--variant-bg: var(--wp--preset--color--base-2, #f9fafb);
+		--variant-border: var(--wp--preset--color--contrast-2, #e5e7eb);
+	}
+
+	// Custom variant
+	&.variant-custom {
+		--variant-bg: var(--custom-bg-color, transparent);
+		--variant-border: var(--custom-border-color, transparent);
+	}
+
+	// Apply variant colors
+	.ria-icon-box {
+		background-color: var(--variant-bg);
+		border-color: var(--variant-border);
+	}
+}

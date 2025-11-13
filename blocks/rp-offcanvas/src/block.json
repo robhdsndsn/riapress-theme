@@ -1,0 +1,41 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "zp/offcanvas",
+  "version": "0.1.0",
+  "title": "Offcanvas",
+  "category": "widgets",
+  "icon": "menu",
+  "description": "An offcanvas area",
+  "supports": {
+    "html": false,
+    "interactivity": {
+      "clientNavigation": true
+    }
+  },
+  "textdomain": "offcanvas",
+  "editorScript": "file:index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "viewStyle": "file:./style.css",
+  "viewScriptModule": "file:./view.js",
+  "render": "file:./render.php",
+  "attributes": {
+    "variant": {
+      "type": "string",
+      "default": "default"
+    },
+    "customColor": {
+      "type": "string",
+      "default": ""
+    },
+    "customBackgroundColor": {
+      "type": "string",
+      "default": ""
+    },
+    "customBorderColor": {
+      "type": "string",
+      "default": ""
+    }
+  }
+}

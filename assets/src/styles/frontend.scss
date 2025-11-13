@@ -1,0 +1,23 @@
+// Base
+@import "base/breakpoints";
+@import "base/forms";
+@import "base/layout";
+@import "base/spacing";
+@import "base/typography";
+
+// Blocks
+@import "blocks/wp-buttons";
+@import "blocks/wp-group";
+@import "blocks/wp-heading";
+@import "blocks/wp-search";
+@import "blocks/wp-navigation";
+@import "blocks/wp-pagination";
+
+// Template parts
+@import "template-parts/site-header";
+@import "template-parts/site-footer";
+
+// Templates
+@import "templates/archive";
+@import "templates/page";
+@import "templates/single";

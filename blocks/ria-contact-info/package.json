@@ -1,0 +1,25 @@
+{
+	"name": "ria-contact-info",
+	"version": "0.1.0",
+	"description": "Contact information display block with phone, email, address, website, fax, and social links",
+	"author": "Rob Hudson",
+	"license": "GPL-2.0-or-later",
+	"scripts": {
+		"build": "wp-scripts build src/index.js --output-path=build",
+		"start": "wp-scripts start src/index.js --output-path=build",
+		"format": "wp-scripts format",
+		"lint:css": "wp-scripts lint-style",
+		"lint:js": "wp-scripts lint-js",
+		"packages-update": "wp-scripts packages-update"
+	},
+	"devDependencies": {
+		"@wordpress/scripts": "^27.0.0"
+	},
+	"dependencies": {
+		"@wordpress/block-editor": "^13.1.0",
+		"@wordpress/blocks": "^13.1.0",
+		"@wordpress/components": "^28.1.0",
+		"@wordpress/element": "^6.1.0",
+		"@wordpress/i18n": "^5.1.0"
+	}
+}

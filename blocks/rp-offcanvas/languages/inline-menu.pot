@@ -1,0 +1,53 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2022-11-15T18:26:22+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.6.0\n"
+"X-Domain: inline-menu\n"
+
+#: build/index.js:1
+msgctxt "Block - Inline Menu"
+msgid "Inline Menu Settings"
+msgstr ""
+
+#: build/index.js:1
+msgctxt "Block - Inline Menu"
+msgid "Menu"
+msgstr ""
+
+#: build/index.js:1
+msgctxt "Block - Inline Menu"
+msgid "Select a Menu"
+msgstr ""
+
+#: build/index.js:1
+msgctxt "Block - Inline Menu"
+msgid "Select a menu from the side"
+msgstr ""
+
+#: build/block.json
+msgctxt "block title"
+msgid "Inline Menu"
+msgstr ""
+
+#: build/block.json
+msgctxt "block description"
+msgid "An inline menu that uses a selected WP Menu"
+msgstr ""
+
+#: build/block.json
+msgctxt "block style label"
+msgid "Overlap"
+msgstr ""
+
+#: build/block.json
+msgctxt "block style label"
+msgid "Inline"
+msgstr ""

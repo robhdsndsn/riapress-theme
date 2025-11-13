@@ -1,0 +1,138 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "ria/badge",
+	"version": "0.2.0",
+	"title": "RIA Badge",
+	"category": "ria",
+	"icon": "tag",
+	"description": "Small status or label badge indicator with icons and taxonomy support.",
+	"keywords": [
+		"badge",
+		"tag",
+		"label",
+		"status",
+		"pill",
+		"taxonomy",
+		"category"
+	],
+	"supports": {
+		"html": false,
+		"spacing": {
+			"margin": true,
+			"padding": true
+		}
+	},
+	"attributes": {
+		"text": {
+			"type": "string",
+			"default": "Badge"
+		},
+		"variant": {
+			"type": "string",
+			"default": "neutral"
+		},
+		"size": {
+			"type": "string",
+			"default": "medium",
+			"enum": [
+				"small",
+				"medium",
+				"large"
+			]
+		},
+		"outlineVariant": {
+			"type": "boolean",
+			"default": false
+		},
+		"showIcon": {
+			"type": "boolean",
+			"default": false
+		},
+		"iconName": {
+			"type": "string",
+			"default": "Tag"
+		},
+		"iconPosition": {
+			"type": "string",
+			"default": "left",
+			"enum": [
+				"left",
+				"right"
+			]
+		},
+		"iconSize": {
+			"type": "number",
+			"default": 16
+		},
+		"showDot": {
+			"type": "boolean",
+			"default": false
+		},
+		"dataSource": {
+			"type": "string",
+			"default": "manual",
+			"enum": [
+				"manual",
+				"taxonomy"
+			]
+		},
+		"taxonomySlug": {
+			"type": "string",
+			"default": "category"
+		},
+		"url": {
+			"type": "string",
+			"default": ""
+		},
+		"openInNewTab": {
+			"type": "boolean",
+			"default": false
+		},
+		"dismissible": {
+			"type": "boolean",
+			"default": false
+		},
+		"animationEnabled": {
+			"type": "boolean",
+			"default": true
+		},
+		"animationType": {
+			"type": "string",
+			"default": "fadeInUp"
+		},
+		"animationDuration": {
+			"type": "number",
+			"default": 0.6
+		},
+		"animationDelay": {
+			"type": "number",
+			"default": 0
+		},
+		"animationEasing": {
+			"type": "string",
+			"default": "ease-out"
+		},
+		"hoverAnimation": {
+			"type": "string",
+			"default": "none"
+		},
+		"customColor": {
+			"type": "string",
+			"default": ""
+		},
+		"customBackgroundColor": {
+			"type": "string",
+			"default": ""
+		},
+		"customBorderColor": {
+			"type": "string",
+			"default": ""
+		}
+	},
+	"textdomain": "ria-badge",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"render": "file:./render.php"
+}

@@ -1,0 +1,77 @@
+// Button
+.wp-block-button {
+  .wp-block-button__link {
+    padding: var(--wp--preset--spacing--3) var(--wp--preset--spacing--4);
+    box-sizing: border-box;
+    line-height: 1;
+    transition: background-color var(--wp--custom--transitions--single-property);
+    border-radius: var(--wp--custom--border--radius--small);
+    border-width: var(--wp--custom--border--width--medium);
+    border-style: var(--wp--custom--border--style--solid);
+    border-color: transparent;
+    font-weight: 600;
+
+    &:focus,
+    &:hover {
+      text-decoration: unset;
+    }
+
+    &:focus {
+      border-color: var(--wp--preset--color--red-300);
+    }
+
+    // TODO: revisit this
+    &[disabled] {
+      // TODO: ask birdi to but the real color for disabled instead of opacity since they may sit on different background colours
+      opacity: .5;
+      cursor: not-allowed;
+    }
+
+    &.has-purple-background-color,
+    &.has-green-background-color {
+      background-color: var(--wp--custom--colors--green) !important;
+      color: var(--wp--custom--colors--dark)  !important;
+
+      &:focus {
+        border-color: var(--wp--custom--colors--secondary-300);
+      }
+
+      &:hover {
+        background-color: var(--wp--custom--colors--secondary-300) !important;
+      }
+    }
+  }
+
+  // Outline
+  &.is-style-outline {
+    .wp-block-button__link {
+      padding: calc(var(--wp--preset--spacing--3) + 2px) calc(var(--wp--preset--spacing--4) + 2px);
+      color: var(--wp--custom--colors--red);
+      background-color: var(--wp--custom--colors--white);
+      border-color: var(--wp--custom--colors--red);
+      border-width: var(--wp--custom--border--width--small);
+
+      &:focus,
+      &:hover {
+        color: var(--wp--custom--colors--white);
+        background-color: var(--wp--custom--colors--red);
+        padding: var(--wp--preset--spacing--3) var(--wp--preset--spacing--4);
+        border-width: var(--wp--custom--border--width--medium);
+      }
+
+      &:hover {
+        color: var(--wp--custom--colors--red);
+        background-color: var(--wp--custom--colors--primary-100);
+      }
+
+      &.has-purple-color {
+        border-color: var(--wp--custom--colors--purple);
+
+        &:focus,
+        &:hover {
+          background-color: var(--wp--custom--colors--secondary-100);
+        }
+      }
+    }
+  }
+}

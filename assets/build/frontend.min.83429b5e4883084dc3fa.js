@@ -1,0 +1,1 @@
+(()=>{var r={66:()=>{console.log("Hello @wordpress/scripts!!!")}},o={};function s(e){var t=o[e];if(void 0!==t)return t.exports;var p=o[e]={exports:{}};return r[e](p,p.exports,s),p.exports}(()=>{"use strict";s(66)})()})();

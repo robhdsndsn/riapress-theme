@@ -1,0 +1,135 @@
+	$tablet: 768px; // Dimensions: iPad Mini (768px)
+
+.wp-block-rp-metrics {
+	margin-right: auto;
+	margin-left: auto;
+	max-width: unset;
+
+	@media screen and (max-width: $tablet) {
+		gap: unset;
+	}
+
+	.metrics {
+		width: 100%;
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--wp--style--block-gap);
+		justify-content: center;
+	}
+
+	&.alignwide,
+	&.alignfull {
+		.metrics {
+			max-width: var(--wp--style--global--content-size);
+			margin-right: auto;
+			margin-left: auto;
+		}
+	}
+
+	&.has-1-columns {
+		.metrics {
+			.wp-block-rp-metric {
+				width: 100%;
+			}
+		}
+	}
+
+	&.has-2-columns {
+		.metrics {
+			.wp-block-rp-metric {
+				width: 100%;
+
+				@media screen and (min-width: $tablet) {
+					width: calc(100% / 2 - (var(--wp--style--block-gap) / 2));
+				}
+			}
+		}
+	}
+
+	&.has-3-columns {
+		.metrics {
+			.wp-block-rp-metric {
+				width: 100%;
+
+				@media screen and (min-width: $tablet) {
+					width: calc(100% / 3 - (var(--wp--style--block-gap) * 2 / 3));
+				}
+			}
+		}
+	}
+
+	&.has-4-columns {
+		.metrics {
+			.wp-block-rp-metric {
+				width: 100%;
+
+				@media screen and (min-width: $tablet) {
+					width: calc(100% / 4 - (var(--wp--style--block-gap) * 3 / 4));
+				}
+			}
+		}
+	}
+
+	&.has-5-columns {
+		.metrics {
+			.wp-block-rp-metric {
+				width: 100%;
+
+				@media screen and (min-width: $tablet) {
+					width: calc(100% / 5 - (var(--wp--style--block-gap) * 4 / 5));
+				}
+			}
+		}
+	}
+
+	&.has-6-columns {
+		.metrics {
+			.wp-block-rp-metric {
+				width: 100%;
+
+				@media screen and (min-width: $tablet) {
+					width: calc(100% / 6 - (var(--wp--style--block-gap) * 5 / 6));
+				}
+			}
+		}
+	}
+
+	.wp-block-rp-metric {
+		position: relative;
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		gap: var(--wp--style--block-gap);
+		transition: var(--wp--custom--transitions--default);
+
+		@media screen and (max-width: $tablet) {
+			border-bottom: unset;
+		}
+
+		.content-container {
+			width: 100%;
+			display: flex;
+			flex-direction: column;
+			justify-content: left;
+			padding: 1.5rem;
+
+			.counter {
+				font-size: var(--wp--preset--font-size--heading-1);
+				display: flex;
+				font-weight: 800;
+				justify-content: center;
+				color: var(--wp--preset--color--navy) !important;
+			}
+			.prefix, .suffix {
+				color: var(--wp--preset--color--green) !important;
+			}
+
+			.description {
+				text-align: center;
+				margin: unset;
+				font-size: var(--wp--preset--font-size--small);
+				color: var(--wp--preset--color--dark);
+			}
+		}
+	}
+}
