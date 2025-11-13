@@ -66,4 +66,55 @@ npm run build
 ### Version History
 - [changelog.md](changelog.md) - Complete version history and changes
 
-## GitHub Webhook Deployment Test
+## GitHub Webhook Deployment Test# RIA Press Theme
+
+**Version:** v0.1.0-janus
+**Status:** Active Development
+
+## About
+
+Professional WordPress block theme with atomic design system and performance-optimized architecture.
+
+## Quick Links
+
+- **Repository:** https://github.com/robhdsndsn/riapress-theme
+- **Staging Site:** https://staging57.the-ria.ca
+- **Documentation:** See GIT_WORKFLOW.md for complete workflow
+
+## Key Features
+
+- 16 Gutenberg blocks (atomic design)
+- Color variant system (8 semantic variants)
+- Animation system (12 animation types)
+- Settings export/import
+- Shared icon library (25 SVG icons)
+- Performance optimized (8-15KB per block)
+
+## Version Naming
+
+Releases use Roman gods/goddesses:
+- v0.1.0 - Janus (Current) - The Foundation
+- v1.0.0 - Minerva (Planned) - First Stable
+- v2.0.0 - Apollo (Planned) - Enhanced
+
+## Development
+
+```bash
+# Daily workflow
+git checkout development
+git pull
+# Make changes
+git commit -m "type: description"
+git push
+
+# Auto-deploys to staging
+```
+
+See GIT_WORKFLOW.md for complete documentation.
+
+## The Janus Philosophy
+
+Like the two-faced Roman god at the threshold:
+- Looking back: Clean, organized history
+- Looking forward: Clear path for innovation
+- At the doorway: Between foundation and future
